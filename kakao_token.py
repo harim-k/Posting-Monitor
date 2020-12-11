@@ -7,13 +7,14 @@ import json
 import os
 #from kakao2 import kakao2
 import datetime
+ip = requests.get("https://api.ipify.org").text
 def saveToken(get_txt):
     code = extractCode(get_txt)
     print(code)
     url = "https://kauth.kakao.com/oauth/token"
     data = {"grant_type": "authorization_code",
             "client_id": "7412c5bbc84770efd9fb12162c229f9f",
-            "redirect_uri": "http://localhost:10080", "code": code}
+            "redirect_uri": ip+"10080", "code": code}
     # 이러한 정보를 담은 data를 아래 url로 request를 보내면, user token을 받아올 수 있다.
     # user token 은 제한 시간이 있는 것으로 추정되며, user token을 이용하여 message를 발행할 수 있다.
     # 다음과정은 kakao2.py로
