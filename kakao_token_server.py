@@ -5,8 +5,9 @@ import os.path
 import time
 import threading
 from kakao_token import saveToken
+import requests
 
-
+ip = requests.get("https://api.ipify.org").text
 def recieve(connectionSock, addr, serverSock):
     # print('Connection thread is created from '+str(addr[0])+':'+str(addr[1]))
     sum_content = b''
@@ -60,7 +61,8 @@ def make_pkt(data, data2):
     data = data.encode('utf-8')
     data += file_data
     return data
-def MIME(filename):
+
+def MIME(filename): #노의미
     dictA=dict()
     dictA['aac']='audio/aac'
     dictA['avi']='video/x-msvideo'
@@ -82,12 +84,15 @@ def MIME(filename):
         result = 'application/octet-stream'
     return result
 
-
 serverSock = socket()
 serverSock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 serverSock.bind(('', 10080))
 serverSock.listen(1000)
-print('my ip is ' + gethostbyname(getfqdn()))
+link ="https://kauth.kakao.com/oauth/authorize?client_id=7412c5bbc84770efd9fb12162c229f9f&response_type=code&redirect_uri=http://"
+link += ip
+link += ":10080"
+
+print('Share this login link(Port forwarding is needed.)\n' + link)
 while 1:
     try:
         connectionSock, addr = serverSock.accept()
