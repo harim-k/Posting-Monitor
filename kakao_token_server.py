@@ -6,7 +6,15 @@ import time
 import threading
 from kakao_token import saveToken
 import requests
+from short_url import shortUrl
+from pathlib import Path
 
+def isFile(strA):
+    my_file = Path(strA)  # Path는 string을 return하는것 아님.window에서만 사용하능함.
+    if my_file.is_file():
+        return True
+    else:
+        return False
 ip = requests.get("https://api.ipify.org").text
 def recieve(connectionSock, addr, serverSock):
     # print('Connection thread is created from '+str(addr[0])+':'+str(addr[1]))
@@ -61,7 +69,6 @@ def make_pkt(data, data2):
     data = data.encode('utf-8')
     data += file_data
     return data
-
 def MIME(filename): #노의미
     dictA=dict()
     dictA['aac']='audio/aac'
@@ -88,11 +95,21 @@ serverSock = socket()
 serverSock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 serverSock.bind(('', 10080))
 serverSock.listen(1000)
-link ="https://kauth.kakao.com/oauth/authorize?client_id=7412c5bbc84770efd9fb12162c229f9f&response_type=code&redirect_uri=http://"
-link += ip
-link += ":10080"
+if isFile('short_url.txt'):
+    with open('short_url.txt',"r") as fp:
+        link = fp.read()
+    #print('hi')
+else:
+    #print('h1i')
+    link ="https://kauth.kakao.com/oauth/authorize?client_id=7412c5bbc84770efd9fb12162c229f9f&response_type=code&redirect_uri=http://"
+    link += ip
+    link += ":10080"
+    link = shortUrl(link)
+    with open('short_url.txt',"w") as fp:
+        fp.write(link)
 
 print('Share this login link(Port forwarding is needed.)\n' + link)
+print('Server has started.')
 while 1:
     try:
         connectionSock, addr = serverSock.accept()
