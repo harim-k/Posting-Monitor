@@ -2,16 +2,13 @@
 <title>에이스침대</title>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <link href="/img/common/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-<link href="/img/common/favicon.ico" rel="icon" type="image/x-icon"/>
-<meta content="no-cache" http-equiv="Pragma"/>
-<meta content="0" http-equiv="Expires"/>
-<meta content="no-cache" http-equiv="Cache-Control"/>
+
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="에이스침대 몰" name="title"/>
 <meta content="에이스침대" name="author"/>
 <meta content="침대는 가구가 아니다, 침대는 에이스다! No.1 침대과학 에이스 공식 자사몰" name="description"/>
 <meta content="에이스침대, 에이스침대몰, 에이스몰" name="keywords"/>
-<meta content="0ef15066-8bff-4558-952f-c33d7d5908fc" name="_csrf"/>
+<meta content="86141005-7036-4d3a-adc7-6fa872b4cf1a" name="_csrf"/>
 <!-- default header name is X-CSRF-TOKEN -->
 <meta content="X-CSRF-TOKEN" name="_csrf_header"/>
 <meta content="/img/common/powerbase.jpg" property="og:image"/>
@@ -228,8 +225,6 @@
 		                                        	
 		                                        
 		                                        	
-		                                        
-		                                        	
 		                                        	<img alt="new" src="/img/common/new_icon.png"/>
 </a>
 </li>
@@ -248,6 +243,10 @@
 </li>
 <li>
 <a href="#none" onclick="move_category('30');return false;">혼수침대
+		                                        
+		                                        	
+		                                        
+		                                        	
 		                                        
 		                                        	
 		                                        
@@ -287,8 +286,6 @@
 		                                        	
 		                                        
 		                                        	
-		                                        
-		                                        	
 		                                        	<img alt="new" src="/img/common/new_icon.png"/>
 </a>
 </li>
@@ -311,8 +308,8 @@
 <img src="/image/category/2020/07/01/1593570473567"/>
 <!-- 현재 imgIcon이름 : best / hot / new / event-->
 <div>
-<img src="/img/common/new.png"/>
-<p>온라인 단독모델 출시 'BMA 1162'</p>
+<img src="/img/common/best.png"/>
+<p>온라인 단독모델 'BMA 1162'</p>
 </div>
 </a>
 </div>
@@ -568,7 +565,7 @@
 <img src="/image/category/2020/09/01/1598923585528"/>
 <!-- 현재 imgIcon이름 : best / hot / new / event-->
 <div>
-<img src="/img/common/new.png"/>
+<img src="/img/common/pick.png"/>
 <p>매직 시그니처 '헤나-오크'</p>
 </div>
 </a>
@@ -688,7 +685,7 @@
 </div>
 <div class="inner">
 <!--간편검색 시작-->
-<form action="/front/search/categorySearch.do;jsessionid=11F8E99FA863F39DE579CCF23E2FFCB7.ef2.ef2?searchYn=N&amp;ctgNo=2" id="form_id_search" method="post"><input id="page" name="page" type="hidden" value="1"/><input id="rows" name="rows" type="hidden" value="1000"/><input id="sortType" name="sortType" type="hidden" value=""/><input id="searchYn" name="searchYn" type="hidden" value="Y"/><div class="pdt-select matt-select">
+<form action="/front/search/categorySearch.do;jsessionid=A0407E17DFA8BC3FE206F4F416B17FEF.ef1.ef1?searchYn=N&amp;ctgNo=2" id="form_id_search" method="post"><input id="page" name="page" type="hidden" value="1"/><input id="rows" name="rows" type="hidden" value="1000"/><input id="sortType" name="sortType" type="hidden" value=""/><input id="searchYn" name="searchYn" type="hidden" value="Y"/><div class="pdt-select matt-select">
 <div class="select-title">
 <h1 class="txt-16">간편검색</h1>
 </div>
@@ -717,7 +714,7 @@
 <button onclick="simple_search();">검색</button>
 </div>
 <div>
-<input name="_csrf" type="hidden" value="0ef15066-8bff-4558-952f-c33d7d5908fc"/>
+<input name="_csrf" type="hidden" value="86141005-7036-4d3a-adc7-6fa872b4cf1a"/>
 </div></form><!--간편검색 끝-->
 <!--st:pt-list-wrap-->
 <div class="pt-list-wrap">

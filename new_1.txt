@@ -1,1959 +1,2100 @@
 <html lang="ko"><head>
-<title>공지사항 게시판목록 | 성균관대학교</title>
-<link href="/_res/skku/img/common/favicon.png" rel="shortcut icon"/>
-<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+<title>에이스침대</title>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<meta content="text/javascript" http-equiv="Content-Script-Type"/>
-<meta content="text/css" http-equiv="Content-Style-Type"/>
+<link href="/img/common/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/img/common/favicon.ico" rel="icon" type="image/x-icon"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta content="no-cache" http-equiv="Cache-Control"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.google-analytics.com/analytics.js" type="text/javascript"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-53596226-1"></script>
+<meta content="에이스침대 몰" name="title"/>
+<meta content="에이스침대" name="author"/>
+<meta content="침대는 가구가 아니다, 침대는 에이스다! No.1 침대과학 에이스 공식 자사몰" name="description"/>
+<meta content="에이스침대, 에이스침대몰, 에이스몰" name="keywords"/>
+<meta content="0ef15066-8bff-4558-952f-c33d7d5908fc" name="_csrf"/>
+<!-- default header name is X-CSRF-TOKEN -->
+<meta content="X-CSRF-TOKEN" name="_csrf_header"/>
+<meta content="/img/common/powerbase.jpg" property="og:image"/>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<link href="/front/css/include.css" rel="stylesheet" type="text/css"/> <!-- 공통 css -->
+<link href="/front/css/custom.css" rel="stylesheet" type="text/css"/> <!-- 공통 css -->
+<script async="" id="www-widgetapi-script" src="https://www.youtube.com/s/player/03226028/www-widgetapi.vflset/www-widgetapi.js" type="text/javascript"></script><script src="https://www.youtube.com/player_api"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="/front/js/lib/jquery/jquery-1.12.3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var HTTP_SERVER_URL = 'http://acebedmall.co.kr',
+        HTTPS_SERVER_URL = 'https://acebedmall.co.kr',
+        HTTPX_SERVER_URL = 'http://acebedmall.co.kr';
+</script>
+<script src="//wcs.naver.net/wcslog.js" type="text/javascript"></script>
+<!-- 디트라이브 공통 스크립트 -->
+<!-- DKAS Tag Start-->
+<script src="/front/js/dkas/dkas.js" type="text/javascript"></script>
+<!-- DKAS Tag End-->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-53596226-1');
-</script><link href="http://www.skku.edu/skku/campus/skk_comm/notice01.do" rel="canonical"/>
-<link href="/_common/cms.css" rel="stylesheet" type="text/css"/>
-<link href="/_res/skku/_css/layout.css" rel="stylesheet" type="text/css"/>
-<!--[if IE 8]>
-	<link rel="stylesheet" type="text/css" href="/_common/ie8.css" />
-<![endif]-->
-<link href="/_common/css/toastr.css" rel="stylesheet" type="text/css"/>
-<link href="/_custom/skkuedu/resource/css/board.css" rel="stylesheet" type="text/css"/>
-<link href="/_common/css/ui.datepicker.css" rel="stylesheet" type="text/css"/>
-<link href="/_common/css/jquery.ui-selectBox.css" rel="stylesheet" type="text/css"/>
-<link href="/_res/skku/_css/user.css" rel="stylesheet" type="text/css"/>
-<script src="/_common/js/jquery/jquery-1.9.1.js" type="text/javascript"></script>
-<script src="/_common/js/jquery/jquery-ui-1.11.4.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-	var _thisHost = location.protocol+'//'+location.host, _thisUrl = document.location.href,_so_ = false,_cur_menu_cd = '284',_edit_content = false,front_page_edit = true,zooInOutMode = 'font',_reouscePath = '/_res/skku/',editorVendor = 'froala',sslYN = 'N',sslPort = '443',servicePort = '',developMode = false,device='pc',isMobile=false,_cfgUseDevMode = false,_siteId = 'skku',printSelector = '#jwxe_main_content',ctx = '',rootPath = '',locale= 'ko',localeScriptPath='/_custom/skkuedu/resource/js/';
-//]]>
-</script>
-<script src="/_common/cms.js" type="text/javascript"></script><style type="text/css"></style><script src="/_common/js/control.js" type="text/javascript"></script>
-<script src="/_custom/skkuedu/resource/js/app.url.js" type="text/javascript"></script>
-<script src="/_res/skku/_js/user/footer.js" type="text/javascript"></script>
-<script src="/_common/js/toastr.js" type="text/javascript"></script>
-<script src="/_common/js/jquery-plugin/selectBox.min.js" type="text/javascript"></script>
-<script src="/_custom/skkuedu/resource/js/board.common.js" type="text/javascript"></script>
-<script src="/_common/js/datepicker/ui.datepicker.all.js" type="text/javascript"></script>
-<script src="/_custom/skkuedu/resource/js/board.notice.js" type="text/javascript"></script>
-<script src="/_res/skku/_js/user.js" type="text/javascript"></script>
-<script src="/_res/skku/_js/user/user2.js" type="text/javascript"></script>
-<script src="/_res/skku/_js/user/jquery.bxslider.min.js" type="text/javascript"></script>
-<script src="/_res/skku/_js/user/temp.js" type="text/javascript"></script>
-<script src="/_res/eng/_js/user/owl.carousel.min.js" type="text/javascript"></script>
-<!--<script type="text/javascript">
-	WebFontConfig = {
-    custom: {
-        families: ['Noto Sans KR'],
-        urls: ['/_res/skku/_css/font.css']
+    var Constant = {
+        file : {
+            maxSize : 5242880
+        },
+        frontPath : '/front'
     }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })();
-</script>-->
-</head>
-<body class="pc" id="item_body" oncontextmenu="return false">
-<ul id="go_main">
-<li><a href="#jwxe_main_content">본문 바로가기</a></li>
-</ul>
-<div class="header">
-<div class="utill_wrap">
-<div class="w1400">
-<ul class="utill">
-<li>
-<a href="/eng/CampusLife/skku/Notice1.do">ENG</a>
-</li>
-<li>
-<div class="fund"><img alt="발전기금" src="/_res/skku/img/main/fund.png"/></div><a href="https://fund.skku.edu/fund/index.do" style="padding-left:27px;" target="_blank">발전기금</a>
-</li>
-<li>
-<a class="kingo" data-url="http://kingo.skku.edu" href="#">킹고봇</a>
-</li>
-<li>
-<a class="postLink" data-link="https://eportal.skku.edu" href="#">킹고ID LOGIN</a>
-</li>
-</ul>
-</div>
-</div>
-<div class="gnb_wrap">
-<div class="w1400">
-<button class="gnb_menuBtn"></button>
-<h1 class="logo">
-<a href="/skku"><img alt="성균관대학교" src="/_res/skku//img/common/logo.png"/></a>
-</h1>
-<div class="mgnb_bg">
-<div class="gnbList_wrap">
-<div class="mgnb_top">
-<h1 class="mo_logo">
-<a href="/skku"><img alt="성균관대학교" src="/_res/skku//img/common/mo_logo.png"/></a>
-</h1>
-<button class="moGnb_xBtn"></button>
-</div>
-<ul class="utill">
-<li>
-<a href="/eng/CampusLife/skku/Notice1.do">ENG</a>
-</li>
-<li>
-<a class="postLink" data-link="https://eportal.skku.edu" href="#">킹고ID LOGIN</a>
-</li>
-<li>
-<a class="kingo" data-url="http://kingo.skku.edu" href="#">킹고봇</a>
-</li>
-</ul>
-<ul class="gnb">
-<li class="gnbFirst">
-<a href="/skku/about/pr/greeting.do">대학정보</a>
-<div class="gnb_bg">
-<div class="w1650">
-<ul class="gnb_2dept">
-<li>
-<a href="/skku/about/pr/greeting.do">총장실</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/about/pr/greeting.do">인사말</a>
-</li>
-<li>
-<a href="/skku/about/pr/profile.do">프로필</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/prs1.do">연설문</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/prs2.do">주요활동</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/prs3.do">언론인터뷰</a>
-</li>
-<li>
-<a href="/skku/about/pr/prev_president_main.do">역대총장</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/about/vision/vision01.do">VISION2020+</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/about/vision/vision01.do">추진체계</a>
-</li>
-<li>
-<a href="/skku/about/vision/vision02.do">4대 전략목표</a>
-</li>
-<li>
-<a href="/skku/about/vision/vision03.do">3대 전략방향</a>
-</li>
-<li>
-<a href="/skku/about/vision/vision04.do">5대 부문별 전략</a>
-</li>
-<li>
-<a href="/skku/about/vision/vision05.do">비전선언문</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/about/s620/sub01.do" target="_blank">성대역사 / 상징</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/about/s620/sub01.do" target="_blank">성대 622년</a>
-</li>
-<li>
-<a href="/skku/about/symbol/symbol_01.do">성대 UI</a>
-</li>
-<li>
-<a href="/skku/about/symbol/sy_tree_song_01.do">교시 / 교목 / 교가</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/about/status/univ_info.do">대학현황</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/about/status/univ_info.do">현황</a>
-</li>
-<li>
-<a href="/skku/about/status/181113.do">학교법인</a>
-</li>
-<li>
-<a href="/skku/about/status/self_evaluation.do">자체평가</a>
-</li>
-<li>
-<a href="/skku/about/status/tuition_2018.do">등록금심의위원회 회의록</a>
-</li>
-<li>
-<a href="/skku/about/status/tuition02_intro.do">대학평의원회</a>
-</li>
-<li>
-<a href="/skku/about/status/budgetaccounts_2020.do">예결산공고</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/prs6.do">업무추진비 사용 내역</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/prs7.do">기부금 내역</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/about/organ/organization.do">대학기관 / 규정</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/about/organ/organization.do">조직도</a>
-</li>
-<li>
-<a href="/skku/about/organ/admin_organ_01.do">행정기관</a>
-</li>
-<li>
-<a href="/skku/about/organ/attachment_01.do">부속기관</a>
-</li>
-<li>
-<a href="http://rules.skku.edu" target="_blank">학칙/규정</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/news.do">SKKU 미디어</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/campus/skk_comm/news.do">성대뉴스</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/press.do">보도자료</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/newsLetter.do">성균소식</a>
-</li>
-<li>
-<a href="/skku/international/department/newletter.do">글로벌 뉴스레터</a>
-</li>
-<li>
-<a href="https://webzine.skku.edu/" target="_blank">성균웹진</a>
-</li>
-<li>
-<a href="http://sgallery.skku.edu" target="_blank">S-Gallery</a>
-</li>
-<li>
-<a href="http://ibook.skku.edu/Viewer/C3AKG9249S91">홍보책자</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/about/campusInfo/campusMap.do">캠퍼스 안내</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/about/campusInfo/campusMap.do" target="_blank">캠퍼스맵</a>
-</li>
-<li>
-<a href="/skku/about/campusInfo/location.do">찾아오시는 길</a>
-</li>
-<li>
-<a href="https://admission.skku.edu/ipsi/campus_tour.htm?PHPSESSID=bfaa9b0579d31e83fb123a4b919ebbd" target="_blank">학교탐방</a>
-</li>
-<li>
-<a href="/skku/about/campusInfo/parking.do">주차안내</a>
-</li>
-<li>
-<a href="/skku/about/campusInfo/campus_telInfo.do">전화번호안내</a>
-</li>
-<li>
-<a href="http://hall.skku.edu/" target="_blank"> 대관안내</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</li>
-<li class="">
-<a href="#iphak">입학</a>
-<div class="gnb_bg">
-<div class="w1650">
-<ul class="gnb_2dept">
-<li>
-<a href="https://admission.skku.edu" target="_blank">대학</a>
-</li>
-<li>
-<a href="https://gradschool.skku.edu/grad/index.htm" target="_blank">대학원</a>
-</li>
-<li>
-<a href="https://admission-global.skku.edu/chn/" target="_blank">외국인 입학</a>
-</li>
-</ul>
-</div>
-</div>
-</li>
-<li class="">
-<a href="/skku/edu/education.do">교육</a>
-<div class="gnb_bg">
-<div class="w1650">
-<ul class="gnb_2dept">
-<li>
-<a href="/skku/edu/education.do">대학</a>
-</li>
-<li>
-<a href="/skku/edu/graduateSchool/graduate_school.do">대학원</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/edu/graduateSchool/graduate_school.do">일반대학원</a>
-</li>
-<li>
-<a href="/skku/edu/graduateSchool/graduate_school02.do">특수대학원</a>
-</li>
-<li>
-<a href="/skku/edu/graduateSchool/graduate_school03.do">전문대학원</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/edu/international/schooling_01.do">부설교육</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/edu/international/schooling_01.do">성균어학원(한국어학당)</a>
-</li>
-<li>
-<a href="/skku/edu/international/schooling_02.do">한국사서교육원</a>
-</li>
-<li>
-<a href="/skku/edu/international/schooling_03.do">e-러닝</a>
-</li>
-<li>
-<a href="/skku/edu/international/schooling_04.do">인재교육원(공개강좌)</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/edu/challenge/challenge_01.do">도전학기</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/edu/challenge/challenge_01.do">총장인사말</a>
-</li>
-<li>
-<a href="http://e-catalog.me/skku/" target="_blank">도전학기 홍보책자</a>
-</li>
-<li>
-<a href="/skku/edu/challenge/challenge_02.do">전체프로그램 소개</a>
-</li>
-<li>
-<a href="/skku/edu/challenge/challenge_03.do">정규교과(혁신융합수업)</a>
-</li>
-<li>
-<a href="/skku/edu/challenge/challenge_04.do">비교과프로그램</a>
-</li>
-<li>
-<a href="/skku/edu/challenge/challenge_05.do">인턴십/국제교류프로그램</a>
-</li>
-<li>
-<a href="/skku/edu/challenge/challenge_06.do">신3품인증제</a>
-</li>
-<li>
-<a href="/skku/edu/challenge/challenge_07.do">학생성공역량</a>
-</li>
-<li>
-<a href="/skku/edu/challenge/challenge_09.do">정규교과목 및 비교과프로그램 상세설명</a>
-</li>
-<li>
-<a href="/skku/edu/challenge/challenge_08.do">FAQ</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/edu/bachelor/ca_de_schedule.do">학사안내</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/edu/bachelor/ca_de_schedule.do">학사일정</a>
-</li>
-<li>
-<a href="/skku/edu/bachelor/ca_de_schedule01.do">학사제도</a>
-</li>
-<li>
-<a href="/skku/edu/bachelor/de_thesis.do">학위논문</a>
-</li>
-<li>
-<a href="/skku/edu/bachelor/curriculum.do">학과/교과목 검색</a>
-</li>
-<li>
-<a href="/skku/about/status/state_02_2012.do">교육과정</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</li>
-<li class="">
-<a href="/skku/research/industry/researchStory.do">연구</a>
-<div class="gnb_bg">
-<div class="w1650">
-<ul class="gnb_2dept">
-<li>
-<a href="/skku/research/industry/researchStory.do">연구정보</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/research/industry/researchStory.do">Research Stories</a>
-</li>
-<li>
-<a href="/skku/research/industry/search_researcher.do">연구자 검색</a>
-</li>
-<li>
-<a href="http://research.skku.edu/rims/" target="_blank">연구정보포털</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/research/industry/research.do">연구기관</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/research/industry/research.do">교내연구기관</a>
-</li>
-<li>
-<a href="/skku/research/industry/BK21_4.do">4단계 BK21 교육연구단</a>
-</li>
-<li>
-<a href="/skku/research/industry/BK21.do">BK21 플러스 사업</a>
-</li>
-<li>
-<a href="/skku/research/industry/research_national.do">정부지원센터</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/research/support/research02.do">연구지원</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/research/support/research02.do">교내연구제도</a>
-</li>
-<li>
-<a href="/skku/research/industry/supp_program.do">학술활동 지원사업</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/research/industry/IRB.do">연구윤리</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/research/industry/IRB.do">기관생명윤리위원회(IRB)</a>
-</li>
-<li>
-<a href="/skku/research/industry/IRB02.do">연구윤리위원회</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</li>
-<li class="">
-<a href="/skku/sanhak/sanhak_01.do">산학</a>
-<div class="gnb_bg">
-<div class="w1650">
-<ul class="gnb_2dept">
-<li>
-<a href="/skku/sanhak/sanhak_01.do">산학협력단</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/sanhak/sanhak_01.do">산학협력단 현황</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_02.do">산학협력단 조직</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_12.do">산학사업</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/sanhak/sanhak_12.do">지식재산권</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_04.do">기술이전 / 사업화</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_05.do">산업자문</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_10.do">브릿지사업(지식재산실용화센터)</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_99.do">LINC 사업단</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/sanhak/sanhak_99.do">LINC 사업단 조직</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_06.do">사업추진체계</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_11.do">창업지원단</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/sanhak/sanhak_11.do">창업지원단 조직</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_13.do">교원창업</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_03.do">창업선도대학육성사업</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_98.do">캠퍼스타운사업</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_08.do">기업가정신과 혁신센터</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_09.do">창업보육센터</a>
-</li>
-<li>
-<a href="/skku/sanhak/sanhak_14.do">한국형 I-Corps사업</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</li>
-<li class="">
-<a href="/skku/international/globalSKKU/InternationalReputationandAchievements.do">국제화</a>
-<div class="gnb_bg">
-<div class="w1650">
-<ul class="gnb_2dept">
-<li>
-<a href="/skku/international/globalSKKU/InternationalReputationandAchievements.do">글로벌 SKKU</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/international/globalSKKU/InternationalReputationandAchievements.do">국제화 위상</a>
-</li>
-<li>
-<a href="/skku/international/globalSKKU/global_network.do">글로벌 네트워크</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/international/globalProgram/outbound.do">글로벌 프로그램</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/international/globalProgram/outbound.do">교환학생</a>
-</li>
-<li>
-<a href="/skku/international/globalProgram/inter_sumuniv.do">국제하계학기</a>
-</li>
-<li>
-<a href="https://winter.skku.edu" target="_blank">국제동계학기</a>
-</li>
-<li>
-<a href="/skku/international/globalProgram/campus_asia.do">캠퍼스 아시아</a>
-</li>
-<li>
-<a href="/skku/international/globalProgram/visiting_1.do">한국학 / 한국어</a>
-</li>
-<li>
-<a href="https://hangul.skku.edu/" target="_blank">성균한글백일장</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/about/organ/admin_organ_07.do">국제처 안내</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/about/organ/admin_organ_07.do">국제교류팀</a>
-</li>
-<li>
-<a href="http://oiss.skku.edu/oiss/" target="_blank">외국인유학생지원팀</a>
-</li>
-<li>
-<a href="/skku/international/department/location.do">위치 및 운영시간</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</li>
-<li class="">
-<a class="" href="/skku/campus/support/employment.do">대학생활</a>
-<div class="gnb_bg">
-<div class="w1650">
-<ul class="gnb_2dept">
-<li>
-<a href="/skku/campus/support/employment.do">학생지원</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/campus/support/employment.do">취업</a>
-</li>
-<li>
-<a href="/skku/campus/support/employment_3.do">Co-op (현장실습프로그램)</a>
-</li>
-<li>
-<a href="/skku/campus/support/employment_2.do">고시</a>
-</li>
-<li>
-<a href="/skku/campus/support/scholarship.do">장학제도</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_13.do">인권센터</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_05.do">장애학생지원</a>
-</li>
-<li>
-<a href="/skku/campus/support/dormitory.do">기숙사</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_07.do">다기능학생증</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_08.do">국제학생증</a>
-</li>
-<li>
-<a href="/skku/campus/support/rotc.do">학군단(ROTC)</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_counseling_center.do">학생상담(카운슬링센터)</a>
-</li>
-<li>
-<a href="https://success.skku.edu" target="_blank">학생성공센터</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_11.do">편의 / 복지</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/campus/support/welfare_11.do">식당 / 메뉴</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_12.do">셔틀버스</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_01.do">편의시설</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_facility.do">시설대여 / 신청</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_03.do">건강센터</a>
-</li>
-<li>
-<a href="/skku/campus/support/insurance.do">학생보험</a>
-</li>
-<li>
-<a href="/skku/campus/support/lost_and_found.do">Lost &amp; Found </a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/research/industry/StudentChallenge.do">학생활동</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/research/industry/StudentChallenge.do">Student Success Story</a>
-</li>
-<li>
-<a href="/skku/campus/activities/voluntary.do">사회봉사</a>
-</li>
-<li>
-<a href="/skku/campus/activities/council_01.do">총학생회</a>
-</li>
-<li>
-<a href="/skku/campus/activities/council_03.do">학생기구 / 단체</a>
-</li>
-<li>
-<a href="/skku/campus/activities/event.do">축제/이벤트</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="/skku/campus/IT_service/ITCallcenter.do">IT 서비스</a>
-<ul class="gnb_3dept">
-<li>
-<a href="/skku/campus/IT_service/ITCallcenter.do">IT Call center</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service02_3.do">모바일 앱 이용안내</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service04.do">노트북/SW 대여</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service05.do">무선랜 이용신청</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service06.do">전산망 이용 신청 / 서버계정신청</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service07.do">킹고포털</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service08.do">홈빌더 / 구글 드라이브</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service09.do">영상회의시스템 / 전화</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service10.do">증명발급</a>
-</li>
-<li>
-<a href="/skku/campus/itservice/home_edit.do">대표홈페이지 수정 요청</a>
-</li>
-</ul>
-</li>
-<li>
-<a class="" href="/skku/campus/skk_comm/notice01.do">성균광장</a>
-<ul class="gnb_3dept">
-<li>
-<a class="on" href="/skku/campus/skk_comm/notice01.do">공지사항</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/event.do">SKKU 캘린더</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/qna_info.do">묻고답하기</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/best.do">칭찬마당</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/report_center.do">불친절신고센터</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/skku_history_notice.do">학교 역사자료 기증</a>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</li>
-</ul>
-<div class="body">
-</div>
-<ul class="link_list">
-<li><a href="#">대학원 바로가기</a></li>
-<li><a href="#">GIVE</a></li>
-</ul>
-</div>
-</div>
-<ul class="gnb_iconList">
-<li>
-<button class="search_icon" id="searchBtn"></button>
-<div class="search_wrap">
-<form action="/skku/search/search.do" id="topSearchForm" method="post">
-<fieldset>
-<legend class="hidden">검색</legend>
-<input name="menu" type="hidden" value="통합검색"/>
-<label class="hidden" for="search_val">검색어</label>
-<input id="search_val" name="qt" type="text"/>
-</fieldset>
-</form>
-</div>
-</li>
-<li>
-<button class="share_icon"></button>
-<div class="share_wrap">
-<ul class="share_list">
-<li><a href="https://www.facebook.com/sungkyunkwanuniversity1398" target="_blank"><img alt="facebook 바로가기" src="/_res/skku/img/common/headM_sns_icon01.png"/></a></li>
-<li><a href="https://www.instagram.com/sungkyunkwan_univ_official/" target="_blank"><img alt="instagram 바로가기" src="/_res/skku/img/common/headM_sns_icon02.png"/></a></li>
-<li><a href="https://www.youtube.com/channel/UCMSzjNHLZNNUUA-Z8OrXY9Q" target="_blank"><img alt="youtube 바로가기" src="/_res/skku/img/common/headM_sns_icon03.png"/></a></li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="mo_seaWrap">
-<div class="seadiv">
-<form action="/skku/search/search.do" id="moSearchForm" method="post">
-<fieldset>
-<legend class="hidden">검색</legend>
-<input name="menu" type="hidden" value="통합검색"/>
-<label class="hidden" for="mo_search_val">검색어</label>
-<input id="mo_search_val" name="qt" placeholder="검색어를 입력하세요" type="text"/>
-<button class="mo_seaBtn"></button>
-</fieldset>
-</form>
-</div>
-<ul class="share_list">
-<li><a href="https://www.facebook.com/sungkyunkwanuniversity1398" target="_blank"><img alt="facebook 바로가기" src="/_res/skku/img/common/headM_sns_icon01.png"/></a></li>
-<li><a href="https://www.instagram.com/sungkyunkwan_univ_official/" target="_blank"><img alt="instagram 바로가기" src="/_res/skku/img/common/headM_sns_icon02.png"/></a></li>
-<li><a href="https://www.youtube.com/channel/UCMSzjNHLZNNUUA-Z8OrXY9Q" target="_blank"><img alt="youtube 바로가기" src="/_res/skku/img/common/headM_sns_icon03.png"/></a></li>
-</ul>
-</div>
-<form name="popForm">
-<input name="ssoToken" type="hidden" value=""/>
-<input name="varUA" type="hidden"/>
-</form>
-</div>
-<div class="sub_visual">
-<div class="visual campus">
-<div class="text-box">
-<h2>Campus Life</h2>
-<ul class="nav_list">
-<li><a href="/skku">홈</a></li>
-<li>
-<a href="/skku/campus/support/employment.do">대학생활</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/notice01.do">성균광장</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/notice01.do">공지사항</a>
-</li>
-<li>
-<a class="active" href="#">전체</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sub_container">
-<div class="lnb_wrap">
-<ul class="lnb">
-<li class="">
-<h4>
-<a class="" href="#linkNone">
-							학생지원
-						</a>
-</h4>
-<ul class="lnb_2depth">
-<li>
-<a href="/skku/campus/support/employment.do" title="/eng/CampusLife/support/employment.do">취업</a>
-</li>
-<li>
-<a href="/skku/campus/support/employment_3.do">Co-op (현장실습프로그램)</a>
-</li>
-<li>
-<a href="/skku/campus/support/employment_2.do">고시</a>
-</li>
-<li>
-<a href="/skku/campus/support/scholarship.do" title="/eng/CampusLife/support/scholarship.do">장학제도</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_13.do" title="/eng/CampusLife/support/GenderEqualityCounselingCenter.do">인권센터</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_05.do" title="/eng/CampusLife/support/DisabilitiesServices.do">장애학생지원</a>
-</li>
-<li>
-<a href="/skku/campus/support/dormitory.do">기숙사</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_07.do" title="/eng/CampusLife/support/StudentIDCard.do">다기능학생증</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_08.do" title="/eng/CampusLife/support/InternationalStudentIDCard.do">국제학생증</a>
-</li>
-<li>
-<a href="/skku/campus/support/rotc.do">학군단(ROTC)</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_counseling_center.do" title="/eng/CampusLife/support/StudentAdvisingCounseling.do">학생상담(카운슬링센터)</a>
-</li>
-<li>
-<a href="https://success.skku.edu" target="_blank" title="">학생성공센터</a>
-</li>
-</ul>
-</li>
-<li class="">
-<h4>
-<a class="" href="#linkNone">
-							편의 / 복지
-						</a>
-</h4>
-<ul class="lnb_2depth">
-<li>
-<a href="/skku/campus/support/welfare_11.do">식당 / 메뉴</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_12.do" title="/eng/CampusLife/convenience/Shuttlebus.do">셔틀버스</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_01.do">편의시설</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_facility.do" title="/eng/CampusLife/convenience/FacilityUtilizationInstructions.do">시설대여 / 신청</a>
-</li>
-<li>
-<a href="/skku/campus/support/welfare_03.do" title="/eng/CampusLife/convenience/HealthCareCenter.do">건강센터</a>
-</li>
-<li>
-<a href="/skku/campus/support/insurance.do" title="/eng/CampusLife/convenience/StudentInsurance.do">학생보험</a>
-</li>
-<li>
-<a href="/skku/campus/support/lost_and_found.do" title="/eng/CampusLife/convenience/LostFound.do">Lost &amp; Found </a>
-</li>
-</ul>
-</li>
-<li class="">
-<h4>
-<a class="" href="#linkNone">
-							학생활동
-						</a>
-</h4>
-<ul class="lnb_2depth">
-<li>
-<a href="/skku/research/industry/StudentChallenge.do" title="">Student Success Story</a>
-</li>
-<li>
-<a href="/skku/campus/activities/voluntary.do" title="/eng/CampusLife/activities/SocialVolunteer.do">사회봉사</a>
-</li>
-<li>
-<a href="/skku/campus/activities/council_01.do">총학생회</a>
-</li>
-<li>
-<a class="" href="#linkNone">
-										학생기구 / 단체
-									</a>
-<ul>
-<li>- <a href="/skku/campus/activities/council_03.do">대학원총학생회</a></li>
-<li>- <a href="/skku/campus/activities/massmedia.do" title="/eng/CampusLife/activities/CampusMedia.do">언론3사</a></li>
-<li>- <a href="/skku/campus/activities/stuOrgan01.do?mode=list&amp;srCategoryId1=1" title="">동아리</a></li>
-<li>- <a href="/skku/campus/activities/cheering_party.do" title="/eng/CampusLife/activities/cheering_party.do">응원단</a></li>
-<li>- <a href="/skku/campus/activities/band.do" title="/eng/CampusLife/activities/SKKUWindOrchestra.do">관악부</a></li>
-<li>- <a href="/skku/campus/activities/chungrang.do" title="/eng/CampusLife/activities/CheongLang.do">청랑</a></li>
-<li>- <a href="/skku/campus/activities/ds.do" title="/eng/CampusLife/activities/dasomi.do">다소미</a></li>
-</ul>
-</li>
-<li>
-<a href="/skku/campus/activities/event.do" title="/eng/CampusLife/activities/event.do">축제/이벤트</a>
-</li>
-</ul>
-</li>
-<li class="">
-<h4>
-<a class="" href="#linkNone">
-							IT 서비스
-						</a>
-</h4>
-<ul class="lnb_2depth">
-<li>
-<a href="/skku/campus/IT_service/ITCallcenter.do" title="/eng/CampusLife/ITServices/ITCallCenter.do">IT Call center</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service02_3.do" title="">모바일 앱 이용안내</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service04.do" title="/eng/CampusLife/ITServices/LaptopAndSWRentalServices.do">노트북/SW 대여</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service05.do" title="/eng/CampusLife/ITServices/InternetUtilization.do">무선랜 이용신청</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service06.do" title="/eng/CampusLife/ITServices/WifiServices.do">전산망 이용 신청 / 서버계정신청</a>
-</li>
-<li>
-<a class="" href="#linkNone">
-										킹고포털
-									</a>
-<ul>
-<li>- <a href="/skku/campus/IT_service/it_service07.do" title="">학생</a></li>
-<li>- <a href="/skku/campus/IT_service/it_service0702.do">교직원</a></li>
-</ul>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service08.do" title="/eng/CampusLife/ITServices/WebpageWebhard.do">홈빌더 / 구글 드라이브</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service09.do" title="/eng/CampusLife/ITServices/itservice_1.do">영상회의시스템 / 전화</a>
-</li>
-<li>
-<a href="/skku/campus/IT_service/it_service10.do" title="/eng/CampusLife/ITServices/CertificateIssuingServices.do">증명발급</a>
-</li>
-<li>
-<a href="/skku/campus/itservice/home_edit.do">대표홈페이지 수정 요청</a>
-</li>
-</ul>
-</li>
-<li class="on">
-<h4>
-<a class="active" href="#linkNone">
-							성균광장
-						</a>
-</h4>
-<ul class="lnb_2depth" style="display:block;">
-<li>
-<a class="active" href="#linkNone">
-										공지사항
-									</a>
-<ul>
-<li>- <a class="active" href="/skku/campus/skk_comm/notice01.do" title="/eng/CampusLife/skku/Notice1.do">전체</a></li>
-<li>- <a href="/skku/campus/skk_comm/notice02.do" title="/eng/CampusLife/skku/Notice2.do">학사</a></li>
-<li>- <a href="/skku/campus/skk_comm/notice03.do" title="/eng/CampusLife/skku/Notice3.do">입학</a></li>
-<li>- <a href="/skku/campus/skk_comm/notice04.do" title="/eng/CampusLife/skku/Notice4.do">취업</a></li>
-<li>- <a href="/skku/campus/skk_comm/notice05.do" title="/eng/CampusLife/skku/Notice5.do">채용/모집</a></li>
-<li>- <a href="/skku/campus/skk_comm/notice06.do" title="/eng/CampusLife/skku/Notice6.do">장학</a></li>
-<li>- <a href="/skku/campus/skk_comm/notice07.do" title="/eng/CampusLife/skku/Notice7.do">행사/세미나</a></li>
-<li>- <a href="/skku/campus/skk_comm/notice08.do" title="/eng/CampusLife/skku/Notice8.do">일반</a></li>
-</ul>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/event.do" title="/eng/CampusLife/skku/SKKUCalendar.do">SKKU 캘린더</a>
-</li>
-<li>
-<a class="" href="#linkNone">
-										묻고답하기
-									</a>
-<ul>
-<li>- <a href="/skku/campus/skk_comm/qna_info.do">질문/답변</a></li>
-<li>- <a href="/skku/campus/skk_comm/qna_all.do">전체보기</a></li>
-<li>- <a href="/skku/campus/skk_comm/my_qna.do">MY Q&amp;A</a></li>
-<li>- <a href="/skku/campus/skk_comm/FAQ.do">자주하는질문(FAQ)</a></li>
-</ul>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/best.do">칭찬마당</a>
-</li>
-<li>
-<a href="/skku/campus/skk_comm/report_center.do">불친절신고센터</a>
-</li>
-<li>
-<a class="" href="#linkNone">
-										학교 역사자료 기증
-									</a>
-<ul>
-<li>- <a href="/skku/campus/skk_comm/skku_history_notice.do">알림판</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul></div>
-<div class="cont_wrap">
-<div class="tit_wrap">
-<div class="print_wrap">
-<div class="w1400">
-<ul class="print_list">
-<li>
-<button href="/_common/template/print.jsp" id="jwxe_print" title="새창으로 프린트">PRINT</button>
-</li>
-<li>
-<button class="plus"></button>
-</li>
-<li>
-<button class="min"></button>
-</li>
-</ul>
-</div>
-</div>
-<h3 class="cont_tit">전체</h3>
-</div>
-<div class="content" id="jwxe_main_content">
-<script type="text/javascript">
-//<![CDATA[
-  var resPath = '/_custom/skkuedu/resource/', isEditorImageUpload = 'true' == 'false'? false: true, clientId = 'skkuedu', boardTy = 'notice', boardNo = '1', siteId = 'skku';
-//]]>
-</script>
-<div class="ko board list">
-<input id="board_mode" type="hidden" value="list"/>
-<div class="notice">
-<form action="?" method="get">
-<fieldset class="content-search-wrap">
-<legend class="hide">게시글 검색</legend>
-<input name="mode" type="hidden" value="list"/>
-<div class="board_seaWrap">
-<ul class="board_seaInputList">
-<li>
-<label class="hide" for="category1">분류선택</label>
-<select class="sea_select" id="category1" name="srCategoryId1">
-<option value="">분류선택</option>
-<option value="17">학사</option>
-<option value="18">입학</option>
-<option value="19">취업</option>
-<option value="20">채용/모집</option>
-<option value="21">장학</option>
-<option value="22">행사/세미나</option>
-<option value="23">일반</option>
-</select>
-</li>
-<li>
-<label class="hidden" for="search_key">검색조건</label>
-<select class="sea_select" id="search_key" name="srSearchKey">
-<option value="">전체</option>
-<option value="article_title">제목</option>
-<option value="article_text">내용</option>
-<option value="writer_nm">작성자</option>
-</select>
-</li>
-<li>
-<label class="hidden" for="search_val">검색어를 입력하세요</label>
-<input class="sea_input" id="search_val" name="srSearchVal" placeholder="검색어를 입력하세요" title="검색어를 입력하세요" type="text" value=""/>
-</li>
-<li>
-<button class="sea_btn">검색</button>
-</li>
-</ul>
-</div>
-</fieldset>
-</form>
-<div class="container">
-<div class="total_wrap">
-	 
-	
-	
-	
 
-  	Total <span>12191</span>건,  <span>1</span> / 1220
-</div>
-<div class="board-wrap board-qa table_scrollWrap">
-<img alt="스크롤" class="scollImg" src="/_res/skku/img/sub/scrollImg.png"/>
-<table class="board_list" summary="No, 제목, 등록일, 조회, 파일을 제공하는 목록">
-<caption class="hide">No, 제목, 등록일, 조회, 파일을 제공하는 목록</caption>
-<colgroup>
-<col style="width:9%;"/>
-<col style="width:55%;"/>
-<col style="width:14%;"/>
-<col style="width:13%;"/>
-<col width="9%"/>
-</colgroup>
-<thead>
-<tr>
-<th scope="col">No.</th>
-<th scope="col">제목</th>
-<th scope="col">등록일</th>
-<th scope="col">조회</th>
-<th scope="col">파일</th>
-</tr>
-</thead>
-<tbody>
-<tr class="">
-<td class="">
-                    	
-						
-							
-							
-							12191
-						
-						
-                    </td>
-<td class="left">
-<span class="new">NEW</span>
-<a class="" href="?mode=view&amp;articleNo=86838&amp;article.offset=0&amp;articleLimit=10">
-                           	
-                           	
-							
-                           		
-                           	[LINC+](창의품) 놀면 뭐하니? 동계방학 '대학연합 창업원정대' 참가 안내
-                           	
-							
-							
-							
-							
-						</a>
-</td>
-<td>2020-12-07</td>
-<td>2311</td>
-<td>
-</td>
-</tr>
-<tr class="">
-<td class="">
-                    	
-						
-							
-							
-							12190
-						
-						
-                    </td>
-<td class="left">
-<span class="new">NEW</span>
-<a class="" href="?mode=view&amp;articleNo=86917&amp;article.offset=0&amp;articleLimit=10">
-                           	
-                           	
-							
-                           		
-                           	한국연구재단 등재학술지 『人文科學』 제80집 논문 공모
-                           	
-							
-							
-							
-							
-						</a>
-</td>
-<td>2020-12-11</td>
-<td>66</td>
-<td>
-<button class="file"></button>
-<div class="file_downWrap">
-<button class="filedown_closeBtn"></button>
-<form action="?mode=downloadZip&amp;articleNo=86917" method="post">
-<fieldset>
-<ul class="filedown_list">
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86917&amp;attachNo=67404">
-																	간행규정 (20180319).hwp
-																</a>
-</li>
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86917&amp;attachNo=67405">
-																	논문투고 지침 (20200801).hwp
-																</a>
-</li>
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86917&amp;attachNo=67406">
-																	온라인투고시스템 투고자 매뉴얼.pdf
-																</a>
-</li>
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86917&amp;attachNo=67407">
-																	인문과학 80 원고 모집 공고.hwp
-																</a>
-</li>
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86917&amp;attachNo=67408">
-																	인문과학 연구윤리규정 (2013).hwp
-																</a>
-</li>
-</ul>
-<ul class="filedown_btnList">
-<li>
-<button>전체다운로드</button>
-</li>
-</ul>
-</fieldset>
-</form>
-</div>
-</td>
-</tr>
-<tr class="">
-<td class="">
-                    	
-						
-							
-							
-							12189
-						
-						
-                    </td>
-<td class="left">
-<span class="new">NEW</span>
-<a class="" href="?mode=view&amp;articleNo=86884&amp;article.offset=0&amp;articleLimit=10">
-                           	
-                           	
-							
-                           		
-                           	[교육개발센터] 2020학년도 겨울방학 “성균공부방” 5기 Teacher 모집
-                           	
-							
-							
-							
-							
-						</a>
-</td>
-<td>2020-12-09</td>
-<td>949</td>
-<td>
-<button class="file"></button>
-<div class="file_downWrap">
-<button class="filedown_closeBtn"></button>
-<form action="?mode=downloadZip&amp;articleNo=86884" method="post">
-<fieldset>
-<ul class="filedown_list">
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86884&amp;attachNo=67370">
-																	2020-2 성균공부방 설명회 자료.pdf
-																</a>
-</li>
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86884&amp;attachNo=67371">
-																	시행안_2020-2 성균공부방(Learning by Teaching).pdf
-																</a>
-</li>
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86884&amp;attachNo=67372">
-																	서식1_Teacher신청서_이름_강좌명.hwp
-																</a>
-</li>
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86884&amp;attachNo=67373">
-																	서식2_개인정보수집이용동의서_이름_강좌명.hwp
-																</a>
-</li>
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86884&amp;attachNo=67374">
-																	서식3_강좌소개_이름_강좌명.pptx
-																</a>
-</li>
-</ul>
-<ul class="filedown_btnList">
-<li>
-<button>전체다운로드</button>
-</li>
-</ul>
-</fieldset>
-</form>
-</div>
-</td>
-</tr>
-<tr class="">
-<td class="">
-                    	
-						
-							
-							
-							12188
-						
-						
-                    </td>
-<td class="left">
-<a class="" href="?mode=view&amp;articleNo=86651&amp;article.offset=0&amp;articleLimit=10">
-                           	
-                           	
-							
-                           		
-                           	2020학년도 2학기 기말강의평가 안내
-                           	
-							
-							
-							
-							
-						</a>
-</td>
-<td>2020-11-26</td>
-<td>4616</td>
-<td>
-<button class="file"></button>
-<div class="file_downWrap">
-<button class="filedown_closeBtn"></button>
-<form action="?mode=downloadZip&amp;articleNo=86651" method="post">
-<fieldset>
-<ul class="filedown_list">
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86651&amp;attachNo=67156">
-																	[공지]2020학년도 2학기 기말강의평가 시행안내문(학생용).pdf
-																</a>
-</li>
-</ul>
-<ul class="filedown_btnList">
-<li>
-<button>전체다운로드</button>
-</li>
-</ul>
-</fieldset>
-</form>
-</div>
-</td>
-</tr>
-<tr class="">
-<td class="">
-                    	
-						
-							
-							
-							12187
-						
-						
-                    </td>
-<td class="left">
-<span class="new">NEW</span>
-<a class="" href="?mode=view&amp;articleNo=86896&amp;article.offset=0&amp;articleLimit=10">
-                           	
-                           	
-							
-                           		
-                           	2021학년도 2학기 파견교환학생 선발 설명회
-                           	
-							
-							
-							
-							
-						</a>
-</td>
-<td>2020-12-09</td>
-<td>911</td>
-<td>
-<button class="file"></button>
-<div class="file_downWrap">
-<button class="filedown_closeBtn"></button>
-<form action="?mode=downloadZip&amp;articleNo=86896" method="post">
-<fieldset>
-<ul class="filedown_list">
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86896&amp;attachNo=67383">
-																	파견교환학생_FAQ.pdf
-																</a>
-</li>
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86896&amp;attachNo=67384">
-																	2021-1학기 파견가능 대학 리스트.xlsx
-																</a>
-</li>
-</ul>
-<ul class="filedown_btnList">
-<li>
-<button>전체다운로드</button>
-</li>
-</ul>
-</fieldset>
-</form>
-</div>
-</td>
-</tr>
-<tr class="">
-<td class="">
-                    	
-						
-							
-							
-							12186
-						
-						
-                    </td>
-<td class="left">
-<span class="new">NEW</span>
-<a class="" href="?mode=view&amp;articleNo=86915&amp;article.offset=0&amp;articleLimit=10">
-                           	
-                           	
-							
-                           		
-                           	[대학혁신과공유센터] 해외융합프로젝트 참가 학생 모집
-                           	
-							
-							
-							
-							
-						</a>
-</td>
-<td>2020-12-10</td>
-<td>582</td>
-<td>
-<button class="file"></button>
-<div class="file_downWrap">
-<button class="filedown_closeBtn"></button>
-<form action="?mode=downloadZip&amp;articleNo=86915" method="post">
-<fieldset>
-<ul class="filedown_list">
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86915&amp;attachNo=67401">
-																	해외융합프로젝트 참여신청서.docx
-																</a>
-</li>
-</ul>
-<ul class="filedown_btnList">
-<li>
-<button>전체다운로드</button>
-</li>
-</ul>
-</fieldset>
-</form>
-</div>
-</td>
-</tr>
-<tr class="">
-<td class="">
-                    	
-						
-							
-							
-							12185
-						
-						
-                    </td>
-<td class="left">
-<span class="new">NEW</span>
-<a class="" href="?mode=view&amp;articleNo=86914&amp;article.offset=0&amp;articleLimit=10">
-                           	
-                           	
-							
-                           		
-                           	[Global C-School] 인텐시브 워크숍 참가자 모집(*이수증 발급/비교과프로그램 이수 14시간 인증)
-                           	
-							
-							
-							
-							
-						</a>
-</td>
-<td>2020-12-10</td>
-<td>460</td>
-<td>
-</td>
-</tr>
-<tr class="">
-<td class="">
-                    	
-						
-							
-							
-							12184
-						
-						
-                    </td>
-<td class="left">
-<a class="" href="?mode=view&amp;articleNo=86329&amp;article.offset=0&amp;articleLimit=10">
-                           	
-                           	
-							
-                           		
-                           	2020년도 2학기 세아해암학술장학재단 일시지원 장학생 선발 
-                           	
-							
-							
-							
-							
-						</a>
-</td>
-<td>2020-11-06</td>
-<td>2164</td>
-<td>
-</td>
-</tr>
-<tr class="">
-<td class="">
-                    	
-						
-							
-							
-							12183
-						
-						
-                    </td>
-<td class="left">
-<span class="new">NEW</span>
-<a class="" href="?mode=view&amp;articleNo=86912&amp;article.offset=0&amp;articleLimit=10">
-                           	
-                           	
-							
-                           		
-                           	나노튜브및나노복합구조연구센터 행정지원인력
-                           	
-							
-							
-							
-							
-						</a>
-</td>
-<td>2020-12-10</td>
-<td>312</td>
-<td>
-</td>
-</tr>
-<tr class="">
-<td class="">
-                    	
-						
-							
-							
-							12182
-						
-						
-                    </td>
-<td class="left">
-<span class="new">NEW</span>
-<a class="" href="?mode=view&amp;articleNo=86909&amp;article.offset=0&amp;articleLimit=10">
-                           	
-                           	
-							
-                           		
-                           	2021 로스쿨(법학전문대학원)준비반 실원 모집
-                           	
-							
-							
-							
-							
-						</a>
-</td>
-<td>2020-12-10</td>
-<td>1654</td>
-<td>
-<button class="file"></button>
-<div class="file_downWrap">
-<button class="filedown_closeBtn"></button>
-<form action="?mode=downloadZip&amp;articleNo=86909" method="post">
-<fieldset>
-<ul class="filedown_list">
-<li>
-<a class="ellipsis" href="?mode=download&amp;articleNo=86909&amp;attachNo=67399">
-																	[지원서] 2021 로스쿨준비반 지원서.hwp
-																</a>
-</li>
-</ul>
-<ul class="filedown_btnList">
-<li>
-<button>전체다운로드</button>
-</li>
-</ul>
-</fieldset>
-</form>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="pagingWrap">
-<ul class="paging">
-<li><a class="active" href="#curPage">1</a></li>
-<li><a href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=10">2</a></li>
-<li><a href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=20">3</a></li>
-<li><a href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=30">4</a></li>
-<li><a href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=40">5</a></li>
-<li><a href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=50">6</a></li>
-<li><a href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=60">7</a></li>
-<li><a href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=70">8</a></li>
-<li><a href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=80">9</a></li>
-<li><a href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=90">10</a></li>
-<li><a class="pg_next" href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=10" title="다음 페이지로 이동하기"><span class="hide">다음 페이지로 이동하기</span></a></li>
-<li><a class="pg_last" href="?mode=list&amp;&amp;articleLimit=10&amp;article.offset=12190" title="마지막 페이지로 이동하기"><span class="hide">마지막 페이지로 이동하기</span></a></li>
-</ul>
-</div>
-</div>
-<div class="table_btnWrap">
-<ul>
-<li><a class="tabBtn_typeB" href="?mode=write&amp;article.offset=0&amp;articleLimit=10">등록</a></li>
-</ul>
-</div>
-<form action="?article.offset=0&amp;articleLimit=10" method="post" name="admin-form">
-<input name="mode" type="hidden"/>
-<input name="articles" type="hidden"/>
-<input name="confirmMode" type="hidden"/>
-</form>
-</div>
-</div>
-</div>
-<div class="ab_contWrap">
-<div class="ab_txtWrap">
-<ul>
-<li>상기 콘텐츠 담당</li>
-<li>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="footer">
-<a class="topBtn" href="#">
-<img alt="최상단으로 이동하기" class="top" src="/_res/skku/img/common/topBtn.png"/>
-<img alt="최상단으로 이동하기" class="top_hover" src="/_res/skku/img/common/topBtn_hover.png"/>
-</a>
-<div class="LinkWrap">
-<div class="LinkList">
-<div class="w1400">
-<ul>
-<li>
-<a class="url" data-h="" data-target="_blank" data-url="https://hakbu.skku.edu" data-w="" href="#">
-<img alt="학부대학" class="fIconTop" src="/_attach/image/2020/04/oyKHOSIyTPOfWoHotlxU.png"/>
-<img alt="학부대학" class="fIconBtm" src="/_attach/image/2020/04/YpqUfGuJoBOblBHiFtHl.png"/>
-<span>학부대학</span>
-</a>
-<div class="seaBan_pupp" style="display: none;">
-				학사과정/일반대학원 학사 문의
-				
-					<br/><br/>
-				
-				1811-8585(바로바로)<br/>
-				1811-7558(SKKU)<br/><br/>
+    var loginYn = 'false' == 'true' ? true : false;
+    var dailyEventNo = '';
+    var sns_add_info_Yn = '';
+    var basketPageMovYn = 'Y';
+    var anlsId = 'UA-110094820-1'
+    var loginId = '';
 
-				9:00~12:00 / 13:00~17:00<br/>
-				(주말 및 공휴일 제외)
-				<img alt="" src="/_res/skku/img/sub/seaBan_tail.png"/>
-</div>
-</li>
-<li>
-<a class="url" data-h="" data-target="_blank" data-url="https://lib.skku.edu/" data-w="" href="#">
-<img alt="학술정보관 off" class="fIconTop" src="/_attach/image/2018/07/esUHzVvIhYfnAlpzqCCL.png"/>
-<img alt="학술정보관 on 이미지" class="fIconBtm" src="/_attach/image/2018/07/kAoPiUftNTnsNUkcSyLi.png"/>
-<span>학술정보관</span>
-</a>
-<div class="seaBan_pupp" style="display: none;">
-				학사과정/일반대학원 학사 문의
-				
-					<br/><br/>
-				
-				1811-8585(바로바로)<br/>
-				1811-7558(SKKU)<br/><br/>
+    /* GA추적코드 */
+    if(anlsId != null){
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', anlsId, 'auto');//
+        ga('send', 'pageview');
+        if(loginId != null){
+            ga('set', 'userId', loginId);
+        }
+    }
 
-				9:00~12:00 / 13:00~17:00<br/>
-				(주말 및 공휴일 제외)
-				<img alt="" src="/_res/skku/img/sub/seaBan_tail.png"/>
-</div>
-</li>
-<li>
-<a class="url" data-h="" data-target="_blank" data-url="https://success.skku.edu" data-w="" href="#">
-<img alt="취업지원 off" class="fIconTop" src="/_attach/image/2020/04/DZbNsCdAebwGoUNKGMRe.png"/>
-<img alt="취업지원 on" class="fIconBtm" src="/_attach/image/2020/04/PtioECQVhdtApvmXTrvo.png"/>
-<span>학생성공센터</span>
-</a>
-<div class="seaBan_pupp" style="display: none;">
-				학사과정/일반대학원 학사 문의
-				
-					<br/><br/>
-				
-				1811-8585(바로바로)<br/>
-				1811-7558(SKKU)<br/><br/>
+    $(document).ready(function() {
+        /*
+         * 네이버 공통 유입 스크립트
+         */
+        //var naverCmnCertKey = ''; // 네이버 공통 인증키
+        var naverCmnCertKey = "61e8dc7ef6935c"; // 네이버 공통 인증키
+        var dlgtDomain = 'www.acebedmall.co.kr'; // 대표도메인
+        var tempDomain = 'www.acebedmall.com'; // 임시도메인
 
-				9:00~12:00 / 13:00~17:00<br/>
-				(주말 및 공휴일 제외)
-				<img alt="" src="/_res/skku/img/sub/seaBan_tail.png"/>
-</div>
-</li>
-<li>
-<a class="url" data-h="" data-target="_blank" data-url="https://job.skku.edu/" data-w="" href="#">
-<img alt="취업지원" class="fIconTop" src="/_attach/image/2020/04/KaAEPWMuZLosNoamfYOl.png"/>
-<img alt="취업지원" class="fIconBtm" src="/_attach/image/2020/04/hgVHfcHHQebvLtzuvgfG.png"/>
-<span>취업지원</span>
-</a>
-<div class="seaBan_pupp" style="display: none;">
-				학사과정/일반대학원 학사 문의
-				
-					<br/><br/>
-				
-				1811-8585(바로바로)<br/>
-				1811-7558(SKKU)<br/><br/>
+        if(naverCmnCertKey !== '') { // 공통 코드 데이터가 존재하면 무조건 적용
+            if(!wcs_add) window.wcs_add = {};
+            //wcs_add["wa"] = '';
+            wcs_add["wa"] = "61e8dc7ef6935c";
 
-				9:00~12:00 / 13:00~17:00<br/>
-				(주말 및 공휴일 제외)
-				<img alt="" src="/_res/skku/img/sub/seaBan_tail.png"/>
-</div>
-</li>
-<li>
-<a class="url" data-h="" data-target="_blank" data-url="https://www.skku.edu/skku/campus/IT_service/it_service10.do" data-w="" href="#">
-<img alt="증명발급 off" class="fIconTop" src="/_attach/image/2020/04/OJChzeNZJUUBoFmaswGL.png"/>
-<img alt="증명발급 on" class="fIconBtm" src="/_attach/image/2020/04/sDzegJnorpWSeHWDdsNc.png"/>
-<span>증명발급</span>
-</a>
-<div class="seaBan_pupp" style="display: none;">
-				학사과정/일반대학원 학사 문의
-				
-					<br/><br/>
-				
-				1811-8585(바로바로)<br/>
-				1811-7558(SKKU)<br/><br/>
+            // 프리미엄 로그(전환 페이지용 스크립트)
+            var _nasa={};
+            if (!_nasa) var _nasa={};
+            if(location.pathname.match('orderPaymentDone.do')) { //구매 완료
+                _nasa["cnv"] = wcs.cnv("1", ($('#naverPaymentAmt').val() == null ?  '' : $('#naverPaymentAmt').val().replace('.00', '')));
+                wcs.inflow();
+                wcs_do(_nasa);
+            } else if(location.pathname.match('insertMember.do')) { //회원가입
+                _nasa["cnv"] = wcs.cnv("2", "1");
+                wcs.inflow();
+                wcs_do(_nasa);
+            }
 
-				9:00~12:00 / 13:00~17:00<br/>
-				(주말 및 공휴일 제외)
-				<img alt="" src="/_res/skku/img/sub/seaBan_tail.png"/>
-</div>
-</li>
-<li>
-<a class="url" data-h="" data-target="_blank" data-url="https://fund.skku.edu/" data-w="" href="#">
-<img alt=" 발전기금 off" class="fIconTop" src="/_attach/image/2018/06/CsQzlgIbwgLPxKNAgoYf.png"/>
-<img alt=" 발전기금 on" class="fIconBtm" src="/_attach/image/2018/06/ArgCtULXeRYGBlCaeXbx.png"/>
-<span> 발전기금</span>
-</a>
-<div class="seaBan_pupp" style="display: none;">
-				학사과정/일반대학원 학사 문의
-				
-					<br/><br/>
-				
-				1811-8585(바로바로)<br/>
-				1811-7558(SKKU)<br/><br/>
+            /*
+             * 네이버페이 white list
+             * white list는 원래 어드민 npay 설정에 존재하였으나 현재는 사용하지 않고
+             * 가맹점내 최대 도메인 운용갯수는 2개이기 때문에 이곳에서 강제로 두가지 도메인을 설정한다.
+             */
+            wcs.checkoutWhitelist = [dlgtDomain,tempDomain]
+            wcs.inflow(location.hostname);// 유입 추적 함수 호출
+            wcs_do();// 로그 수집 함수 호출
+        }
+    });
+</script><!--[if lt IE 9]>
+<script type="text/javascript" src="/front/js/lib/html5shiv.min.js"></script>
+<script type="text/javascript" src="/front/js/lib/html5shiv.printshiv.min.js"></script>
+<script type="text/javascript" src="/front/js/lib/IE9.js"></script>
+<![endif]-->
+<!--[if (gte IE 6)&(lte IE 8)]>
+    <script id="selectivizr" type="text/javascript" src="/front/js/lib/selectivizr.min.js"></script>
+    <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+<![endif]-->
+<script src="/front/js/lib/jquery/jquery-ui.1.12.1.js" type="text/javascript"></script>
+<script charset="utf-8" src="/front/js/lib/jquery/jquery.cookie.js" type="text/javascript"></script>
+<script charset="utf-8" src="/front/js/lib/jquery/jquery.mask.min.js" type="text/javascript"></script>
+<script charset="utf-8" src="/front/js/lib/jquery/jquery.form.min.js" type="text/javascript"></script>
+<script charset="utf-8" src="/front/js/lib/jquery/jquery.blockUI.js" type="text/javascript"></script>
+<link href="/front/js/lib/jquery/validation-Engine-2.6.2/css/validationEngine.jquery.css" rel="stylesheet" type="text/css"/>
+<script charset="utf-8" src="/front/js/lib/jquery/validation-Engine-2.6.2/js/jquery.validationEngine.js" type="text/javascript"></script>
+<script charset="utf-8" src="/front/js/lib/jquery/validation-Engine-2.6.2/js/languages/jquery.validationEngine-ko.js" type="text/javascript"></script>
+<script src="/front/js/lib/jquery/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+<script src="/front/js/lib/jquery/jquery.carouFredSel-6.2.1-packed.js" type="text/javascript"></script>
+<script src="/front/js/lib/jquery.bxslider.js" type="text/javascript"></script>
+<script charset="utf-8" src="/front/js/lib/jquery.alphanumeric.js" type="text/javascript"></script>
+<script charset="utf-8" src="/front/js/lib/jquery/jquery.datetimepicker.full.min.js" type="text/javascript"></script>
+<script charset="utf-8" src="/front/js/common.js"></script>
+<script charset="utf-8" src="/front/js/custom.js"></script>
+<script charset="utf-8" src="/front/js/layer.js"></script>
+<script charset="utf-8" src="/front/js/link.js"></script>
+<script charset="utf-8" src="/front/js/paging.js"></script>
+<script charset="utf-8" src="/front/js/cookie.js"></script>
+<script charset="utf-8" src="/front/js/common_ace.js"></script>
+<script charset="utf-8" src="/front/js/perfect-scrollbar.js" type="text/javascript"></script>
+<script charset="utf-8" src="/front/js/perfect-scrollbar.jquery.js" type="text/javascript"></script><link href="/front/css/product.css" rel="stylesheet" type="text/css"/>
+<script charset="utf-8" src="/front/js/product_ace.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function(){
+        $('#div_id_paging').grid(jQuery('#form_id_search'));//페이징
+        getCompareCount('MATTRESS_COMPARE');//침대비교함 수량 조회
 
-				9:00~12:00 / 13:00~17:00<br/>
-				(주말 및 공휴일 제외)
-				<img alt="" src="/_res/skku/img/sub/seaBan_tail.png"/>
+        $(".matt-bottom-pop").fadeIn(300);
+    });
+    function simple_search(){
+        var data = $('#form_id_search').serializeArray();
+        var param = {};
+        $(data).each(function(index,obj){
+            param[obj.name] = obj.value;
+        });
+        Storm.FormUtil.submit('/front/search/categorySearch.do', param);
+    }
+
+    function mattBtClose() {
+    	$(".matt-bottom-pop").fadeOut(300);
+    }
+    </script></head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false" style="">
+<!-- 00.LAYOUT: -->
+<div id="wrap">
+<div id="pop-bg"></div>
+<!--st:top-banner-->
+<!--en:top-banner-->
+<!--st:cf-pop-->
+<div class="cf-pop">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1" frameborder="0" height="521" id="youTubePlayer1" src="https://www.youtube.com/embed/lS5lJ_5X6bs?modestbranding=1&amp;rel=0&amp;loop=1&amp;showinfo=0&amp;controls=0&amp;disablekb=1&amp;playlist=lS5lJ_5X6bs&amp;enablejsapi=1&amp;origin=http%3A%2F%2Facebedmall.co.kr&amp;widgetid=1" title="YouTube video player" width="927"></iframe><!-- 플레이어를 불러올 영역-->
+<a class="btn_stop" href="#!"><img alt="닫기" src="/front/img/main/main-banner_pop_down.png"/></a>
 </div>
-</li>
+<!--en:cf-pop-->
+<div id="header">
+<div class="top">
+<div class="inner">
+<ul class="clfix">
+<li class="active"><a href="/front/viewMain.do" title="에이스침대"><img alt="에이스침대 mall" src="/front/img/common/img-top-01.png"/></a></li>
+<li><a href="http://www.acebed.com/" target="_blank" title="새창열림"><img alt="에이스침대" src="/front/img/common/img-top-02.png"/></a></li>
+<li><a href="http://www.aceavenue.co.kr/#/home/main" target="_blank" title="새창열림"><img alt="에이스에비뉴" src="/front/img/common/img-top-03.png"/></a></li>
+<li><a href="http://www.aceheritz.com/" target="_blank" title="새창열림"><img alt="에이스헤리츠" src="/front/img/common/img-top-04.png"/></a></li>
 </ul>
 </div>
 </div>
-<div class="LinkListBtm">
-<div class="w1400">
+<div class="headerIn">
+<div class="inner clfix">
+<div class="utill-banner">
+<div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 75px;"><ul style="width: auto; position: relative; transition-duration: 0s; transform: translate3d(0px, -75px, 0px);"><li class="bx-clone" style="float: none; list-style: none; position: relative; width: 260px;"><a href="/front/event/weddingMembersView.do"><img alt="상단배너" src="/image/banner/2020/01/16/1579136988299.jpg"/></a></li>
+<li style="float: none; list-style: none; position: relative; width: 260px;"><a href="/front/event/categorySearch.do"><img alt="상단배너2" src="/image/banner/2018/04/13/1523586011881.gif"/></a></li>
+<li style="float: none; list-style: none; position: relative; width: 260px;"><a href="/front/event/weddingMembersView.do"><img alt="상단배너" src="/image/banner/2020/01/16/1579136988299.jpg"/></a></li>
+<li class="bx-clone" style="float: none; list-style: none; position: relative; width: 260px;"><a href="/front/event/categorySearch.do"><img alt="상단배너2" src="/image/banner/2018/04/13/1523586011881.gif"/></a></li></ul></div></div>
+</div>
+<h1 class="logo"><a href="/front/viewMain.do"><img alt="에이스침대 MALL" src="/front/img/common/PC_aceMall_logo.jpg"/></a></h1>
+<div class="utill">
+<ul class="clfix utill-ul" id="utill-ul">
+<li><a href="https://acebedmall.co.kr/front/login/viewLogin.do">로그인</a></li>
+<li class="utill-mb"><a href="https://acebedmall.co.kr/front/member/join_step_01.do">회원가입</a></li>
+<li><a href="javascript:void(0);" onclick="move_page('basket');">장바구니</a></li>
+<li><a href="javascript:void(0);" onclick="move_page('faq');">고객센터</a></li>
+</ul>
+<div class="utill-srch">
+<input id="searchText" onfocus="javascript:init_focus();" onkeydown="if(event.keyCode == 13){$('#btn_search').click();}" placeholder="상품 모델명 또는 해시태그를 입력하세요" type="text" value=""/>
+<input id="searchLink" type="hidden" value=""/>
+<input id="searchListType" type="hidden" value="all"/>
+<button class="utill-btn" data-search-open-flag="N" id="btn_search" type="button"></button>
+<div class="srch-pop">
+<ul class="srch-tab clfix">
+<li class="srch-li-01 active"><a data-srch-type="01" href="#">추천검색어</a></li>
+<li class="srch-li-02 bar"><a data-srch-type="02" href="#">최근검색어</a></li>
+</ul>
+<div>
+<div class="gray-txt">
+<ul id="recommendSearchWrap">
+<li><a href="#">HYBRID TECH LIME</a></li>
+<li><a href="#">BMA 1162</a></li>
+<li><a href="#">BMA 1150</a></li>
+<li><a href="#">BMA 1086-C</a></li>
+<li><a href="#">BMA 1119-C</a></li>
+</ul>
+<ul id="latelySearchWrap" style="display:none"></ul>
+</div>
+</div>
+</div>
+<a class="srch-close" href="javascript:void(0);">닫기</a>
+</div>
+</div>
+</div>
+</div>
+<div class="active" id="gnb">
+<div class="inner">
+<ul class="depth1 clfix">
+<li class="first depth1_sub1">
+<a href="#none" onclick="move_category('1');return false;">침대</a>
+<div class="depth2 cateImg_active">
+<ul class="first">
+<li class="first">
+<a href="#none" onclick="move_category('29');return false;">신제품
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        	<img alt="new" src="/img/common/new_icon.png"/>
+</a>
+</li>
+<li>
+<a href="#none" onclick="move_category('33');return false;">프리미엄
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('30');return false;">혼수침대
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        	<img alt="new" src="/img/common/new_icon.png"/>
+</a>
+</li>
+<li>
+<a href="#none" onclick="move_category('31');return false;">패밀리침대
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('32');return false;">아동용침대
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('34');return false;">2인침대
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        	<img alt="new" src="/img/common/new_icon.png"/>
+</a>
+</li>
+<li>
+<a href="#none" onclick="move_category('35');return false;">1인침대
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+</ul>
+<div class="cateImg">
+<a href="/front/goods/goodsDetail.do?goodsNo=G2005281716_2183">
+<img src="/image/category/2020/07/01/1593570473567"/>
+<!-- 현재 imgIcon이름 : best / hot / new / event-->
+<div>
+<img src="/img/common/new.png"/>
+<p>온라인 단독모델 출시 'BMA 1162'</p>
+</div>
+</a>
+</div>
+</div>
+</li>
+<li class="depth1_sub2 active">
+<a href="#none" onclick="move_category('2');return false;">매트리스</a>
+<div class="depth2 cateImg_active">
+<ul class="">
+<li class="first">
+<a href="#none" onclick="move_category('39');return false;">라지킹/킹
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('38');return false;">퀸
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('37');return false;">더블
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('36');return false;">슈퍼싱글/디럭스
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('51');return false;">오토플렉스
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+</ul>
+<div class="cateImg">
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171127_1467">
+<img src="/image/category/2019/10/08/1570525223899"/>
+<!-- 현재 imgIcon이름 : best / hot / new / event-->
+<div>
+<img src="/img/common/best.png"/>
+<p>또 한번 받쳐준다 'HYBRID TECH LIME'</p>
+</div>
+</a>
+</div>
+</div>
+</li>
+<li class="depth1_sub3">
+<a href="#none" onclick="move_category('3');return false;">룸세트</a>
+<div class="depth2 cateImg_active">
+<ul class="">
+<li class="first">
+<a href="#none" onclick="move_category('13');return false;">협탁
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('15');return false;">서랍장/화장대
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('14');return false;">거울
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('16');return false;">사이드가드
+		                                        
+		                                        	
+		                                        	<img alt="new" src="/img/common/new_icon.png"/>
+</a>
+</li>
+</ul>
+<div class="cateImg">
+<a href="/front/goods/goodsDetail.do?goodsNo=G2007221032_2192">
+<img src="/image/category/2020/09/01/1598923664531"/>
+<!-- 현재 imgIcon이름 : best / hot / new / event-->
+<div>
+<img src="/img/common/new.png"/>
+<p>공간의 매력을 더하는 'ARNO 협탁'</p>
+</div>
+</a>
+</div>
+</div>
+</li>
+<li class="depth1_sub4">
+<a href="#none" onclick="move_category('4');return false;">Rio Furniture</a>
+<div class="depth2 cateImg_active">
+<ul class="">
+<li class="first">
+<a href="#none" onclick="move_category('17');return false;">거실&amp;쇼파
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('18');return false;">식탁&amp;서재
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+</ul>
+<div class="cateImg">
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708101315_1278">
+<img src="/image/category/2019/10/08/1570501461827"/>
+<!-- 현재 imgIcon이름 : best / hot / new / event-->
+<div>
+<img src="/img/common/pick.png"/>
+<p>자연의 감각을 살린 'VENATO 소파'</p>
+</div>
+</a>
+</div>
+</div>
+</li>
+<li class="depth1_sub5">
+<a href="#none" onclick="move_category('5');return false;">Stressless</a>
+<div class="depth2 cateImg_active">
+<ul class="">
+<li class="first">
+<a href="#none" onclick="move_category('19');return false;">1인용 리클라이너
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('20');return false;">소파
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('21');return false;">오피스체어
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('22');return false;">테이블
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+</ul>
+<div class="cateImg">
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708161051_1358">
+<img src="/image/category/2020/09/01/1598923585528"/>
+<!-- 현재 imgIcon이름 : best / hot / new / event-->
+<div>
+<img src="/img/common/new.png"/>
+<p>매직 시그니처 '헤나-오크'</p>
+</div>
+</a>
+</div>
+</div>
+</li>
+<li class="depth1_sub6">
+<a href="#none" onclick="move_category('6');return false;">슬립케어</a>
+<div class="depth2 cateImg_active">
+<ul class="">
+<li class="first">
+<a href="#none" onclick="move_category('25');return false;">마이크로케어
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+<li>
+<a href="#none" onclick="move_category('23');return false;">스마트슬리브
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+		                                        	
+		                                        
+	                                        </a>
+</li>
+</ul>
+<div class="cateImg">
+<a href="/front/goods/goodsDetail.do?goodsNo=G1711101005_1684">
+<img src="/image/category/2020/03/11/1583884838587"/>
+<!-- 현재 imgIcon이름 : best / hot / new / event-->
+<div>
+<img src="/img/common/best.png"/>
+<p>걱정없는 쾌적수면 '마이크로케어 화이트'</p>
+</div>
+</a>
+</div>
+</div>
+</li>
+<li class="depth1_sub7">
+<a href="/front/community/productReviewList.do">커뮤니티</a>
+<div class="depth2 cateImg_active">
 <ul>
-<li><a href="https://www.skku.edu/skku/about/campusInfo/campus_telInfo.do" target="_blank" title="새창"><span>·</span> 교내전화번호</a></li>
-<li><a href="https://www.skku.edu/skku/about/campusInfo/campusMap.do" target="_blank" title="새창"><span>·</span> 캠퍼스맵</a></li>
-<li><a href="https://icampus.skku.edu/" target="_blank" title="새창"><span>·</span> i-Campus</a></li>
-<li><a href="https://www.skku.edu/skku/about/organ/admin_organ_02.do" title="새창"><span>·</span> 학사바로센터</a></li>
-<li><a href="http://book.skku.edu/" target="_blank" title="새창"><span>·</span> 오거서</a></li>
-<li><a href="https://helper.skku.edu/" target="_blank" title="새창"><span>·</span> 인권센터</a></li>
-<li><a href="https://chec.skku.edu" target="_blank" title="새창"><span>·</span>성균인성교육센터</a></li>
-<li><a href="/skku/etc/my_proposal.do" target="_blank" title="새창"><span>·</span> 예산절감제안방</a></li>
-<li><a href="/skku/campus/skk_comm/report_center.do" target="_blank" title="새창"><span>·</span> 불친절신고센터</a></li>
-<li><a href="http://press.skku.edu/" target="_blank" title="새창"><span>·</span> 출판부</a></li>
-<li><a href="https://dorm.skku.edu/" target="_blank" title="새창"><span>·</span> 기숙사</a></li>
-<li><a href="http://scc.skku.edu" target="_blank" title="새창"><span>·</span> 카운슬링센터</a></li>
-<li><a href="/skku/campus/skk_comm/newsLetter.do" target="_blank" title="새창"><span>·</span> 성균소식</a></li>
+<li class="first"><a href="/front/community/productReviewList.do">상품후기</a></li>
+<li><a href="/front/community/aceRoom.do">에이스룸</a></li>
+<!-- <li><a href="/front/community/aceStory.do">에이스스토리</a></li> -->
+<li><a href="/front/community/refurbGoodList.do">전시상품판매</a></li>
+<li><a href="/front/community/SNOutlet.do">성남아울렛</a></li>
 </ul>
+<div class="cateImg">
+<a href="/front/ace.do">
+<img alt="에이스침대 포토후기 EVENT!" src="/image/banner/2020/03/06/1583480721258.jpg"/>
+<div>
+<p>에이스침대 포토후기 EVENT!</p>
+</div>
+</a>
 </div>
 </div>
-</div>
-<div class="w1400">
-<div class="footer_top">
-<h1 class="footer_logo"><img alt="성균관대학교" src="/_res/skku/img/common/footer-logo.png"/></h1>
-<div class="secWrap">
-<ul class="foot_secList">
-<li>
-<label class="hidden" for="secLink">주요링크</label>
-<select class="select" id="secLink">
-<option>주요링크</option>
-</select>
 </li>
-<li>
-<label class="hidden" for="sec1">대학/대학원</label>
-<select class="select" id="sec1">
-<option>대학/대학원</option>
-<option target="_blank" value="https://hakbu.skku.edu/hakbu/index.jsp">학부대학</option>
-<option target="_blank" value="http://scos.skku.edu/scos/index.jsp">유학대학</option>
-<option target="_blank" value="http://liberalarts.skku.edu/liberal/index.jsp">문과대학</option>
-<option target="_blank" value="http://sscience.skku.edu/sscience/index.jsp">사회과학대학</option>
-<option target="_blank" value="http://ecostat.skku.edu/ecostat/index.jsp">경제대학</option>
-<option target="_blank" value="https://biz.skku.edu/">경영대학</option>
-<option target="_blank" value="http://coe.skku.edu/coe/index.jsp">사범대학</option>
-<option target="_blank" value="http://art.skku.edu/art/index.jsp">예술대학</option>
-<option target="_blank" value="https://cscience.skku.edu/cscience/index.do">자연과학대학</option>
-<option target="_blank" value="https://ice.skku.edu/ice/index.do">정보통신대학</option>
-<option target="_blank" value="http://cs.skku.edu/">소프트웨어대학</option>
-<option target="_blank" value="http://enc.skku.edu/enc/">공과대학</option>
-<option target="_blank" value="http://pharm.skku.edu/">약학대학</option>
-<option target="_blank" value="https://skb.skku.edu/biotech/index.do">생명공학대학</option>
-<option target="_blank" value="http://sport.skku.edu/sports/index.jsp">스포츠과학대학</option>
-<option target="_blank" value="http://www.skkumed.ac.kr/">의과대학</option>
-<option target="_blank" value="http://icon.skku.edu/icon/index.jsp">성균융합원</option>
-<option target="_blank" value="/skku/edu/graduateSchool/graduate_school01.do">일반대학원</option>
-<option target="_blank" value="/skku/edu/graduateSchool/graduate_school02.do">특수대학원</option>
-<option target="_blank" value="/skku/edu/graduateSchool/graduate_school03.do">전문대학원</option>
-</select>
-</li>
-<li>
-<label class="hidden" for="sec2">주요서비스</label>
-<select class="select" id="sec2">
-<option value="">주요서비스</option>
-<option data-target="_blank" value="http://classinfo.skku.edu/map/map.do">강의실안내</option>
-<option data-target="_blank" value="https://kingoinfo.skku.edu/gaia/nxui/outdex.html?language=KO&amp;menuId=NHSSU030840M">교육과정안내</option>
-<option data-target="_blank" value="/skku/campus/IT_service/it_service04.do">노트북대여</option>
-<option data-target="_blank" value="https://kingoinfo.skku.edu/gaia/nxui/outdex.html?language=KO&amp;menuId=NHSDR030071M">등록금고지서출력(재학생)</option>
-<option data-target="_blank" value="/skku/campus/IT_service/it_service05.do">무선랜서비스</option>
-<option data-target="_blank" value="/skku/campus/support/welfare_12.do">셔틀버스안내</option>
-<option data-target="_blank" value="/skku/campus/IT_service/it_service04.do">SW안내</option>
-<option data-target="_blank" value="/skku/campus/support/welfare_11.do">식당메뉴안내</option>
-<option data-target="_blank" value="http://helpu.kr/6119/">IT콜센터 원격지원</option>
-<option data-target="_blank" value="/skku/about/campusInfo/campus_telInfo.do">전화번호 안내</option>
-<option data-target="_blank" value="http://admin.skku.edu/co/DispatchWebAction.do?SKEY=G000005605&amp;BIZ=hs&amp;FIRST_PAGE=IBIT060210M&amp;FIRST_POPYN=Y">전화요금명세서</option>
-<option data-target="_blank" value="/skku/about/campusInfo/parking.do">주차안내(서울)</option>
-<option data-target="_blank" value="/skku/about/campusInfo/parking02.do">주차안내(수원)</option>
-<option data-target="_blank" value="/skku/about/campusInfo/location.do">찾아오시는길</option>
-<option data-target="_blank" value="/skku/campus/support/welfare_01.do">편의시설</option>
-<option data-target="_blank" value="http://admin.skku.edu/co/DispatchWebAction.do?SKEY=SYSIBGK001&amp;BIZ=ib&amp;FIRST_PAGE=IBGK050100M&amp;FIRST_POPYN=Y">공간관리비납부</option>
-<option data-target="_blank" value="http://admin.skku.edu/co/DispatchWebAction.do?SKEY=SYSIBIH004&amp;BIZ=ib&amp;FIRST_PAGE=IBIH040100M&amp;FIRST_POPYN=Y">거래처 출금조회</option>
-</select>
-</li>
-<li>
-<label class="hidden" for="sec3">주요사이트</label>
-<select class="select" id="sec3">
-<option value="">주요사이트</option>
-<option data-target="_blank" value="https://lecturer.skku.edu">강사/비전임교원 채용</option>
-<option data-target="_blank" value="http://archives.skku.edu/">기록보존실</option>
-<option data-target="_blank" value="https://health.skku.edu/health/index.do">건강센터</option>
-<option data-target="_blank" value="https://socw.skku.edu/">공개강의(SOCW)</option>
-<option data-target="_blank" value="https://ccrf.skku.edu/ccrf/index.do">공동기기원</option>
-<option data-target="_blank" value="https://dorm.skku.edu/">기숙사</option>
-<option data-target="_blank" value="https://cec.skku.edu/cec">글쓰기 클리닉</option>
-<option data-target="_blank" value="https://faculty.skku.edu/">교원인사</option>
-<option data-target="_blank" value="http://ctl.skku.edu/ctl/index.jsp">교육개발센터</option>
-<option data-target="_blank" value="https://aeas.skku.edu/">동아시아학술원</option>
-<option data-target="_blank" value="http://cihe.skku.edu/">대학혁신과공유센터</option>
-<option data-target="_blank" value="https://linc.skku.edu/">LINC+사업단</option>
-<option data-target="_blank" value="https://museum.skku.edu">박물관</option>
-<option data-target="_blank" value="https://fund.skku.edu/">발전기금</option>
-<option data-target="_blank" value="http://sls.skku.edu/sls/index.jsp">법학전문대학원(로스쿨)</option>
-<option data-target="_blank" value="https://bk21plus.skku.edu/main/main.jsp">BK21 PLUS</option>
-<option data-target="_blank" value="http://ranbiz.skku.edu/">산학협력단</option>
-<option data-target="_blank" value="http://www.smc.or.kr/">삼성의료원</option>
-<option data-target="_blank" value="http://saihst.skku.edu/m/index.php">삼성융합의과학원(SAIHST)</option>
-<option data-target="_blank" value="https://src.skku.edu/">서베이리서치센터</option>
-<option data-target="_blank" value="https://koreansli.skku.edu/ksli/index.do">성균어학원</option>
-<option data-target="_blank" value="http://saah.skku.edu/saah/index.jsp">성균인문동양학아카데미</option>
-<option data-target="_blank" value="http://chec.skku.edu/chec/index.jsp">성균인성교육센터</option>
-<option data-target="_blank" value="http://dailyinsight.skku.edu/">수중혜</option>
-<option data-target="_blank" value="http://hall.skku.edu/">새천년홀</option>
-<option data-target="_blank" value="https://safety.skku.edu/">안전정보망</option>
-<option data-target="_blank" value="https://book.skku.edu/">오거서</option>
-<option data-target="_blank" value="http://ygmh.skku.edu/ygmh/index.jsp">유교문화연구소</option>
-<option data-target="_blank" value="https://admission.skku.edu/main.html">입학처</option>
-<option data-target="_blank" value="http://ur1004.skku.edu">UR1004(자원봉사)</option>
-<option data-target="_blank" value="https://support.skku.edu/">장애학생지원센터</option>
-<option data-target="_blank" value="http://security.skku.edu/security/index.jsp">정보보안포털</option>
-<option data-target="_blank" value="https://east.skku.edu/">존경각</option>
-<option data-target="_blank" value="http://alumni.skku.edu/">총동창회</option>
-<option data-target="_blank" value="https://www.facebook.com/skku52iruri/">총학생회(인사캠)</option>
-<option data-target="_blank" value="https://www.facebook.com/skkunssc/">총학생회(자과캠)</option>
-<option data-target="_blank" value="http://dozawee.com/">도서관자치위원회</option>
-<option data-target="_blank" value="http://press.skku.edu/">출판부</option>
-<option data-target="_blank" value="http://scc.skku.edu">카운슬링센터</option>
-<option data-target="_blank" value="https://job.skku.edu/">학생인재개발팀</option>
-<option data-target="_blank" value="https://lib.skku.edu/#/">학술정보관(도서관)</option>
-<option data-target="_blank" value="http://ygc.skku.edu/index_2013.jsp?location_type=kor">한국유경편찬센터</option>
-<option data-target="_blank" value="http://humanbook.skku.edu">SKKU 휴먼북</option>
-<option data-target="_blank" value="http://home.skku.edu/~alimi/index_temp.htm">SKKU 알리미</option>
-<option data-target="_blank" value="http://bridge.skku.edu/">V데스크</option>
-<option data-target="_blank" value="https://oldbook.skku.edu/">고서찾기시스템</option>
-<option data-target="_blank" value="http://matrix.skku.ac.kr/simsan/">심산연구회</option>
-</select>
-</li>
-</ul>
-<ul class="footer_list">
-<li><a class="indi_info" href="/skku/etc/private.do">개인정보처리방침</a></li>
-<li><a href="http://www.academyinfo.go.kr/popup/pubinfo1690/list.do?schlId=0000133" target="_blank">대학정보공시</a></li>
-<li><a href="/skku/about/status/self_evaluation.do">자체평가</a></li>
-<li><a href="/skku/etc/netizen.do">네티즌윤리규약</a></li>
-<li><a href="#none" onclick="openPop('/skku/etc/pop_email.jsp','campusmap',660,365);return false" target="_blank" title="새창">이메일무단수집거부</a></li>
-<li><a href="/skku/about/status/budgetaccounts_2019.do">예결산공고</a></li>
-<li><a href="/skku/etc/service.do">행정서비스헌장</a></li>
-<li><a href="/skku/etc/illegal.do">청탁금지법</a></li>
-<li><a href="http://security.skku.edu/" target="_blank" title="새창"> 정보보안</a></li>
-</ul>
-</div>
-</div>
-<div class="footer_btm">
-<div class="footBtm_info">
+<li class="depth1_sub8 gnb-event">
+<a href="/front/event/weddingMembersView.do"><span class="ev-ticker"></span>이벤트</a>
+<div class="depth2 cateImg_active">
 <ul>
-<li>인문사회과학캠퍼스 (03063) 서울특별시 종로구 성균관로 25-2 / TEL.02.760.0114</li>
-<li>자연과학캠퍼스 (16419) 경기도 수원시 장안구 서부로 2066 / TEL.031.290.5114</li>
-<li>COPYRIGHT ⓒ 2014 SUNGKYUNKWAN UNIVERSITY ALL RIGHTS RESERVED. <a href="/skku/campus/itservice/home_edit.do"><span class="glay_txt">Contact us</span></a></li>
+<li class="first"><a href="/front/event/weddingMembersView.do">웨딩 멤버스</a></li>
+<li><a href="/front/event/dpGoodsList.do">기획전</a></li>
+<li><a href="/front/event/eventList.do">이벤트</a></li>
+<li><a href="/front/event/categorySearch.do">할인상품</a></li>
+<li><a href="/front/customer/noticeView.do?lettNo=84">카드<br/>무이자할부</a></li>
+<!-- <li><a href="/front/event/cultureEventList.do">공연초대 이벤트</a></li>
+	                            <li><a href="/front/event/closeCultureEventList.do">공연초대 이벤트<br>당첨자발표</a></li> -->
+</ul>
+<div class="cateImg">
+<a href="/front/event/eventDetail.do?eventNo=26">
+<img alt="에이스침대 스페셜 롯데카드" src="/image/banner/2019/10/23/1571817673200.jpg"/>
+<div>
+<img src="/img/common/event.png"/>
+<p>에이스침대 스페셜 롯데카드</p>
+</div>
+</a>
+</div>
+</div>
+</li>
 </ul>
 </div>
-<div class="foot_award">
+</div>
+<div class="sub-gnb sub-gnb-02">
+<ul class="clfix inner">
+<li><a href="javascript:move_category('39')">라지킹/킹</a></li>
+<li><a class="active" href="javascript:move_category('38')">퀸</a></li>
+<li><a href="javascript:move_category('37')">더블</a></li>
+<li><a href="javascript:move_category('36')">슈퍼싱글/디럭스</a></li>
+<li><a href="javascript:move_category('51')">오토플렉스</a></li>
+</ul>
+</div>
+<div id="gnb-bg"></div>
+<div id="blue-line"></div>
+</div>
+<!--en:header-->
+<!-- 04.LAYOUT: MIDDLE AREA -->
+<!-- side/content area -->
+<!--st:container-->
+<div id="container">
+<div class="pt-visual pt-visual-02">
+<div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 540px;"><ul style="width: 315%; position: relative; transition-duration: 0s; transform: translate3d(-1080px, 0px, 0px);"><li class="bx-clone" style="float: left; list-style: none; position: relative; width: 1080px;"><a href="/front/goods/goodsDetail.do?goodsNo=G1708170945_1417"><img alt="매트리스 퀸 배너" src="/image/banner/2020/09/03/1599114720307.jpg"/></a></li>
+<li style="float: left; list-style: none; position: relative; width: 1080px;"><a href="/front/goods/goodsDetail.do?goodsNo=G1708170945_1417"><img alt="매트리스 퀸 배너" src="/image/banner/2020/09/03/1599114720307.jpg"/></a></li>
+<li class="bx-clone" style="float: left; list-style: none; position: relative; width: 1080px;"><a href="/front/goods/goodsDetail.do?goodsNo=G1708170945_1417"><img alt="매트리스 퀸 배너" src="/image/banner/2020/09/03/1599114720307.jpg"/></a></li></ul></div></div>
+</div>
+<div class="inner">
+<!--간편검색 시작-->
+<form action="/front/search/categorySearch.do?searchYn=N&amp;ctgNo=2" id="form_id_search" method="post"><input id="page" name="page" type="hidden" value="1"/><input id="rows" name="rows" type="hidden" value="1000"/><input id="sortType" name="sortType" type="hidden" value=""/><input id="searchYn" name="searchYn" type="hidden" value="Y"/><div class="pdt-select matt-select">
+<div class="select-title">
+<h1 class="txt-16">간편검색</h1>
+</div>
+<div class="bed-select-box matt-select-box">
+<p class="gray-txt-02">쿠션감</p>
+<label class="hidden" for="topCushionTypeCd-button">전체</label>
+<select class="mattType" id="topCushionTypeCd" name="topCushionTypeCd" style="display: none;">
+<option selected="selected" value="">전체</option>
+<option value="1">프리미엄 소프트</option>
+<option value="2">소프트</option>
+<option value="3">레귤러</option>
+<option value="4">하드</option>
+<option value="5">슈퍼하드</option>
+</select><span aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-owns="topCushionTypeCd-menu" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" id="topCushionTypeCd-button" role="combobox" tabindex="0"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">전체</span></span>
+</div>
+<div class="bed-select-box matt-select-box">
+<p class="gray-txt-02">등급</p>
+<label class="hidden" for="mattressGradeCd-button">전체</label>
+<select class="mattType" id="mattressGradeCd" name="mattressGradeCd" style="display: none;">
+<option selected="selected" value="">전체</option>
+<option value="1">최고급형</option>
+<option value="2">고급형</option>
+<option value="3">일반형</option>
+</select><span aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-owns="mattressGradeCd-menu" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget" id="mattressGradeCd-button" role="combobox" tabindex="0"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">전체</span></span>
+</div>
+<button onclick="simple_search();">검색</button>
+</div>
+<div>
+<input name="_csrf" type="hidden" value="0ef15066-8bff-4558-952f-c33d7d5908fc"/>
+</div></form><!--간편검색 끝-->
+<!--st:pt-list-wrap-->
+<div class="pt-list-wrap">
+<!--
+                매트리스 쿠션감
+                1    : 프리미엄 소프트
+                2    : 소프트
+                3    : 레귤러
+                4    : 하드
+                5    : 슈퍼하드
+                -->
+<h1 class="txt-32">PREMIUM SOFT</h1>
+<!--st:pt-list-->
+<div class="pt-list">
+<ul class="matt-list-ul pt-list-ul clfix">
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1710241705_1592">
+<img alt="ROYAL ACE 380 퀸 투매트리스" src="/image/goods/2018/05/18/29d19404fa0396da6a1d8e8baba16141ff2395d203d8ff8022984945a1a172c0_C"/>
+<div class="prt-txt">
+<span class="grade grade-01">최고급형</span>
+<p>ROYAL ACE 380 퀸 투매트리스</p>
+<h1> 4,232,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-first-ctg="2" data-goods-img="/image/goods/2018/05/18/29d19404fa0396da6a1d8e8baba16141ff2395d203d8ff8022984945a1a172c0_C" data-goods-nm="ROYAL ACE 380 퀸 투매트리스" data-goods-no="G1710241705_1592" data-mattress-grade-cd="1" data-pr-words="고된 당신의 여정을 포긴히 감싸는 매트리스" data-sale-price="4232000">
+<li onclick="goods_detail_pop('G1710241705_1592');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1710241705_1592">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1710241705_1592');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1710241703_1591">
+<img alt="ROYAL ACE 380 퀸 원매트리스" src="/image/goods/2017/10/25/6102b9bdedc8fbed05e987451e606d6a158991a6da276cec1d36781caad25d19_C"/>
+<div class="prt-txt">
+<span class="grade grade-01">최고급형</span>
+<p>ROYAL ACE 380 퀸 원매트리스</p>
+<h1> 3,800,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-first-ctg="2" data-goods-img="/image/goods/2017/10/25/6102b9bdedc8fbed05e987451e606d6a158991a6da276cec1d36781caad25d19_C" data-goods-nm="ROYAL ACE 380 퀸 원매트리스" data-goods-no="G1710241703_1591" data-mattress-grade-cd="1" data-pr-words="고된 당신의 여정을 포근히 감싸는 매트리스" data-sale-price="3800000">
+<li onclick="goods_detail_pop('G1710241703_1591');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1710241703_1591">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1710241703_1591');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171338_1489">
+<img alt="ROYAL ACE 360 퀸 투매트리스" src="/image/goods/2018/05/18/ab58fa971e5e6d30c871e516dd3973a98942d2a5691c083aba889dce0be376ba_C"/>
+<div class="prt-txt">
+<span class="grade grade-01">최고급형</span>
+<p>ROYAL ACE 360 퀸 투매트리스</p>
+<h1> 3,633,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-first-ctg="2" data-goods-img="/image/goods/2018/05/18/ab58fa971e5e6d30c871e516dd3973a98942d2a5691c083aba889dce0be376ba_C" data-goods-nm="ROYAL ACE 360 퀸 투매트리스" data-goods-no="G1708171338_1489" data-mattress-grade-cd="1" data-pr-words="럭셔리 매트리스의 기준" data-sale-price="3633000">
+<li onclick="goods_detail_pop('G1708171338_1489');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171338_1489">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171338_1489');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li style="border-right: 0px;">
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171336_1488">
+<img alt="ROYAL ACE 360 퀸 원매트리스" src="/image/goods/2017/10/25/ea79eebb460adb56c07df529689d943c2440d2b9c0398274b2cce2443beab962_C"/>
+<div class="prt-txt">
+<span class="grade grade-01">최고급형</span>
+<p>ROYAL ACE 360 퀸 원매트리스</p>
+<h1> 3,201,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-first-ctg="2" data-goods-img="/image/goods/2017/10/25/ea79eebb460adb56c07df529689d943c2440d2b9c0398274b2cce2443beab962_C" data-goods-nm="ROYAL ACE 360 퀸 원매트리스" data-goods-no="G1708171336_1488" data-mattress-grade-cd="1" data-pr-words="럭셔리 매트리스의 기준" data-sale-price="3201000">
+<li onclick="goods_detail_pop('G1708171336_1488');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171336_1488">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171336_1488');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171008_1436">
+<img alt="HYBRID TECH RED 퀸 투매트리스" src="/image/goods/2019/03/28/87eca24f5832b626dd04400e26f17935e9f69a28a855d9f5fd043a4f4aefbfe7_C"/>
+<div class="prt-txt">
+<span class="grade grade-01">최고급형</span>
+<p>HYBRID TECH RED 퀸 투매트리스</p>
+<h1> 2,555,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-first-ctg="2" data-goods-img="/image/goods/2019/03/28/87eca24f5832b626dd04400e26f17935e9f69a28a855d9f5fd043a4f4aefbfe7_C" data-goods-nm="HYBRID TECH RED 퀸 투매트리스" data-goods-no="G1708171008_1436" data-mattress-grade-cd="1" data-pr-words="마침내 과학이 과학을 넘어섰다" data-sale-price="2555000">
+<li onclick="goods_detail_pop('G1708171008_1436');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171008_1436">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171008_1436');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171006_1434">
+<img alt=" HYBRID TECH RED 퀸 원매트리스" src="/image/goods/2019/03/28/3564d7025dcd7a28a2c001a76c1d1a3349ce7f56fdd2a2df49758d3f7ff8d7bd_C"/>
+<div class="prt-txt">
+<span class="grade grade-01">최고급형</span>
+<p> HYBRID TECH RED 퀸 원매트리스</p>
+<h1> 2,123,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-first-ctg="2" data-goods-img="/image/goods/2019/03/28/3564d7025dcd7a28a2c001a76c1d1a3349ce7f56fdd2a2df49758d3f7ff8d7bd_C" data-goods-nm=" HYBRID TECH RED 퀸 원매트리스" data-goods-no="G1708171006_1434" data-mattress-grade-cd="1" data-pr-words="마침내 과학이 과학을 넘어섰다" data-sale-price="2123000">
+<li onclick="goods_detail_pop('G1708171006_1434');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171006_1434">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171006_1434');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708170946_1419">
+<img alt="HYBRID TECH VII 퀸 투매트리스" src="/image/goods/2019/03/27/88583ea042f2a5581bca6a0e9f111c80cbe70ac17d1915b52d62bfeb0f96f1cb_C"/>
+<div class="prt-txt">
+<span class="grade grade-01">최고급형</span>
+<p>HYBRID TECH VII 퀸 투매트리스</p>
+<h1> 2,364,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-first-ctg="2" data-goods-img="/image/goods/2019/03/27/88583ea042f2a5581bca6a0e9f111c80cbe70ac17d1915b52d62bfeb0f96f1cb_C" data-goods-nm="HYBRID TECH VII 퀸 투매트리스" data-goods-no="G1708170946_1419" data-mattress-grade-cd="1" data-pr-words="침대의 Next가 되다" data-sale-price="2364000">
+<li onclick="goods_detail_pop('G1708170946_1419');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708170946_1419">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708170946_1419');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li style="border-right: 0px;">
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708170945_1417">
+<img alt="HYBRID TECH VII 퀸 원매트리스" src="/image/goods/2019/03/27/f930b00decf391c01b524bed87499e3aac636e7c223028a5f73db4c6daf60154_C"/>
+<div class="prt-txt">
+<span class="grade grade-01">최고급형</span>
+<p>HYBRID TECH VII 퀸 원매트리스</p>
+<h1> 1,932,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-first-ctg="2" data-goods-img="/image/goods/2019/03/27/f930b00decf391c01b524bed87499e3aac636e7c223028a5f73db4c6daf60154_C" data-goods-nm="HYBRID TECH VII 퀸 원매트리스" data-goods-no="G1708170945_1417" data-mattress-grade-cd="1" data-pr-words="침대의 Next가 되다" data-sale-price="1932000">
+<li onclick="goods_detail_pop('G1708170945_1417');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708170945_1417">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708170945_1417');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<!--en:pt-list-->
+<h1 class="txt-32">SOFT</h1>
+<!--st:pt-list-->
+<div class="pt-list">
+<ul class="matt-list-ul pt-list-ul clfix">
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171723_1502">
+<img alt="ROYAL ACE 320 퀸 투매트리스" src="/image/goods/2018/05/18/58769626ee8bb6f12de7fa6c75d5c6fdb369a0c03ed83a1f2cef58353071ba3f_C"/>
+<div class="prt-txt">
+<span class="grade grade-01">최고급형</span>
+<p>ROYAL ACE 320 퀸 투매트리스</p>
+<h1> 2,973,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2018/05/18/58769626ee8bb6f12de7fa6c75d5c6fdb369a0c03ed83a1f2cef58353071ba3f_C" data-goods-nm="ROYAL ACE 320 퀸 투매트리스" data-goods-no="G1708171723_1502" data-mattress-grade-cd="1" data-pr-words="남다른 기준을 가진 당신을 위해" data-sale-price="2973000">
+<li onclick="goods_detail_pop('G1708171723_1502');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171723_1502">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171723_1502');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171719_1501">
+<img alt="ROYAL ACE 320 퀸 원매트리스" src="/image/goods/2017/10/25/3c5d639a82c26c0dcbb700e4faf029d17dbe2210b02b3c24215d55ff418cc74e_C"/>
+<div class="prt-txt">
+<span class="grade grade-01">최고급형</span>
+<p>ROYAL ACE 320 퀸 원매트리스</p>
+<h1> 2,541,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2017/10/25/3c5d639a82c26c0dcbb700e4faf029d17dbe2210b02b3c24215d55ff418cc74e_C" data-goods-nm="ROYAL ACE 320 퀸 원매트리스" data-goods-no="G1708171719_1501" data-mattress-grade-cd="1" data-pr-words="남다른 기준을 가진 당신을 위해" data-sale-price="2541000">
+<li onclick="goods_detail_pop('G1708171719_1501');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171719_1501">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171719_1501');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171033_1452">
+<img alt="HYBRID TECH BLUE 퀸 투매트리스" src="/image/goods/2019/03/27/3c4c70aa3944be823aa97b6b8bfe3a3c445de37a9b85cebd491cbbd2d3ca14ec_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>HYBRID TECH BLUE 퀸 투매트리스</p>
+<h1> 2,243,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/03/27/3c4c70aa3944be823aa97b6b8bfe3a3c445de37a9b85cebd491cbbd2d3ca14ec_C" data-goods-nm="HYBRID TECH BLUE 퀸 투매트리스" data-goods-no="G1708171033_1452" data-mattress-grade-cd="2" data-pr-words="신혼의 달콤함이 배가되는" data-sale-price="2243000">
+<li onclick="goods_detail_pop('G1708171033_1452');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171033_1452">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171033_1452');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li style="border-right: 0px;">
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171029_1451">
+<img alt="HYBRID TECH BLUE 퀸 원매트리스" src="/image/goods/2019/03/27/343f628157dc579568cc1ad3111275c1d4d7116abdaa054c5bbc4b3ab2896d49_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>HYBRID TECH BLUE 퀸 원매트리스</p>
+<h1> 1,811,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/03/27/343f628157dc579568cc1ad3111275c1d4d7116abdaa054c5bbc4b3ab2896d49_C" data-goods-nm="HYBRID TECH BLUE 퀸 원매트리스" data-goods-no="G1708171029_1451" data-mattress-grade-cd="2" data-pr-words="신혼의 달콤함이 배가되는" data-sale-price="1811000">
+<li onclick="goods_detail_pop('G1708171029_1451');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171029_1451">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171029_1451');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<!--en:pt-list-->
+<h1 class="txt-32">REGULAR</h1>
+<!--st:pt-list-->
+<div class="pt-list">
+<ul class="matt-list-ul pt-list-ul clfix">
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708090839_1254">
+<img alt="HYBRID TECH III 퀸 투매트리스" src="/image/goods/2019/05/17/5e11756bb82fdf982d3fb15b7ad8e61b9ca30202947c909305939b76f643ac9a_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>HYBRID TECH III 퀸 투매트리스</p>
+<h1> 1,922,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/05/17/5e11756bb82fdf982d3fb15b7ad8e61b9ca30202947c909305939b76f643ac9a_C" data-goods-nm="HYBRID TECH III 퀸 투매트리스" data-goods-no="G1708090839_1254" data-mattress-grade-cd="2" data-pr-words="신혼의 행복이 길어진다" data-sale-price="1922000">
+<li onclick="goods_detail_pop('G1708090839_1254');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708090839_1254">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708090839_1254');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708090836_1253">
+<img alt="HYBRID TECH III 퀸 원매트리스" src="/image/goods/2019/05/17/72e53d7c926ecb380b447b1864d816cd9218132d87d9a0c1a9cef1d2a6f1112d_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>HYBRID TECH III 퀸 원매트리스</p>
+<h1> 1,490,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/05/17/72e53d7c926ecb380b447b1864d816cd9218132d87d9a0c1a9cef1d2a6f1112d_C" data-goods-nm="HYBRID TECH III 퀸 원매트리스" data-goods-no="G1708090836_1253" data-mattress-grade-cd="2" data-pr-words="신혼의 행복이 길어진다" data-sale-price="1490000">
+<li onclick="goods_detail_pop('G1708090836_1253');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708090836_1253">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708090836_1253');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li></li><li style="border-right: 0px;"></li></ul>
+</div>
+<!--en:pt-list-->
+<h1 class="txt-32">HARD</h1>
+<!--st:pt-list-->
+<div class="pt-list">
+<ul class="matt-list-ul pt-list-ul clfix">
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171149_1476">
+<img alt="HYBRID TECH ALPHA 퀸 투매트리스" src="/image/goods/2019/03/27/de5cd95618b5bf59d61152a088fd13c3b886e85321849348d326feca77483a7d_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>HYBRID TECH ALPHA 퀸 투매트리스</p>
+<h1> 1,642,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/03/27/de5cd95618b5bf59d61152a088fd13c3b886e85321849348d326feca77483a7d_C" data-goods-nm="HYBRID TECH ALPHA 퀸 투매트리스" data-goods-no="G1708171149_1476" data-mattress-grade-cd="2" data-pr-words="맞춰주고 또 한번 받쳐준다" data-sale-price="1642000">
+<li onclick="goods_detail_pop('G1708171149_1476');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171149_1476">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171149_1476');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171146_1475">
+<img alt="HYBRID TECH ALPHA 퀸 원매트리스" src="/image/goods/2019/03/27/0eabf395c04d9c226840060df17f033c21870d54987b125e553ae030d8146002_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>HYBRID TECH ALPHA 퀸 원매트리스</p>
+<h1> 1,210,000<span>원</span></h1>
+</div>
+<p class="ticker"><img src="/front/img/common/img-best-ticker.png"/></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/03/27/0eabf395c04d9c226840060df17f033c21870d54987b125e553ae030d8146002_C" data-goods-nm="HYBRID TECH ALPHA 퀸 원매트리스" data-goods-no="G1708171146_1475" data-mattress-grade-cd="2" data-pr-words="맞춰주고 또 한번 받쳐준다" data-sale-price="1210000">
+<li onclick="goods_detail_pop('G1708171146_1475');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171146_1475">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171146_1475');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171129_1468">
+<img alt="HYBRID TECH LIME 퀸 투매트리스" src="/image/goods/2019/03/28/8877c5f1fd9302041d593f40464b3bcc425a2397a487f3a82e00f05e1f67bf4f_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>HYBRID TECH LIME 퀸 투매트리스</p>
+<h1> 1,631,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/03/28/8877c5f1fd9302041d593f40464b3bcc425a2397a487f3a82e00f05e1f67bf4f_C" data-goods-nm="HYBRID TECH LIME 퀸 투매트리스" data-goods-no="G1708171129_1468" data-mattress-grade-cd="2" data-pr-words="맞춰주고 또 한번 받쳐준다" data-sale-price="1631000">
+<li onclick="goods_detail_pop('G1708171129_1468');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171129_1468">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171129_1468');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li style="border-right: 0px;">
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171127_1467">
+<img alt="HYBRID TECH LIME 퀸 원매트리스" src="/image/goods/2019/03/28/69c3b31266defd8aae33a491b5384e6257f18bb123d53591ceb92c8fb3f433bc_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>HYBRID TECH LIME 퀸 원매트리스</p>
+<h1> 1,199,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/03/28/69c3b31266defd8aae33a491b5384e6257f18bb123d53591ceb92c8fb3f433bc_C" data-goods-nm="HYBRID TECH LIME 퀸 원매트리스" data-goods-no="G1708171127_1467" data-mattress-grade-cd="2" data-pr-words="맞춰주고 또 한번 받쳐준다" data-sale-price="1199000">
+<li onclick="goods_detail_pop('G1708171127_1467');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171127_1467">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171127_1467');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171108_1460">
+<img alt="HYBRID TECH WHITE 퀸 투매트리스" src="/image/goods/2019/03/27/7344837860e3363c13283880896166be9c6bf2684d3964edbc4dce61f85cb1de_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>HYBRID TECH WHITE 퀸 투매트리스</p>
+<h1> 1,774,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/03/27/7344837860e3363c13283880896166be9c6bf2684d3964edbc4dce61f85cb1de_C" data-goods-nm="HYBRID TECH WHITE 퀸 투매트리스" data-goods-no="G1708171108_1460" data-mattress-grade-cd="2" data-pr-words="맞춰주고 또 한번 받쳐준다" data-sale-price="1774000">
+<li onclick="goods_detail_pop('G1708171108_1460');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171108_1460">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171108_1460');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708171106_1459">
+<img alt="HYBRID TECH WHITE 퀸 원매트리스" src="/image/goods/2019/03/27/ff9008a1ca11ca89952f380c91a48fa8299f420425068d10de6d0752506f0d36_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>HYBRID TECH WHITE 퀸 원매트리스</p>
+<h1> 1,342,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/03/27/ff9008a1ca11ca89952f380c91a48fa8299f420425068d10de6d0752506f0d36_C" data-goods-nm="HYBRID TECH WHITE 퀸 원매트리스" data-goods-no="G1708171106_1459" data-mattress-grade-cd="2" data-pr-words="맞춰주고 또 한번 받쳐준다" data-sale-price="1342000">
+<li onclick="goods_detail_pop('G1708171106_1459');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708171106_1459">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708171106_1459');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708081727_1238">
+<img alt="DUO TECH III 퀸 투매트리스" src="/image/goods/2019/02/19/410781ce4d9b872146ddc84f3361964d95fe07240c08500d5c6daf3dcf2ccf9c_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>DUO TECH III 퀸 투매트리스</p>
+<h1> 1,876,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/02/19/410781ce4d9b872146ddc84f3361964d95fe07240c08500d5c6daf3dcf2ccf9c_C" data-goods-nm="DUO TECH III 퀸 투매트리스" data-goods-no="G1708081727_1238" data-mattress-grade-cd="2" data-pr-words="하이테크 공법의 투웨이 쿠션" data-sale-price="1876000">
+<li onclick="goods_detail_pop('G1708081727_1238');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708081727_1238">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708081727_1238');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li style="border-right: 0px;">
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708081607_1236">
+<img alt="DUO TECH III 퀸 원매트리스" src="/image/goods/2019/02/19/6a132ed85c0dc234226934744aed3d98749d64c2a1fcd9fa882e098e4385bfb0_C"/>
+<div class="prt-txt">
+<span class="grade grade-02">고급형</span>
+<p>DUO TECH III 퀸 원매트리스</p>
+<h1> 1,444,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2019/02/19/6a132ed85c0dc234226934744aed3d98749d64c2a1fcd9fa882e098e4385bfb0_C" data-goods-nm="DUO TECH III 퀸 원매트리스" data-goods-no="G1708081607_1236" data-mattress-grade-cd="2" data-pr-words="하이테크 공법의 투웨이 쿠션" data-sale-price="1444000">
+<li onclick="goods_detail_pop('G1708081607_1236');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708081607_1236">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708081607_1236');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708081448_1213">
+<img alt="CLUB ACE II 퀸 투매트리스" src="/image/goods/2018/09/04/70768cd454442ff6bcc6443ead4d403e6d885c3ae0233c7656a3656180b3bed5_C"/>
+<div class="prt-txt">
+<span class="grade grade-03">일반형</span>
+<p>CLUB ACE II 퀸 투매트리스</p>
+<h1> 1,123,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2018/09/04/70768cd454442ff6bcc6443ead4d403e6d885c3ae0233c7656a3656180b3bed5_C" data-goods-nm="CLUB ACE II 퀸 투매트리스" data-goods-no="G1708081448_1213" data-mattress-grade-cd="3" data-pr-words="침대과학으로 만든 편안함" data-sale-price="1123000">
+<li onclick="goods_detail_pop('G1708081448_1213');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708081448_1213">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708081448_1213');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708081444_1212">
+<img alt="CLUB ACE II 퀸 원매트리스" src="/image/goods/2018/09/04/f2873579fc05a249969ec5a52835919f82ce0d011a873c85b4bbf5197da98377_C"/>
+<div class="prt-txt">
+<span class="grade grade-03">일반형</span>
+<p>CLUB ACE II 퀸 원매트리스</p>
+<h1> 691,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2018/09/04/f2873579fc05a249969ec5a52835919f82ce0d011a873c85b4bbf5197da98377_C" data-goods-nm="CLUB ACE II 퀸 원매트리스" data-goods-no="G1708081444_1212" data-mattress-grade-cd="3" data-pr-words="침대과학으로 만든 편안함" data-sale-price="691000">
+<li onclick="goods_detail_pop('G1708081444_1212');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708081444_1212">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708081444_1212');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li></li><li style="border-right: 0px;"></li></ul>
+</div>
+<!--en:pt-list-->
+<h1 class="txt-32">SUPER HARD</h1>
+<!--st:pt-list-->
+<div class="pt-list">
+<ul class="matt-list-ul pt-list-ul clfix">
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708081521_1222">
+<img alt="CLUB ACE 퀸 투매트리스" src="/image/goods/2018/09/04/11ede5dcc800eec69ff2deb78d541e65fecd1594c904341af54bd4340d6772af_C"/>
+<div class="prt-txt">
+<span class="grade grade-03">일반형</span>
+<p>CLUB ACE 퀸 투매트리스</p>
+<h1> 938,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2018/09/04/11ede5dcc800eec69ff2deb78d541e65fecd1594c904341af54bd4340d6772af_C" data-goods-nm="CLUB ACE 퀸 투매트리스" data-goods-no="G1708081521_1222" data-mattress-grade-cd="3" data-pr-words="침대과학으로 시작하는 첫번째" data-sale-price="938000">
+<li onclick="goods_detail_pop('G1708081521_1222');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708081521_1222">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708081521_1222');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/front/goods/goodsDetail.do?goodsNo=G1708081517_1221">
+<img alt="CLUB ACE 퀸 원매트리스" src="/image/goods/2018/09/04/4836e3e6bb536652fd229997e1e290715f3dada38dad071d485da993ef1a54c5_C"/>
+<div class="prt-txt">
+<span class="grade grade-03">일반형</span>
+<p>CLUB ACE 퀸 원매트리스</p>
+<h1> 506,000<span>원</span></h1>
+</div>
+<p class="ticker"></p>
+</a>
+<div class="pt-more">
+<ul data-compare-id="MATTRESS_COMPARE" data-goods-img="/image/goods/2018/09/04/4836e3e6bb536652fd229997e1e290715f3dada38dad071d485da993ef1a54c5_C" data-goods-nm="CLUB ACE 퀸 원매트리스" data-goods-no="G1708081517_1221" data-mattress-grade-cd="3" data-pr-words="침대과학으로 시작하는 첫번째" data-sale-price="506000">
+<li onclick="goods_detail_pop('G1708081517_1221');"><a href="#none"></a></li>
+<li class="pt-more-02" id="G1708081517_1221">
+<a href="#none" onclick="ListBtnUtil.insertInterest('G1708081517_1221');"></a>
+</li>
+<li class="pt-more-03" onclick="addBedCompare(this);"><a href="#none"></a></li>
+</ul>
+</div>
+</li>
+<li></li><li style="border-right: 0px;"></li></ul>
+</div>
+<!--en:pt-list-->
+</div>
+</div>
+<!--st:bed-detail-pop-->
+<div class="pt-detail-pop" id="pop-product">
+<div id="goods-detail-pop-area"></div>
+</div>
+<!--en:bed-detail-pop-->
+<!--en:container-->
+</div>
+<!--st:bed-compare-->
+<div class="layer-bar bed-compare layer-pop-02">
+<div class="inner clfix">
+<div class="layer-bar-close" data-compare-id="MATTRESS_COMPARE">
+<div class="layer-bar-title">
+<a class="layer-bar-open" href="#" id="btn_mettress_compare_open">
+<span class="layer-bar-arr"></span>
+<h1 class="txt-18">비교함 열기</h1>
+<span class="cp-count"><span id="compare_count">0</span> / 10</span>
+</a>
+</div>
+<a class="layer-bar-btn" href="#none" onclick="compareGoods('MATTRESS_COMPARE');">비교하기</a>
+</div>
+</div>
+<div class="layer-bar-cont compare-list">
+<div class="inner clfix compare">
+<!-- st:비교함 상품정보영역 -->
+<ul class="clfix compare-ul" id="compare-floating-area"></ul>
+<!-- en:비교함 상품정보영역 -->
+</div>
+</div>
+</div>
+<!--en:bed-compare-->
+<!--st:bed-compare-pop-->
+<div class="layer-pop bed-compare-pop" id="compare-pop-area"></div>
+<!--en:bed-compare-pop--><!--// side/content area -->
+<!--// 04.LAYOUT: MIDDLE AREA -->
+<!--st:footer-->
+<div id="footer">
+<div class="left-banner">
+<div class="left-banner-02 left-banner-slide left-banner-slide01">
+<div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 168px;"><ul style="width: 515%; position: relative; transition-duration: 0s; transform: translate3d(-78px, 0px, 0px);"><li class="bx-clone" style="float: left; list-style: none; position: relative; width: 78px;">
+<a href="/front/ace.do"><img alt="좋은 침대의 첫번째 기준 에이스침대의 침대과학" src="/front/img/common/img-left-icon2.gif"/></a>
+</li>
+<li style="float: left; list-style: none; position: relative; width: 78px;">
+<a href="/front/event/dpGoodsList.do?prmtNo=15" target="_blank"><img alt="HYBRID TECH LIME" src="/front/img/common/img-left-icon5.gif"/></a>
+</li>
+<li style="float: left; list-style: none; position: relative; width: 78px;">
+<a class="brandPop" href="javascript:brandPop();"><img alt="좋은 침대의 첫번째 기준 에이스침대의 침대과학" src="/front/img/common/img-left-icon1.gif"/></a>
+</li>
+<li style="float: left; list-style: none; position: relative; width: 78px;">
+<a href="/front/ace.do"><img alt="좋은 침대의 첫번째 기준 에이스침대의 침대과학" src="/front/img/common/img-left-icon2.gif"/></a>
+</li>
+<li class="bx-clone" style="float: left; list-style: none; position: relative; width: 78px;">
+<a href="/front/event/dpGoodsList.do?prmtNo=15" target="_blank"><img alt="HYBRID TECH LIME" src="/front/img/common/img-left-icon5.gif"/></a>
+</li></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div>
+</div>
+<!-- <div class="left-banner-03">
+            	<a href="/front/event/eventDetail.do?eventNo=16">
+				<img src="/front/img/common/img-left-icon20181115.gif" alt="에이스침대 롯데카드입니다." />
+				</a>
+			</div> -->
+</div>
+<div class="right-quick">
+<p class="guide-go"><a href="javascript:guidePop();"><img alt="매트리스 구매가이드 GO" src="/front/img/common/img-guide-go.png"/></a></p>
+<div class="quick-in">
+<div class="latest-pt">
+<p class="latest-txt">최근 본 상품</p>
+<div class="bx-wrapper" style="max-width: 70px; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 0px;"><ul id="quick_view" style="width: auto; position: relative;"></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev disabled" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div>
+</div>
+<div class="quick-menu">
 <ul>
+<li onclick="move_page('interest');"><a href="#">관심상품<span class="quick-ticker" id="interest_count">0</span></a></li>
+<li onclick="move_page('basket');"><a href="#">장바구니<span class="quick-ticker" id="basket_count">0</span></a></li>
+<li onclick="move_page('order');"><a href="#">주문배송조회</a></li>
+<li onclick="move_page('write_inquiry');"><a href="#">1:1 문의하기</a></li>
+</ul>
+</div>
+</div>
+<a class="go-top" href="#"><img alt="TOP" src="/front/img/common/img-go-top.png"/></a>
+</div>
+<div class="footer-01">
+<div class="inner clfix">
+<div class="f-menu">
+<ul class="clfix gray-txt">
+<li><a href="http://www.acebed.com/contents/company/company_01.asp" target="_blank">회사소개</a></li>
+<li><a href="http://www.acebed.com/contents/etc/special.asp" target="_blank">특판사업</a></li>
+<li><a href="/front/siteMap.do">사이트맵</a></li>
+<li><a href="/front/company.do?siteInfoCd=03">이용약관</a></li>
+<li><a href="/front/company.do?siteInfoCd=04">개인정보처리방침</a></li>
+<li><a href="http://www.acebed.com/contents/etc/internal.asp" target="_blank">내부정보관리규정</a></li>
+</ul>
+</div>
+<div class="f-site">
+<span>FAMILY SITE</span>
+<ul>
+<li><a href="https://www.acebed.com//index.asp">ACE BED</a></li>
+<li><a href="http://www.aceavenue.co.kr/#/home/main">ACE AVENUE</a></li>
+<li><a href="http://www.aceheritz.com/">ACE HERITZ</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-02 gray-txt">
+<div class="inner clfix">
+<div class="footer-02-left">
+<div class="company">
+<img alt="에이스침대몰" src="/front/img/main/ft_logo.gif"/>
+<p>대표자:안성호</p>
+<p>서울 강남구 도산대로 218 (주)에이스침대서울지점, 사업자 등록번호 : 211-85-17660<a class="more-btn-05" href="javascript:communicationPopup('2118517660');">사업자정보 확인<span></span></a></p>
+<p>통신판매업 : 2017-서울강남-02955, 개인정보 관련 문의 : <a href="mailto:privacy@acebed.co.kr">privacy@acebed.co.kr</a></p>
+</div>
+<p class="copy">Copyright (R) <strong>ACE BED</strong> Corp. All Rights Reserved.</p>
+</div>
+<div class="footer-02-right">
+<div class="f-sns">
+<strong>ACEBED SNS</strong>
+<ul class="clfix">
+<li class="f-sns-li-01"><a href="https://www.facebook.com/ace.bed.kr/" target="_blank" title="페이스북">페이스북</a></li>
+<li class="f-sns-li-02"><a href="https://www.instagram.com/acebed_official/?hl=ko" target="_blank" title="인스타그램">인스타그램</a></li>
+<li class="f-sns-li-03"><a href="http://blog.naver.com/good_jam" target="_blank" title="네이버블로그">네이버블로그</a></li>
+<li class="f-sns-li-04"><a href="http://post.naver.com/good_jam" target="_blank" title="네이버포스트">네이버포스트</a></li>
+<li class="f-sns-li-05"><a href="https://www.youtube.com/channel/UCSZiIVgGA4JAIJgoAghGGHA/feed" target="_blank" title="유튜브">유튜브</a></li>
+</ul>
+</div>
+<div class="f-app">
+<strong>AR APP 다운로드</strong>
+<div>
+<a href="https://play.google.com/store/apps/details?id=com.acebed.aceroom" target="_blank"><img alt="google play" src="/front/img/main/ft_goole.gif"/></a>
+<a href="https://apps.apple.com/kr/app/ace-room/id1485848367" target="_blank"><img alt="app store" src="/front/img/main/ft_app.gif"/></a>
+</div>
+<span><img alt="qr" src="/front/img/main/ft_qr.gif"/></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--en:footer-->
+<!--브랜드홍보 레이어팝업 시작-->
+<!--st:brand-pop-->
+<div class="layer-pop layer-pop-02 brand-pop" id="brandPop">
+<div class="layer-pop-title">
+<h1>침대는 왜 에이스일까요?</h1>
+</div>
+<div class="layer-pop-in arr-tab ui-tabs ui-corner-all ui-widget ui-widget-content">
+<ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header" role="tablist">
+<li aria-controls="brandPop01" aria-expanded="true" aria-labelledby="ui-id-1" aria-selected="true" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" role="tab" tabindex="0"><a class="ui-tabs-anchor" href="#brandPop01" id="ui-id-1" role="presentation" tabindex="-1">Z스프링</a></li>
+<li aria-controls="brandPop02" aria-expanded="false" aria-labelledby="ui-id-2" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1"><a class="ui-tabs-anchor" href="#brandPop02" id="ui-id-2" role="presentation" tabindex="-1">ACE침대과학</a></li>
+<li aria-controls="brandPop03" aria-expanded="false" aria-labelledby="ui-id-3" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1"><a class="ui-tabs-anchor" href="#brandPop03" id="ui-id-3" role="presentation" tabindex="-1">특허 및 수상내역</a></li>
+<!-- <li><a href="#brandPop04">침대과학 홍보센터</a></li> -->
+</ul>
+<!--st:brandPop01-->
+<div aria-hidden="false" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="brandPop01" role="tabpanel">
+<div class="brandPop01-1">
+<p>Next 침대과학으로 탄생한</p>
+<p class="txt-28">
+					세계특허<span class="mint-txt"> Z스프링</span>
+</p>
+<dl>
+<dt>
+<span class="yellow-txt">Play1</span>인체 곡선을 따라 부드럽게 맞춰준다
+					</dt>
+<dd>
+						2중 구조로 이루어진 하이브리드 Z스프링은 상부의 독립된 스프링이 <br/> 마치 피아노 건반처럼 몸의 라인을 따라
+						부드럽고 빈틈없이 맞춰주어<br/> 가장 편안한 수면 자세를 만들어 드립니다.
+					</dd>
+</dl>
+<dl>
+<dt>
+<span class="mint-txt">Play2</span>숙면을 위한 단단한 지지력까지!
+					</dt>
+<dd>
+						반발력이 약한 독립형 스프링이나 폼 매트리스와는 달리<br/> 수면시간 동안 몸의 뒤척임을 무리없이 도와주고 인체의<br/>
+						하중을 단단하게 받쳐주어 숙면에 도움을 줍니다.
+					</dd>
+</dl>
+<div class="txt-box">
+<span>특허내역</span>
+<ul>
+<li>- 미국 제7, 677,541B2호</li>
+<li>- 유럽 연합 발명특허 제 1834547호<br/> (영국, 독일, 프랑스, 이탈리아, 스위스,
+							스페인, 네덜란드)
+						</li>
+<li>- 캐나다 발명특허 제2,550,303호</li>
+<li>- 일본 발명특허 제4264489호</li>
+</ul>
+<ul>
+<li>- 한국 발명특허 제717543호</li>
+<li>- 중국 발명특허 ZL20061009808.9</li>
+<li>- 멕시코 발명특허 제 266524호</li>
+<li>- 인도네시아 발명특허 ID P0031675B</li>
+<li>- 브라질 발명특허 PI0602620-6</li>
+</ul>
+</div>
+</div>
+<div class="brandPop01-2">
+<p>잠을 방해하는</p>
+<p class="txt-28">
+					모든 요소들이<span class="mint-txt"> Zero</span>
+</p>
+<p class="txt-13">
+					어떤 몸 상태에도 적용되는 5 ZERO SYSTEM으로 최상의 숙면 조건을 만듭니다.<br/> 휴식을 방해하는 모든
+					것이 사라지는 순간, 완벽한 편안함이 시작됩니다.
+				</p>
+<div class="dl-wrap">
+<p>5 ZERO SYSTEM</p>
+<dl class="brand-dl-01">
+<dt>꺼짐 Zero</dt>
+<dd>
+							위에서 한 번, 두번 받쳐주는 더블 쿠션 시스템이라<br/> 오래 사용해도 꺼지지 않고 처음같은 탄력을 <br/>제공합니다.
+						</dd>
+</dl>
+<dl class="brand-dl-02">
+<dt>소음 Zero</dt>
+<dd>
+							세계 15개국 발명특허를 획득한 Z센서가 스프링간의<br/> 마찰로 인한 소음을 방지해주어 보다 충만한 휴식을 <br/>드립니다.
+						</dd>
+</dl>
+<dl class="brand-dl-03">
+<dt>빈틈 Zero</dt>
+<dd>
+							피아노 건반처럼 따로따로 독립된 Fit Zone이 <br/>인체 곡선을 따라 맞춰주어 어떤 체형이라도 <br/>빈틈없이
+							지지해줍니다.
+						</dd>
+</dl>
+<dl class="brand-dl-04">
+<dt>흔들림 Zero</dt>
+<dd>
+							스프링판 위로 하나하나 독립되어 돌출된 Fit Zone은 <br/>따로따로 움직이기 때문에 진동을 차단해주어 <br/>옆
+							사람이 뒤척여도 흔들리지 않습니다.
+						</dd>
+</dl>
+<dl class="brand-dl-05">
+<dt>쏠림 Zero</dt>
+<dd>
+							탄력의 대칭을 위해 2개의 스프링을 서로 마주보게 <br/>판조립하는 신기술인 FTF공법을 적용하여 <br/>어떤
+							방향에서 힘을 받아도 쏠리지 않습니다.
+						</dd>
+</dl>
+</div>
+</div>
+<div class="brandPop01-3">
+<p>S라인을 유지시켜주는</p>
+<p class="txt-28">
+<span class="mint-txt">하이브리드 Z스프링</span>
+</p>
+<div>
+<img alt="하이브리드 Z 스프링" src="/front/img/etc/brand-07.gif"/>
+<p>하이브리드 Z 스프링</p>
+<p class="gray-txt-20">
+						위에서 맞춰주고 아래서 또 한 번 받쳐주어 <br/> 어깨부터 엉덩이, 발목까지 일직선을 이루어 <br/> 서
+						있을 때의 <span class="yellow-txt">S라인 그대로 누웠을 때도 <br/>
+							유지시켜줍니다.
+						</span>
+</p>
+</div>
+<div>
+<img alt="독립형 스프링" src="/front/img/etc/brand-08.gif"/>
+<p>독립형 스프링</p>
+<p class="gray-txt-20">
+						스프링 탄력이 약해 제대로 받쳐주지 못하기<br/> 때문에 하중이 많이 나가는 엉덩이 부분이 처져, <br/>
+						서 있을 때의 S라인이 누었을 때에는 유지되지<br/> 못합니다.
+					</p>
+</div>
+<div>
+<img alt="메모리 폼" src="/front/img/etc/brand-09.gif"/>
+<p>메모리 폼</p>
+<p class="gray-txt-20">
+						메모리 폼의 탄력이 약해 제대로 받쳐주지<br/> 못하기 때문에 하중이 많이 나가는 엉덩이<br/> 부분이
+						처져, 서 있을 때의 S라인이 누웠을 <br/> 때에는 유지되지 못합니다.
+					</p>
+</div>
+</div>
+</div>
+<!--en:brandPop01-->
+<!--st:brandPop02-->
+<div aria-hidden="true" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="brandPop02" role="tabpanel" style="display: none;">
+<div class="brand-slider">
+<div class="bx-wrapper" style="max-width: 820px;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 550px;"><ul style="width: 415%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"><li class="bx-clone" style="float: left; list-style: none; position: relative; width: 100px;"><img alt="최고 소재, 기술의 완벽조화 표면부 안락감" src="/front/img/etc/brand-slider-02.jpg"/></li>
+<li style="float: left; list-style: none; position: relative; width: 100px;"><img alt="수면 에너지 소모를 줄여주는 중심부 탄력성" src="/front/img/etc/brand-slider-01.jpg"/></li>
+<li style="float: left; list-style: none; position: relative; width: 100px;"><img alt="최고 소재, 기술의 완벽조화 표면부 안락감" src="/front/img/etc/brand-slider-02.jpg"/></li>
+<li class="bx-clone" style="float: left; list-style: none; position: relative; width: 100px;"><img alt="수면 에너지 소모를 줄여주는 중심부 탄력성" src="/front/img/etc/brand-slider-01.jpg"/></li></ul></div><div class="bx-controls bx-has-pager bx-has-controls-direction"><div class="bx-pager bx-default-pager"><div class="bx-pager-item"><a class="bx-pager-link active" data-slide-index="0" href="">1</a></div><div class="bx-pager-item"><a class="bx-pager-link" data-slide-index="1" href="">2</a></div></div><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div>
+</div>
+<div class="brandPop02-2">
+<p class="mint-txt">스프링</p>
+<p>에이스침대의 기술력으로 편안함과 안락함을 경험하세요.</p>
+<div class="color-tab ui-tabs ui-corner-all ui-widget ui-widget-content">
+<ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header" role="tablist">
+<li aria-controls="spring01" aria-expanded="true" aria-labelledby="ui-id-6" aria-selected="true" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" role="tab" tabindex="0"><a class="ui-tabs-anchor" href="#spring01" id="ui-id-6" role="presentation" tabindex="-1">하이브리드 Z 스프링</a></li>
+<li aria-controls="spring02" aria-expanded="false" aria-labelledby="ui-id-7" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1"><a class="ui-tabs-anchor" href="#spring02" id="ui-id-7" role="presentation" tabindex="-1">하이브리드 스프링</a></li>
+<li aria-controls="spring03" aria-expanded="false" aria-labelledby="ui-id-8" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1"><a class="ui-tabs-anchor" href="#spring03" id="ui-id-8" role="presentation" tabindex="-1">플러스파워 스프링</a></li>
+<li aria-controls="spring04" aria-expanded="false" aria-labelledby="ui-id-9" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1"><a class="ui-tabs-anchor" href="#spring04" id="ui-id-9" role="presentation" tabindex="-1">매직파워 스프링</a></li>
+<li aria-controls="spring05" aria-expanded="false" aria-labelledby="ui-id-10" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1"><a class="ui-tabs-anchor" href="#spring05" id="ui-id-10" role="presentation" tabindex="-1">슈퍼파워 스프링</a></li>
+</ul>
+<div aria-hidden="false" aria-labelledby="ui-id-6" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="spring01" role="tabpanel">
+<img alt="하이브리드 Z 스프링" src="/front/img/etc/brand-spring-01.jpg"/>
+</div>
+<div aria-hidden="true" aria-labelledby="ui-id-7" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="spring02" role="tabpanel" style="display: none;">
+<img alt="하이브리드 스프링" src="/front/img/etc/brand-spring-02.jpg"/>
+</div>
+<div aria-hidden="true" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="spring03" role="tabpanel" style="display: none;">
+<img alt="플러스파워 스프링" src="/front/img/etc/brand-spring-03.jpg"/>
+</div>
+<div aria-hidden="true" aria-labelledby="ui-id-9" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="spring04" role="tabpanel" style="display: none;">
+<img alt="매직파워 스프링" src="/front/img/etc/brand-spring-04.jpg"/>
+</div>
+<div aria-hidden="true" aria-labelledby="ui-id-10" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="spring05" role="tabpanel" style="display: none;">
+<img alt="슈퍼파워 스프링" src="/front/img/etc/brand-spring-05.jpg"/>
+</div>
+</div>
+</div>
+<!--공법 및 소재 시작-->
+<div class="brandPop02-3">
+<p class="mint-txt">공법 및 소재</p>
+<p>세계 침대역사를 바꾼 에이스만의 신기술과 최고 품질의 소재를 소개합니다.</p>
+<div class="color-tab color-tab-02 ui-tabs ui-corner-all ui-widget ui-widget-content">
+<ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header" role="tablist">
+<li aria-controls="mtrl01" aria-expanded="true" aria-labelledby="ui-id-11" aria-selected="true" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" role="tab" tabindex="0"><a class="ui-tabs-anchor" href="#mtrl01" id="ui-id-11" role="presentation" tabindex="-1">공법</a></li>
+<li aria-controls="mtrl02" aria-expanded="false" aria-labelledby="ui-id-12" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1"><a class="ui-tabs-anchor" href="#mtrl02" id="ui-id-12" role="presentation" tabindex="-1">소재</a></li>
+</ul>
+<!--공법 시작-->
+<div aria-hidden="false" aria-labelledby="ui-id-11" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="mtrl01" role="tabpanel">
+<div>
+<img alt="하이브리드 Z 스프링" src="/front/img/etc/brand-mtrl-01.jpg"/>
+<div>
+<h2>하이브리드 Z 스프링</h2>
+<p>15개국 세계특허 취득</p>
+<p class="gray-txt-02">
+									부드럽게 맞춰주고 또 한 번 단단하게 받쳐주는 1Spring 2Play 기능에<br/> 잠을 방해하는 꺼짐,
+									소음, 빈틈, 흔들림, 쏠림을 방지하는 <br/> 5 Zero System이 차원이 다른 편안함을 제공합니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="로얄필로우 공법" src="/front/img/etc/brand-mtrl-02.jpg"/>
+<div>
+<h2>로얄필로우 공법</h2>
+<p>발명특허 제538708호</p>
+<p class="gray-txt-02">
+									기존 필로우탑에서 상단 재봉선이 느껴지는 단점을 보완하여, 상단의 테이프 봉합을 없애 <br/> 고급스러운
+									외관은 물론 매트리스 끝부분까지 최상의 편안함을 제공하는 신개념의<br/> 필로우 탑 시스템입니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="하이필로우 공법" src="/front/img/etc/brand-mtrl-03.jpg"/>
+<div>
+<h2>하이필로우 공법</h2>
+<p>실용신안등록 제216139호 / 제240460호 / 제240461호</p>
+<p class="gray-txt-02">
+									기존 필로우탑의 외관변형 방지 기능은 물론 매트리스에 가해지는 하중을 1차적으로 <br/> 분산시켜주어 최상의
+									편안함을 제공하는 신개념의 필로우 탑 시스템입니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="에어웨이 공법" src="/front/img/etc/brand-mtrl-04.jpg"/>
+<div>
+<h2>에어웨이 공법</h2>
+<p>실용신안등록 제216139호 / 제240460호 / 제240461호</p>
+<p class="gray-txt-02">
+									최적의 공기흐름을 위한 신개념의 공기순환 시스템으로 매트리스를 사용하는 동안 <br/> 위생적이고 쾌적한
+									잠자리를 제공합니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="미라클버튼 + 핫멜트" src="/front/img/etc/brand-mtrl-05.jpg"/>
+<div>
+<h2>미라클버튼 + 핫멜트</h2>
+<p class="gray-txt-02">
+									인체에 무해한 특수 소재로 내장재를 빈틈없이 접착하는 핫멜트 공법 처리 후 스프링판과 <br/> 내장재를
+									미라클 버튼으로 완벽히 고정함으로 써 장시간 사용에도 고른 탄력을 제공합니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="파워서포트 스프링" src="/front/img/etc/brand-mtrl-06.jpg"/>
+<div>
+<h2>파워서포트 스프링</h2>
+<p>실용신안등록 제122971호, 디자인등록 제169540호 (기본형)</p>
+<p>실용신안등록 제233654호, 디자인등록 제300988호 (압축형)</p>
+<p class="gray-txt-02">
+									최고의 탄력과 지지력을 자랑하는 최고급 파운데이션 전용 스프링인 파워서포트는<br/> 매트리스에 가해지는
+									충격을 완벽하게 분산시켜주어 에이스침대를 더욱 편안하게 하고<br/> 수명도 연장시켜 줍니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="하이테크 공법" src="/front/img/etc/brand-mtrl-07.jpg"/>
+<div>
+<h2>하이테크 공법</h2>
+<p>발명특허 제626854호</p>
+<p class="gray-txt-02">
+									특수 MDI 소재인 센서리폼과 스프링을 일체화 시킴으로써 소프트 하면서도 탄력 있는<br/> 수면 조건을
+									제공하고, 스프링의 소음 방지 및 내구성을 극대화시키는 신기술입니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="FTF 공법" src="/front/img/etc/brand-mtrl-08.jpg"/>
+<div>
+<h2>FTF 공법</h2>
+<p>발명특허 제440712호</p>
+<p class="gray-txt-02">
+									탄력의 대칭을 위해 2개의 스프링이 한 조가 되어 서로 마주보게 함으로써 쏠림 현상을<br/> 혁신적으로
+									개선한 신개념의 쏠림 방지공법입니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="오토컴플러스 공법" src="/front/img/etc/brand-mtrl-09.jpg"/>
+<div>
+<h2>오토컴플러스 공법</h2>
+<p class="gray-txt-02">
+									계단식 상하구조와 스프링 일체형 톱니바퀴 디자인의 에지훠머 플러스를 채택, <br/> 가장자리 탄력강화는 물론
+									내장재를 완벽하게 고정해주는 최첨단 공법입니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="올인원 공법" src="/front/img/etc/brand-mtrl-10.jpg"/>
+<div>
+<h2>올인원 공법</h2>
+<p>발명특허 제365241호</p>
+<p class="gray-txt-02">
+									스프링과 내장재를 통째로 찍어 고정함으로써 장기간 사용했을 때 매트리스 꺼짐 현상을<br/> 최소화 하고,
+									매트리스의 내구성은 물론 탄력을 강화시켜주는 특수공법입니다.
+								</p>
+</div>
+</div>
+</div>
+<!--공법 끝-->
+<!--소재 시작-->
+<div aria-hidden="true" aria-labelledby="ui-id-12" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="mtrl02" role="tabpanel" style="display: none;">
+<div>
+<img alt="모스키토 프리원단" src="/front/img/etc/brand-mtrl-11.jpg"/>
+<div>
+<h2>모스키토 프리원단</h2>
+<p class="gray-txt-02">
+									모기의 접근을 방지하는 유럽산 최고급 위생원단인 Mosquito Free 원단은 <br/> 모기나 다른 성가신
+									곤충들은 물론 집먼지 진드기, 세균, 박테리아를 방지해줍니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="인프라화이버" src="/front/img/etc/brand-mtrl-12.jpg"/>
+<div>
+<h2>인프라화이버</h2>
+<p class="gray-txt-02">
+									순백의 카시미론 솜에 맥반석을 반죽하여 만든 첨단 섬유로 근육 피로와 스트레스를 <br/> 해소시켜 줄 뿐만
+									아니라 90% 이상의 항균도를 나타내 항균효과 또한 뛰어납니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="통기성 메모리폼" src="/front/img/etc/brand-mtrl-13.jpg"/>
+<div>
+<h2>통기성 메모리폼</h2>
+<p class="gray-txt-02">
+									첨단 우주공학으로 탄생한 저탄성, 고밀도의 압력경감 소재인 메모리폼에 <br/> 통기성까지 더해 안락감은 물론
+									위생적인 수면 조건을 제공합니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="고탄성폼" src="/front/img/etc/brand-mtrl-14.jpg"/>
+<div>
+<h2>고탄성폼</h2>
+<p class="gray-txt-02">
+									타사의 일반 스펀지보다 밀도가 높아 탄력과 복원력이 우수해 매트리스 커버에 <br/> 부드럽고 안락한 탄력을
+									제공해줍니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="컴포트 화이버" src="/front/img/etc/brand-mtrl-15.jpg"/>
+<div>
+<h2>컴포트 화이버</h2>
+<p class="gray-txt-02">
+									부드러우면서도 내구성이 강하게 카시미론 솜을 특수 가공한 소재로 <br/> 스프링과의 마찰로부터 내장재를
+									보호해주고 소음을 감소시켜 줍니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="파워패드" src="/front/img/etc/brand-mtrl-16.jpg"/>
+<div>
+<h2>파워패드</h2>
+<p class="gray-txt-02">
+									타사의 잡색휄트 대신 카시밀노 솜을 초압축 가공해 <br/> 내구성과 통기성이 탁월하고 위생적입니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="슈프림 울" src="/front/img/etc/brand-mtrl-17.jpg"/>
+<div>
+<h2>슈프림 울</h2>
+<p class="gray-txt-02">
+									겨울에는 따뜻하고 여름엔 시원한 최고급 100% 순수양모로 <br/> 보온성과 탄력성은 물론 수분을 흡수,
+									발산하는 기능이 탁월해 4계절 내내 <br/> 쾌적한 수면을 보장하는 천연소재입니다.
+								</p>
+</div>
+</div>
+<div>
+<img alt="UE 폼" src="/front/img/etc/brand-mtrl-18.jpg"/>
+<div>
+<h2>UE 폼</h2>
+<p class="gray-txt-02">
+									일반 고탄성폼 보다 밀도가 2배 이상 높아 안락하고 부드러울 뿐 아니라 <br/> 복원력과 탄력이 뛰어나기
+									때문에 무거운 하중이나 강한 충격에도 내구성이 우수합니다.
+								</p>
+</div>
+</div>
+</div>
+<!--소재 끝-->
+</div>
+</div>
+<!--공법 및 소재 끝-->
+<div class="brandPop02-4">
+<p>
+					투 매트리스<span class="mint-txt"> 시스템</span>
+</p>
+<p>
+					세계 특급 호텔들의 선택! 에이스만의 매트리스 전용 파워 스프링과 파운데이션 전용 파워서포트 스프링으로 하중을 완벽히
+					분산 시켜주는 <br/> 에이스 투매트리스 침대로 편안하고 안락함을 느껴보세요.
+				</p>
+<img alt="투 매트리스 시스템" src="/front/img/etc/brand-two-matt.jpg"/>
+</div>
+<div class="brandPop02-5">
+<p>
+					위생 <span class="mint-txt"> 건강</span>
+</p>
+<p>
+					침대를 건강하게 하는 에이스만의 3중 위생과학! HS 마크에 이어 국가가 친환경상품임을 공인하는 <br/> 환경마크를
+					획득함으로써 세균, 곰팡이는 물론 새집 증후군 및 새 가구 증후군으로 인한 <br/> 호흡기 및 피부 질환으로부터
+					안전합니다.
+				</p>
+<img alt="마이크로가드" src="/front/img/etc/brand-micro-01.jpg"/>
+<div>
+<img alt="모스키도 프리원단" src="/front/img/etc/brand-micro-02.gif"/>
+<h2>모스키토 프리원단</h2>
+<p>
+						모기의 접근을 방지하는 유럽산 최고급 위생원단인 Mosquito Free <br/>원단은 모기나 다른 성가신
+						곤충들은 물론 집먼지 진드기, 세균, <br/>박테리아를 방지해줍니다.
+					</p>
+</div>
+<div>
+<img alt="인프라화이버" src="/front/img/etc/brand-micro-03.gif"/>
+<h2>인프라화이버</h2>
+<p>
+						순백의 카시미론 솜에 맥반석을 반죽하여 만든 첨단 섬유로 <br/>근육 피로와 스트레스를 해소시켜 줄 뿐만 아니라
+						90% 이상의 <br/>항균도를 나타내 항균효과 또한 뛰어납니다.
+					</p>
+</div>
+</div>
+</div>
+<!--en:brandPop02-->
+<!--st:brandPop03-->
+<div aria-hidden="true" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="brandPop03" role="tabpanel" style="display: none;">
+<p>특허 및 수상내역</p>
+<p>
+				끊임없는 연구와 노력으로 최고의 자리를 이어온<span class="mint-txt"> 에이스의 명성</span>
+</p>
+<p class="gray-txt-02">
+				금탑 산업 훈장, 철탑 산업 훈장 및 대통령상 등 지난 수년간 “최고”의 이름으로 명성을 이어온 에이스침대,<br/>
+				에이스의 무대는 이미 세계입니다.
+			</p>
+<div class="color-tab color-tab-03 ui-tabs ui-corner-all ui-widget ui-widget-content">
+<ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header" role="tablist">
+<li aria-controls="award01" aria-expanded="true" aria-labelledby="ui-id-13" aria-selected="true" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" role="tab" tabindex="0"><a class="ui-tabs-anchor" href="#award01" id="ui-id-13" role="presentation" tabindex="-1">특허내역</a></li>
+<li aria-controls="award02" aria-expanded="false" aria-labelledby="ui-id-14" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1"><a class="ui-tabs-anchor" href="#award02" id="ui-id-14" role="presentation" tabindex="-1">수상내역</a></li>
+<li aria-controls="award03" aria-expanded="false" aria-labelledby="ui-id-15" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1"><a class="ui-tabs-anchor" href="#award03" id="ui-id-15" role="presentation" tabindex="-1">인증내역</a></li>
+</ul>
+<div aria-hidden="false" aria-labelledby="ui-id-13" class="award01 ui-tabs-panel ui-corner-bottom ui-widget-content" id="award01" role="tabpanel">
+<div>
+<img alt="Hybrid Z Spring" src="/front/img/etc/brand-award-01.gif"/>
+<div>
+<p>
+								Hybrid Z Spring<span> (15개국)</span>
+</p>
+<ul>
+<li>미국 발명특허<span> 제7,677,541B2호</span></li>
+<li>유럽 연합 발명특허<span> 제1834547호 (영국, 독일, 프랑스, 이탈리아,
+										스위스, 스페인, 네덜란드)</span></li>
+<li>캐나다 발명특허<span> 제2,550,303호</span></li>
+<li>일본 발명특허<span> 제4264489호</span></li>
+<li>한국 발명특허<span> 제717543호</span></li>
+<li>중국 발명특허<span> ZL200610090808.9</span></li>
+<li>멕시코 발명특허<span> 제266524호</span></li>
+<li>인도네시아 발명특허<span> ID P0031675B</span></li>
+<li>브라질 발명특허<span> PI0602620-6</span></li>
+</ul>
+</div>
+</div>
+<div>
+<img alt="튜브코일 공법" src="/front/img/etc/brand-award-02.gif"/>
+<div>
+<p>
+								튜브코일 공법<span> (14개국)</span>
+</p>
+<ul>
+<li>미국 발명특허<span> 제6,983,503B2호</span></li>
+<li>영국 발명특허<span> 제2410430호</span></li>
+<li>독일 발명특허<span> 제112004000088호</span></li>
+<li>유럽 연합 발명특허<span> 제1662942B1호 (프랑스,스위스,이탈리아,네덜란드)</span></li>
+<li>스페인 발명특허<span> 제 1072643Y 호</span></li>
+<li>캐나다 발명특허<span> 제2,522,381호</span></li>
+<li>일본 발명특허<span> 제3958777호</span></li>
+<li>한국 발명특허<span> 제444347호</span></li>
+<li>중국 발명특허<span> ZL200480001463.4</span></li>
+<li>멕시코 발명특허<span> 제252563호</span></li>
+<li>인도네시아 발명특허<span> 제0019 341호</span></li>
+</ul>
+</div>
+</div>
+<div>
+<img alt="하이테크 공법" src="/front/img/etc/brand-award-03.gif"/>
+<div>
+<p>
+								하이테크 공법<span> (15개국)</span>
+</p>
+<ul>
+<li>미국 발명특허<span> 제7,721,367B2호</span></li>
+<li>유럽 연합 발명특허<span> 제1834547호 (영국, 독일, 프랑스, 이탈리아,
+										스위스, 스페인, 네덜란드)</span></li>
+<li>캐나다 발명특허<span> 제2,553,184호</span></li>
+<li>일본 발명특허<span> 제4,348,440호</span></li>
+<li>한국 발명특허<span> 제626854호</span></li>
+<li>중국 발명특허<span> ZL200610105590</span></li>
+<li>멕시코 발명특허<span> 제282115호</span></li>
+<li>인도네시아 발명특허<span> 제0019 341호</span></li>
+<li>브라질 발명특허<span> PI0602620-6</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="ui-id-14" class="award02 ui-tabs-panel ui-corner-bottom ui-widget-content" id="award02" role="tabpanel" style="display: none;">
+<div>
+<img alt="고객만족도 1위 기업 8회 선정" src="/front/img/etc/brand-arward-04.gif"/>
+<p>
+							고객만족도 1위 기업 <br/>8회 선정
+						</p>
+<p class="gray-txt-02">Selected in KCSI for 8 times.</p>
+</div>
+<div>
+<img alt="21년 연속 브랜드파워 1위 기업선정" src="/front/img/etc/brand-arward-05.gif"/>
+<p>
+							21년 연속 브랜드파워 1위<br/> 기업선정
+						</p>
+<p class="gray-txt-02">
+							Selected in KBPI for<br/> 21 consecutive Years.
+						</p>
+</div>
+<div>
+<img alt="18년 연속 히트상품 선정" src="/front/img/etc/brand-arward-06.gif"/>
+<p>
+							18년 연속 <br/>히트상품 선정
+						</p>
+<p class="gray-txt-02">
+							Selected for its ‘Hit’ products for<br/> 18 consecutive years.
+						</p>
+</div>
+<ul>
+<li>철탑산업 훈장 수훈<span> Awarded the Iron Tower Order of
+								Industrial Service Merit.</span></li>
+<li>금탑산업훈장 수훈<span> Awarded the Gold Tower Order of
+								Industrial Service Merit.</span></li>
+<li>산업훈장 수훈<span> Presented Industrial Merit Award.</span></li>
+<li>국가품질경영대회 소비자만족상 대통령상 수상<span> Awarded the Iron
+								Tower Order of Industrial Service Merit.</span></li>
+<li>대한민국 디자인브랜드 대상 브랜드 경영 부문 국무총리상 수상<span> Awarded
+								the Iron Tower Order of Industrial Service Merit.</span></li>
+<li>대한민국 마케팅 대상 최고경영자상 수상<span> Received the Korea
+								Marketing Best Award for the CEO.</span></li>
+<li>업계 대한민국 50년 최고 히트상품 선정<span> Seleted as offering
+								most popular In korea for the past 50 years.</span></li>
+<li>6년 연속 KS 대상 수상<span> Received the KS Award for 6
+								Consecutive years.</span></li>
+<li>15년 연속 한국품질만족지수 1위 기업 선정<span> Selected in KS QEI for 15 consecutive years.</span></li>
+</ul>
+</div>
+<div aria-hidden="true" aria-labelledby="ui-id-15" class="award03 ui-tabs-panel ui-corner-bottom ui-widget-content" id="award03" role="tabpanel" style="display: none;">
+<ul>
+<!-- li>
+	                        <div><img src="/front/img/etc/brand-arward-07.gif" alt="KC 마크 인증 획득" /></div>
+	                        <p>KC 마크 인증 획득</p>
+	                    </li -->
+<!-- <li>
+							<div>
+								<img src="/front/img/etc/brand-arward-08.gif"
+									alt="HS 마크 인증 획득" />
+							</div>
+							<p>HS 마크 인증 획득</p>
+						</li> -->
 <li>
-<a href="#">
-<img alt="잘 가르치는 대학 ACE" src="/_res/skku/img/common/award_icon01.png"/>
-</a>
+<div>
+<img alt="매트리스 제품 환경마크 인증 획득" src="/front/img/etc/brand-arward-09.gif"/>
+</div>
+<p>매트리스 제품 환경마크 인증 획득</p>
 </li>
 <li>
-<a href="#">
-<img alt="국가고객만족도 9년 연속 1위" src="/_res/skku/img/common/award_icon02.png"/>
-</a>
+<div>
+<img alt="KS 마크 인증 획득" src="/front/img/etc/brand-arward-10.gif"/>
+</div>
+<p>KS 마크 인증 획득</p>
 </li>
 <li>
-<a href="#">
-<img alt="대통령상 大賞" src="/_res/skku/img/common/award_icon03.png"/>
-</a>
+<div>
+<img alt="ISO-9001 인증 획득" src="/front/img/etc/brand-arward-11.gif"/>
+</div>
+<p>ISO-9001 인증 획득</p>
 </li>
 <li>
-<a href="#">
-<img alt="국가품질경영 대통령상" src="/_res/skku/img/common/award_icon04.png"/>
-</a>
-</li>
-<li>
-<a href="#">
-<img alt="2013년 한국서비스품질지수 3년 연속 1위 달성" src="/_res/skku/img/common/award_icon05.png"/>
-</a>
-</li>
-<li>
-<a href="#">
-<img alt="공공부문 Best HRD 1위" src="/_res/skku/img/common/award_icon06.png"/>
-</a>
-</li>
-<li>
-<a href="#">
-<img alt="국내대학 최초 QS 5-star 인증 획득" src="/_res/skku/img/common/award_icon07.png"/>
-</a>
+<div>
+<img alt="라돈안전 제품인증 획득" src="/front/img/etc/brand-arward-12.gif"/>
+</div>
+<p>라돈안전 제품인증 획득</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
+<!--en:brandPop03-->
+<!--st:brandPop04-->
+<!--en:brandPop04-->
 </div>
-<noscript><p>이 사이트는 자바스크립트를 지원하지 않으면 정상적으로 보이지 않을수 있습니다.</p></noscript>
-<form action="/_common/template/print.jsp" id="jwxe_print_form" method="post" target="_blank"><input name="contents" type="hidden" value="123"/></form><div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible" id="ui-datepicker-div"></div></body></html>
+<a class="pop-close" href="#"><img alt="닫기" src="/front/img/common/img-pop-close-01.png"/></a>
+</div>
+<!--en:brand-pop-->
+<!--브랜드홍보 레이어팝업 끝--><!--침대가이드 레이어팝업 시작-->
+<!--st:bed-guide-pop-->
+<div class="layer-pop layer-pop-02 bed-guide-pop" id="guidePop">
+<div class="layer-pop-title">
+<h1>침대 구매가이드</h1>
+</div>
+<div class="layer-pop-in arr-tab ui-tabs ui-corner-all ui-widget ui-widget-content">
+<ul class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header" role="tablist">
+<li aria-controls="bedGuide01" aria-expanded="true" aria-labelledby="ui-id-4" aria-selected="true" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" role="tab" tabindex="0"><a class="ui-tabs-anchor" href="#bedGuide01" id="ui-id-4" role="presentation" tabindex="-1">매트리스 맞춤 가이드</a></li>
+<li aria-controls="bedGuide02" aria-expanded="false" aria-labelledby="ui-id-5" aria-selected="false" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" role="tab" tabindex="-1"><a class="ui-tabs-anchor" href="#bedGuide02" id="ui-id-5" role="presentation" tabindex="-1">침대 잘 고르는 팁 7가지</a></li>
+</ul>
+<!--st:bedGuide01-->
+<div aria-hidden="false" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="bedGuide01" role="tabpanel">
+<img alt="고객별 맞춤 가이드" src="/front/img/etc/bed-guide-01.jpg"/>
+<img alt="빠르게 찾아볼까요?" src="/front/img/etc/bed-guide-02.jpg"/>
+</div>
+<!--en:bedGuide01-->
+<!--st:bedGuide02-->
+<div aria-hidden="true" aria-labelledby="ui-id-5" class="ui-tabs-panel ui-corner-bottom ui-widget-content" id="bedGuide02" role="tabpanel" style="display: none;">
+<div>
+<iframe frameborder="no" height="500" scrolling="no" src="http://serviceapi.nmv.naver.com/flash/convertIframeTag.nhn?vid=62E73B7F2BEF19BE59FA329EFCD1E2F1382A&amp;outKey=V12615c6e086225840d47baff32f78ba39c344b2d68e87677d23bbaff32f78ba39c34" width="100%"></iframe>
+<h2>Tip 1</h2>
+<p>누웠을 때 매트리스 길이는 신장보다 15~20cm 가량 길고 가로 폭은 어깨의 3배 정도 OK!</p>
+<p class="gray-txt-02">영상을 통해 확인하시면 좀 더 쉽고 정확하게 이해하실 수 있어요!</p>
+</div>
+<div class="tip-list">
+<img alt="스프링이 느껴지지 않아야 좋은 매트리스!" src="/front/img/etc/bed-guide-03.gif"/>
+<h2>Tip 2</h2>
+<p>스프링이 느껴지지 않아야 좋은 매트리스!</p>
+<p class="gray-txt-02">매트리스는 스프링이 느껴지지 않도록 많은 내장재를 넣은 후, 커버를 씌어<br/>
+                봉합시키는데요. 내장재가 많이 들어간 매트리스는 스프링이 느껴지지 않아, <br/>
+                에너지 소모량이 적기 때문에 숙면에 도움을 준답니다.</p>
+</div>
+<div class="tip-list mr0">
+<img alt="52~70cm 높이 이상의 침대를!" src="/front/img/etc/bed-guide-04.gif"/>
+<h2>Tip 3</h2>
+<p>52~70cm 높이 이상의 침대를!</p>
+<p class="gray-txt-02">움직임이 없는 밤에는 공기 내 떠다니는 먼지들이 쉽게 바닥에 가라앉는데요. <br/>
+                침대가 너무 낮을 경우, 공기 내 먼지들이 체내에 들어오기 쉬워 호흡기 질환<br/>
+                문제가 생길 수 있다는 사실! 따라서 침대는 52~70cm 정도의 일정 높이 이상 <br/>
+                되는 것을 골라주는 것이 좋습니다.</p>
+</div>
+<div class="tip-list">
+<img alt="침대를 눌러보고, 침대 소음이 발생하는지 확인!" src="/front/img/etc/bed-guide-05.gif"/>
+<h2>Tip 4</h2>
+<p>침대를 눌러보고, 침대 소음이 발생하는지 확인!</p>
+<p class="gray-txt-02">침대에서 소음이 발생하진 않는지 Check! 겉보기에는 아무런 문제가<br/>
+                없어 보여도, 침대 내장재에 들어가는 스프링이 좋지않으면 서로 부딪혀 <br/>
+                마찰 소리가 나는 경우가 많다고 합니다. 에이스침대는 스프링 마찰로 인한<br/>
+                소음을 완벽하게 방지해줄 수 있도록 제작되어, 소음 걱정이 없다는 사실!</p>
+</div>
+<div class="tip-list mr0">
+<img alt="유해물질 포함상태 및 위생상태 확인!" src="/front/img/etc/bed-guide-06.gif"/>
+<h2>Tip 5</h2>
+<p>유해물질 포함상태 및 위생상태 확인!</p>
+<p class="gray-txt-02">각종 질병, 알레르기 유발 집먼지 진드기의 최적 서식지인 침대. 따라서 환경마크 <br/>
+                인증 친환경 제품을 선택하는 것이 좋습니다. 미국 EPA(환경보호청)가 승인한 <br/>
+                에이스침대의 <b>‘마이크로가드’</b>는 초강력 항균작용/항 곰팡이 작용으로 유해곤충과<br/>
+                세균, 곰팡이들을 완벽하게 방지해줍니다.</p>
+</div>
+<div class="tip-list">
+<img alt="인체공학적 침대 전무 제품 선택하기" src="/front/img/etc/bed-guide-07.gif"/>
+<h2>Tip 6</h2>
+<p>인체공학적 침대 전무 제품 선택하기</p>
+<p class="gray-txt-02">너무 무르거나 딱딱한 침대는 척추건강을 해칠 수 있습니다. 어깨, <br/>
+                엉덩이 부분의 유연함, 허리 부분을 받쳐주는 탄력의 완벽한 S라인으로<br/>
+                올바른 수면 자세가 유지되는 매트리스를 선택해주세요.</p>
+</div>
+<div class="tip-list mr0">
+<img alt="구매 후 A/S 여부 확인" src="/front/img/etc/bed-guide-08.gif"/>
+<h2>Tip 7</h2>
+<p>구매 후 A/S 여부 확인</p>
+<p class="gray-txt-02">구매만큼 중요한 것은, 구매 후 A/S의 여부! <br/>
+                침대의 원산지 및 품질 보증 마크를 확인하는 동시에, A/S 여부도 <br/>
+                반드시 확인해주세요.</p>
+</div>
+</div>
+<!--en:bedGuide02-->
+</div>
+<a class="pop-close" href="#"><img alt="닫기" src="/front/img/common/img-pop-close-01.png"/></a>
+</div>
+<!--en:bed-guide-pop-->
+<!--침대가이드 레이어팝업 끝--></div>
+<!--// 00.LAYOUT: -->
+<div class="ui-selectmenu-menu ui-front"><ul aria-hidden="true" aria-labelledby="topCushionTypeCd-button" class="ui-menu ui-corner-bottom ui-widget ui-widget-content" id="topCushionTypeCd-menu" role="listbox" tabindex="0"></ul></div><div class="ui-selectmenu-menu ui-front"><ul aria-hidden="true" aria-labelledby="mattressGradeCd-button" class="ui-menu ui-corner-bottom ui-widget ui-widget-content" id="mattressGradeCd-menu" role="listbox" tabindex="0"></ul></div></body></html>

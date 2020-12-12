@@ -5,12 +5,12 @@ from selenium import webdriver
 import time
 import os
 from filecmp import cmp
-
+import difflib
 
 url1 = 'https://docs.google.com/document/d/1i9j_XGRqFNHX-nu3ehOQ3RgUpLCHNtctCXrXTNKMGVw/edit'
 url2 = 'http://acebedmall.co.kr/front/search/categorySearch.do?searchYn=N&ctgNo=2'
 url = 'https://www.skku.edu/skku/campus/skk_comm/notice01.do'
-urls = [url]
+urls = [url2]
 
 driver = webdriver.Chrome()
 
@@ -35,11 +35,18 @@ for index, url in enumerate(urls, 1):
 while True:
     for index, url in enumerate(urls, 1):
         new_html = get_html(url)
+        file_name = f'{index}.txt'
+        new_file_name = f'new_{index}.txt'
 
-        with open(f'new_{index}.txt', 'w', -1, 'utf-8') as f:
+        with open(new_file_name, 'w', -1, 'utf-8') as f:
             f.write(new_html)
 
-        if cmp(f'{index}.txt', f'new_{index}.txt') is False:
+        if cmp(file_name, new_file_name) is False:
+            # os.system(f'diff {file_name} {new_file_name} > diff_{index}.txt')
+            diff = difflib.Differ()
+            a = "aaa\n"
+            b = "bbb"
+            print(diff.compare(a, b))
             print('Posting Uploaded !!')
             
 
