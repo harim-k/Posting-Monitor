@@ -56,10 +56,9 @@ def sendMsg(tokenName,msg, link="http://www.naver.com"):
     url = 'https://kapi.kakao.com/v1/user/ids'
     response  = requests.get(url, data=data)
     #https://kapi.kakao.com/v1/user/ids?Authorization=a498a890d7f8e180b3c54c262ac9836d
-if not os.path.isdir('tokens'):
-    print('no tokens')
-    exit()
 def main():
+    if not os.path.isdir('tokens'):
+        os.mkdir('tokens')
     file_list = os.listdir('tokens')
     file_list.sort()
     if len(file_list) >0:

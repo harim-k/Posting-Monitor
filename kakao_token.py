@@ -8,12 +8,14 @@ from kakao_send_msg import read_data
 # 현재 사용자에게 REST API가 포함된 링크를 보내고, 거기서 사용자는 메시지 수신알림을 accept한상태
 # 그 과정에서 data의 code를 추출할 수 있다. client_id는 develops.kakao에서 받아온 REST API ID
 client_id = '7412c5bbc84770efd9fb12162c229f9f'
-local = False
-
+local = True
+port = '10080'
 def getLocal():
     return local
 def getClientId():
     return client_id
+def getPort():
+    return port
 
 
 def extractToken(txt):
@@ -48,7 +50,7 @@ def saveToken(get_txt):
     url = "https://kauth.kakao.com/oauth/token"
     data = {"grant_type": "authorization_code",
             "client_id": "7412c5bbc84770efd9fb12162c229f9f",
-            "redirect_uri": "http://"+ip+":10080", "code": code}
+            "redirect_uri": "http://"+ip+":"+port, "code": code}
     # 이러한 정보를 담은 data를 아래 url로 request를 보내면, user token을 받아올 수 있다.
     # user token 은 제한 시간이 있는 것으로 추정되며, user token을 이용하여 message를 발행할 수 있다.
     # 다음과정은 kakao_send_msg.py에서 실행
@@ -92,9 +94,12 @@ def extractCode(get_txt):
     res = get_txt[init:end + 1]
     return res
 
-def refrigerator(): # 21599초(6시간)마다 만료, (21599-600)(5시간 50분)마다 갱신
+def refrigerator(mutex): # 21599초(6시간)마다 만료, (21599-600)(5시간 50분)마다 갱신
     while 1:        # 토큰 refresh
+        #mutex.acquire()
         data ={}
+        if not os.path.isdir('tokens'):
+            os.mkdir('tokens')
         file_list = os.listdir('tokens')
         file_list.sort()
         print('Refreshing token has started.')
@@ -109,6 +114,7 @@ def refrigerator(): # 21599초(6시간)마다 만료, (21599-600)(5시간 50분)
                 print(str(idx)+": "+str(f) +" "+txt)
         else:
             print('refrigerator: no tokens')
+        #mutex.release()
         sleep(21599-600)
     data ={}
 #'{"access_token":"BCbuRtz-0eCK-h7agdCGfBd03CO0rfp3i9aA0wo9dNsAAAF2VnrFcQ",
