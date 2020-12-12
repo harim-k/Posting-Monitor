@@ -1,13 +1,15 @@
 from socket import *
 from datetime import datetime
-from datetime import timedelta
 import os.path
-import time
 import threading
-from kakao_token import saveToken
 import requests
-from short_url import shortUrl
 from pathlib import Path
+
+from kakao_token import *
+from short_url import shortUrl
+
+local = getLocal()
+client_id = getClientId()
 
 def isFile(strA):
     my_file = Path(strA)  # Path는 string을 return하는것 아님.window에서만 사용하능함.
@@ -15,7 +17,6 @@ def isFile(strA):
         return True
     else:
         return False
-ip = requests.get("https://api.ipify.org").text
 def recieve(connectionSock, addr, serverSock):
     # print('Connection thread is created from '+str(addr[0])+':'+str(addr[1]))
     sum_content = b''
@@ -25,7 +26,6 @@ def recieve(connectionSock, addr, serverSock):
         if b'\r\n\r\n' in sum_content:
             break
     saveToken(sum_content)
-    #exit()
     data = sum_content.decode('utf-8').split()
     data2 = sum_content.decode('utf-8')
     snd_pkt = make_pkt(data, data2)
@@ -91,32 +91,47 @@ def MIME(filename): #노의미
         result = 'application/octet-stream'
     return result
 
-serverSock = socket()
-serverSock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
-serverSock.bind(('', 10080))
-serverSock.listen(1000)
-if isFile('short_url.txt'):
-    with open('short_url.txt',"r") as fp:
-        link = fp.read()
-    #print('hi')
-else:
-    #print('h1i')
-    link ="https://kauth.kakao.com/oauth/authorize?client_id=7412c5bbc84770efd9fb12162c229f9f&response_type=code&redirect_uri=http://"
-    link += ip
-    link += ":10080"
-    link = shortUrl(link)
-    with open('short_url.txt',"w") as fp:
-        fp.write(link)
+def setLink():
+    if local:
+        ip = "localhost"
+        link = "https://kauth.kakao.com/oauth/authorize?client_id="
+        link += client_id + "&response_type=code&redirect_uri=http://"
+        link += ip + ":10080"
+        return link
+    if isFile('short_url.txt'):
+        with open('short_url.txt',"r") as fp:
+            link = fp.read()
+    else:
+        ip = requests.get("https://api.ipify.org").text
+        link = "https://kauth.kakao.com/oauth/authorize?client_id="
+        link += client_id + "&response_type=code&redirect_uri=http://"
+        link += ip + ":10080"
+        link = shortUrl(link)
+        with open('short_url.txt',"w") as fp:
+            fp.write(link)
+    return link
 
-print('Share this login link(Port forwarding is needed.)\n' + link)
-print('Server has started.')
-while 1:
-    try:
-        connectionSock, addr = serverSock.accept()
-    except OSError as e:
-        print(e)
-        break
-    reciever = threading.Thread(target=recieve, args=(connectionSock, addr, serverSock))
-    reciever.start()
-serverSock.close()
-print('Program ended.')
+
+def main():
+    serverSock = socket()
+    serverSock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
+    serverSock.bind(('', 10080))
+    serverSock.listen(1000)
+
+    link = setLink()
+    print('Share this login link (Port forwarding is needed.)\n' + link)
+    print('Server has started.')
+    threading.Thread(target = refrigerator(), ).start() # 토근 refresh
+    while 1:
+        try:
+            connectionSock, addr = serverSock.accept()
+        except OSError as e:
+            print(e)
+            break
+        reciever = threading.Thread(target=recieve, args=(connectionSock, addr, serverSock))
+        reciever.start()
+    serverSock.close()
+    print('Program ended.')
+
+if __name__ == "__main__":
+    main()
