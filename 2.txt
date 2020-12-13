@@ -6,6 +6,8 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="에이스침대 몰" name="title"/>
 <meta content="에이스침대" name="author"/>
+<a href="/wiki/Philadelphia" title="Philadelphia">Philadelphia</a>
+<a href="/wiki/Pennsylvania" title="Pennsylvania">Pennsylvania</a>
 <meta content="침대는 가구가 아니다, 침대는 에이스다! No.1 침대과학 에이스 공식 자사몰" name="description"/>
 <meta content="에이스침대, 에이스침대몰, 에이스몰" name="keywords"/>
 <meta content="86141005-7036-4d3a-adc7-6fa872b4cf1a" name="_csrf"/>
