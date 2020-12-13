@@ -1,5 +1,4 @@
-from typing import Text
-import telegram
+import urllib3
 import webbrowser
 
 def tele_register():
@@ -13,10 +12,7 @@ def tele_register():
 
 # cid에는 chat_id를 넣어주고, msg엔 보낼 메시지를 담습니다.
 def tele_sendmsg(cid, msg):
-    tele_token = '1480309823:AAHWQ_dGDK9-DRBejMKTO5JnC6KEna9A1KQ'
-    tele_bot = telegram.Bot(token = tele_token)
-    # 토큰으로 봇을 특정함
-
-    tele_bot.sendMessage(chat_id = cid, text = msg)
-
-
+    urllib3.PoolManager().request(\
+    'GET','https://api.telegram.org/'+\
+        'bot1480309823:AAHWQ_dGDK9-DRBejMKTO5JnC6KEna9A1KQ/sendMessage?chat_id='\
+            +cid+'&text='+msg)
