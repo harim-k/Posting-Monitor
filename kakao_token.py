@@ -18,32 +18,13 @@ def getPort():
     return port
 
 
-def extractToken(txt):
-    data = txt
-    aim = 'access_token:\": '
-    init = data.find(aim) + len(aim)+2 # 모르겠다 2는
-    end = data[init:].find(',')
-    res = data[init:init + end].replace("\"", '').replace(',', '')
-    #print(res)
-    return res
-def nickName(text):
-    access_token = extractToken(text)
-    #print('hi2')
-    #access_token=(read_data(tokenName))
-    headers = {"Authorization": "Bearer " + access_token}
-    response =requests.get("https://kapi.kakao.com/v2/user/me", headers = headers )
-    print('hi')
-    print(response.text)
-    if 'kakao_account' in response.json().keys():
-        res = response.json()['kakao_account']['profile']['nickname']
-    else:
-        res ='err'
-    return res
 def saveToken(get_txt):
     if local:
         ip = "localhost"
     else:
         ip = requests.get("https://api.ipify.org").text
+        with open("ip.txt","w") as fp:
+            fp.write(ip)
     code = extractCode(get_txt)
     print('Creating token requests have been received.')
     print('Code\n'+code)
@@ -55,9 +36,9 @@ def saveToken(get_txt):
     # user token 은 제한 시간이 있는 것으로 추정되며, user token을 이용하여 message를 발행할 수 있다.
     # 다음과정은 kakao_send_msg.py에서 실행
     response = requests.post(url, data=data)
-
+    uid =-1
     tokens = response.json()
-    nickName2 = nickName(response.text)
+    nickName2, uid = getInfo(response.text)
 
     print('Token info\n'+str(tokens))
     if 'error' not in tokens.keys():
@@ -65,10 +46,34 @@ def saveToken(get_txt):
         time1 = str(datetime.datetime.now()).split('.')[0].replace(' ','_').replace('-','').replace(':','')
         if not os.path.isdir('./tokens'):
             os.mkdir('tokens')
-        name =  "./tokens/"+ nickName2+"_"+time1+'.json'
+        name =  "./tokens/"+ time1[2:]+"_"+nickName2+'.json'
         with open(name,"w") as fp:
             json.dump(tokens,fp)
             print('Token has been saved: '+name[2:])
+    return uid
+
+def extractToken(txt):
+    data = txt
+    aim = 'access_token:\": '
+    init = data.find(aim) + len(aim)+2 # 모르겠다 2는
+    end = data[init:].find(',')
+    res = data[init:init + end].replace("\"", '').replace(',', '')
+    #print(res)
+    return res
+def getInfo(text):
+    access_token = extractToken(text)
+    #print('hi2')
+    #access_token=(read_data(tokenName))
+    headers = {"Authorization": "Bearer " + access_token}
+    response =requests.get("https://kapi.kakao.com/v2/user/me", headers = headers )
+    print('hi')
+    print(response.text)
+    if 'kakao_account' in response.json().keys():
+        res = response.json()['kakao_account']['profile']['nickname']
+        res2 = response.json()['id']
+    else:
+        res ='err'
+    return res, res2
 
 def extractCode(get_txt):
     flag=0

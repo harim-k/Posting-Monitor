@@ -12,12 +12,30 @@ local = getLocal()
 client_id = getClientId()
 port = getPort()
 
-def isFile(strA):
-    my_file = Path(strA)  # Path는 string을 return하는것 아님.window에서만 사용하능함.
-    if my_file.is_file():
-        return True
-    else:
-        return False
+
+def main():
+    mutex = threading.Lock()
+    serverSock = socket()
+    serverSock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
+    serverSock.bind(('', int(port)))
+    serverSock.listen(1000)
+
+    link = setLink()
+    print('Share this login link (Port forwarding is needed.)\n' + link)
+    print('Server has started.')
+    refresher = threading.Thread(target = refrigerator, args=(mutex, ))
+    refresher.start() # 토큰 refresh
+    while 1:
+        try:
+            connectionSock, addr = serverSock.accept()
+        except OSError as e:
+            print(e)
+            break
+        reciever = threading.Thread(target=recieve, args=(connectionSock, addr, serverSock,mutex))
+        reciever.start()
+    serverSock.close()
+    print('Program ended.')
+
 def recieve(connectionSock, addr, serverSock,mutex):
     #mutex.acquire()
     # print('Connection thread is created from '+str(addr[0])+':'+str(addr[1]))
@@ -27,16 +45,39 @@ def recieve(connectionSock, addr, serverSock,mutex):
         sum_content += content
         if b'\r\n\r\n' in sum_content:
             break
-    saveToken(sum_content)
+    uid =saveToken(sum_content)
     data = sum_content.decode('utf-8').split()
     data2 = sum_content.decode('utf-8')
     snd_pkt = make_pkt(data, data2)
+    make200(uid)
     connectionSock.send(snd_pkt)
+    undo200(uid)
     # print('connection thread is end. :' +str(addr[0])+':'+str(addr[1]))
     connectionSock.close()
     #mutex.release()
-
-
+def make200(uid):
+    if uid == -1:
+        return
+    fileName = '200.html'
+    with open(fileName,"r") as fp:
+        data =  fp.read().replace('<p></p>','<p>'+str(uid)+'</p>')
+    with open(fileName,"w") as fp:
+        fp.write(data)
+def undo200(uid):
+    if uid==-1:
+        return
+    fileName = '200.html'
+    with open(fileName,"r") as fp:
+        data =  fp.read()
+    data.replace(str(uid),'')
+    with open(fileName,"w") as fp:
+        fp.write(data)
+def isFile(strA):
+    my_file = Path(strA)  # Path는 string을 return하는것 아님.window에서만 사용하능함.
+    if my_file.is_file():
+        return True
+    else:
+        return False
 def make_pkt(data, data2):
     res_type = '200 OK'
     version = "HTTP/1.1"
@@ -93,7 +134,6 @@ def MIME(filename): #노의미
     if result is None:
         result = 'application/octet-stream'
     return result
-
 def setLink():
     if local:
         ip = "localhost"
@@ -113,30 +153,6 @@ def setLink():
         with open('short_url.txt',"w") as fp:
             fp.write(link)
     return link
-
-def main():
-    mutex = threading.Lock()
-    p = int(port)
-    serverSock = socket()
-    serverSock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
-    serverSock.bind(('', p))
-    serverSock.listen(1000)
-
-    link = setLink()
-    print('Share this login link (Port forwarding is needed.)\n' + link)
-    print('Server has started.')
-    refresh = threading.Thread(target = refrigerator, args=(mutex, ))
-    refresh.start() # 토큰 refresh
-    while 1:
-        try:
-            connectionSock, addr = serverSock.accept()
-        except OSError as e:
-            print(e)
-            break
-        reciever = threading.Thread(target=recieve, args=(connectionSock, addr, serverSock,mutex))
-        reciever.start()
-    serverSock.close()
-    print('Program ended.')
 
 if __name__ == "__main__":
     main()
