@@ -7,8 +7,6 @@ import os
 from filecmp import cmp
 import difflib
 
-MONITORING_TIME_INTERVAL = 10
-
 url1 = 'https://docs.google.com/document/d/1i9j_XGRqFNHX-nu3ehOQ3RgUpLCHNtctCXrXTNKMGVw/edit'
 url2 = 'http://acebedmall.co.kr/front/search/categorySearch.do?searchYn=N&ctgNo=2'
 url = 'https://blog.naver.com/harim9355'
@@ -59,47 +57,9 @@ def _get_link_from_diff_file(file_name):
 
 # save urls' html as file
 for index, url in enumerate(urls, 1):
-    file_name = f'{index}.txt'
+    file_name = 'naver2.txt'
 
     html = _get_html_from_url(url)
     _save_html_as_file(html, file_name)
 
-
-# monitor web
-while True:
-    for index, url in enumerate(urls, 1):
-        file_name = f'{index}.txt'
-        new_file_name = f'new_{index}.txt'
-        diff_file_name = f'diff_{index}.txt'
-
-        new_html = _get_html_from_url(url)
-        _save_html_as_file(new_html, new_file_name)
-        
-        # make diff file
-        os.system(f'diff {file_name} {new_file_name} > {diff_file_name}')
-
-        links = _get_link_from_diff_file(diff_file_name)
-
-
-        if links:
-            print('Posting Uploaded !!')
-        else:
-            print('No Posting Uploaded !!')
-
-
-        # send message to user
-        for i in range(len(links)):
-            if links[i][0] == '/':
-                links[i] = url + links[i]
-            # send_message(index, i)
-
-
-        # update file if html is changed
-        if cmp(file_name, new_file_name) is False:
-            os.system(f'rm {file_name}')
-            os.system(f'mv {new_file_name} {file_name}')
-
-        
-        # sleep for monitoring time interval
-        time.sleep(MONITORING_TIME_INTERVAL)
 
