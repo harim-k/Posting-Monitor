@@ -12,7 +12,7 @@ url2 = 'http://acebedmall.co.kr/front/search/categorySearch.do?searchYn=N&ctgNo=
 url = 'https://blog.naver.com/harim9355'
 urls = [url]
 
-driver = webdriver.Chrome()
+# driver = webdriver.Chrome()
 
 
 def _get_html_from_url(url):
@@ -53,13 +53,40 @@ def _get_link_from_diff_file(file_name):
 
     return links
 
+def _write_log(file_name, logs):
+    """ save link list as file """
+    
+    current_time = _get_current_time()
+    
+    with open(file_name, 'a', -1, 'utf-8') as f:
+        f.write('\n' + current_time + '\n')
+        for log in logs:
+            f.write(log+'\n')
 
 
-# save urls' html as file
-for index, url in enumerate(urls, 1):
-    file_name = 'naver2.txt'
+def _get_current_time():
+    """ get current time as string """
 
-    html = _get_html_from_url(url)
-    _save_html_as_file(html, file_name)
+    import datetime
+
+    return str(datetime.datetime.now())
+
+
+diff_file_name = 'diff_1.txt'
+links = ['dd', 'bb']
+
+_write_log('links.txt', links)
+with open(diff_file_name, 'r', -1, 'utf-8') as f:
+    diffs = f.readlines()
+_write_log('diffs.txt', diffs)
+
+
+    
+# # save urls' html as file
+# for index, url in enumerate(urls, 1):
+#     file_name = 'naver2.txt'
+
+#     html = _get_html_from_url(url)
+#     _save_html_as_file(html, file_name)
 
 
