@@ -7,18 +7,12 @@ import os
 from filecmp import cmp
 import difflib
 
+from messenger import send_message
+
 MONITORING_TIME_INTERVAL = 10
 FILES_DIR = 'files'
 
-url1 = 'https://docs.google.com/document/d/1i9j_XGRqFNHX-nu3ehOQ3RgUpLCHNtctCXrXTNKMGVw/edit'
-url2 = 'http://acebedmall.co.kr/front/search/categorySearch.do?searchYn=N&ctgNo=2'
-url3 = 'https://blog.naver.com/harim9355'
-url4 = 'https://everytime.kr/370444'
-url5 = 'https://cs.skku.edu/news/recent/list'
-url6 = 'https://gall.dcinside.com/board/lists/?id=leagueoflegends4'
-urls = [url4, url6]
 
-driver = webdriver.Chrome()
 
 hrefs = dict()
 
@@ -51,8 +45,9 @@ def _write_log_file(file_name, logs):
         f.write('\n')
 
 
-def _get_html_from_url(url):
+def _get_html_from_url(driver, url):
     """ get html from url """
+    
     driver.get(url)
     time.sleep(1)
     for _ in range(10):
@@ -91,12 +86,26 @@ def _get_links_from_diff_file(file_name):
     return links
 
 
-def monitor_posting(urls):
+def _get_base_url(url):
+    """ get base url """
+    end_index = -1
+    for index, char in enumerate(url[8:], 8):
+        if char == '/':
+            end_index = index
+            break
+
+    return url[:end_index]
+
+def monitor_posting(user, urls):
     """ monitor posting of website """
 
+    driver = webdriver.Chrome()
+
     # save urls' html as file
+    base_url = [0]
     for index, url in enumerate(urls, 1):
         
+        base_url.append(_get_base_url(url))
         dir_name = os.path.join(FILES_DIR, str(index))
         html_file_name = os.path.join(dir_name, 'html.txt')
         links_file_name = os.path.join(dir_name, 'links.txt')
@@ -110,7 +119,7 @@ def monitor_posting(urls):
         with open(diffs_file_name, 'w', -1, 'utf-8') as f:
             pass
 
-        html = _get_html_from_url(url)
+        html = _get_html_from_url(driver, url)
         _write_file(html_file_name, html)
         links = _get_links_from_html(html)
 
@@ -128,7 +137,7 @@ def monitor_posting(urls):
             links_file_name = os.path.join(dir_name, 'links.txt')
             diffs_file_name = os.path.join(dir_name, 'diffs.txt')
 
-            new_html = _get_html_from_url(url)
+            new_html = _get_html_from_url(driver, url)
             _write_file(new_html_file_name, new_html)
             
             # make diff file
@@ -145,10 +154,10 @@ def monitor_posting(urls):
 
             # send message to user
             for i in range(len(links)):
-                # if links[i][0] == '/':
-                #     links[i] = url + links[i]
+                if links[i][0] == '/':
+                    links[i] = base_url[index] + links[i]
                 print(links[i])
-                # send_message(index, i)
+                send_message(user, links[i])
 
             if links:
                 _write_log_file(links_file_name, links)
@@ -166,7 +175,7 @@ def monitor_posting(urls):
             time.sleep(MONITORING_TIME_INTERVAL)
 
 
-try:
-    monitor_posting(urls)
-except KeyboardInterrupt:
-    driver.quit()
+# try:
+#     monitor_posting(urls)
+# except KeyboardInterrupt:
+#     driver.quit()
