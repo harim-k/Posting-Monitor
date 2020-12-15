@@ -57,7 +57,7 @@
 </ul>
 </address>
 <script type="text/javascript">
-    var _serverTime = 1607958943298;
+    var _serverTime = 1607959333289;
     var _clientTime = new Date().getTime();
     var _diffTime = _clientTime - _serverTime;
     var _apiServerUrl = 'https://api.everytime.kr';
