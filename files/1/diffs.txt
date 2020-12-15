@@ -1,0 +1,584 @@
+2020-12-16 00:20:38.071070
+45c45
+
+< <p><span class="name single">에브리타임</span></p>
+
+---
+
+> <p><span class="name multiple">에브리타임</span><span class="subname">성균관대</span></p>
+
+48,49c48,52
+
+< <a class="button" href="/login">로그인</a>
+
+< <a class="button red" href="/register">회원가입</a>
+
+---
+
+> <a class="icon message" href="/message" title="쪽지함">쪽지함</a>
+
+> <a class="icon my" href="/my" title="내 정보">내 정보</a>
+
+> <input id="userUserid" type="hidden" value="harim9504"/>
+
+> <input id="userSchool" type="hidden" value="9"/>
+
+> <input id="userCampus" type="hidden" value="14"/>
+
+61a65,260
+
+> <div id="submenu">
+
+> <div class="wrap">
+
+> <div class="divider"></div>
+
+> <div class="group">
+
+> <ul>
+
+> <li><a class="new active" data-id="370444" href="/370444">인사캠 자유게시판</a></li>
+
+> <li><a class="new" data-id="370445" href="/370445">자과캠 자유게시판</a></li>
+
+> <li><a class="new" data-id="375128" href="/375128">비밀게시판</a></li>
+
+> <li><a class="new" data-id="385545" href="/385545">졸업생게시판</a></li>
+
+> <li><a class="new" data-id="375132" href="/375132">새내기게시판</a></li>
+
+> <li><a class="new" data-id="370465" href="/370465">인사캠 장터게시판</a></li>
+
+> <li><a class="new" data-id="420096" href="/420096">자과캠 장터게시판</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group">
+
+> <ul>
+
+> <li><a class="new" data-id="375129" href="/375129">홍보게시판</a></li>
+
+> <li><a class="new" data-id="418760" href="/418760">동아리·학회</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="divider"></div>
+
+> <div class="group">
+
+> <ul>
+
+> <li><a class="new" data-id="375130" href="/375130">정보게시판</a></li>
+
+> <li><a class="new" data-id="375131" href="/375131">취업·진로</a></li>
+
+> <li><a data-id="386599" href="/386599">교환학생 정보공유 게시판</a></li>
+
+> <li><a class="new" data-id="373066" href="/373066">회계사준비성대생모임</a></li>
+
+> <li><a class="new" data-id="385837" href="/385837">행정고시 준비생 게시판</a></li>
+
+> <li><a class="new" data-id="401132" href="/401132">피트게시판</a></li>
+
+> <li><a class="new" data-id="375011" href="/375011">성대 7급 준비생들 모임</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group">
+
+> <ul>
+
+> <li><a class="new" data-id="386340" href="/386340">로스쿨 저장소</a></li>
+
+> <li><a class="new" data-id="403407" href="/403407">금융공기업 준비생 게시판</a></li>
+
+> <li><a class="new" data-id="375550" href="/375550">변리사 준비생 게시판</a></li>
+
+> <li><a class="new" data-id="442919" href="/442919">언론고시 준비생 게시판✒</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="divider"></div>
+
+> <div class="group">
+
+> <ul>
+
+> <li><a data-id="468619" href="/468619">성균지</a></li>
+
+> <li><a data-id="457382" href="/457382">다소미</a></li>
+
+> <li><a data-id="448926" href="/448926">방송국</a></li>
+
+> <li><a data-id="476771" href="/476771">관악부</a></li>
+
+> <li><a data-id="417358" href="/417358">에스엔젤</a></li>
+
+> <li><a data-id="369580" href="/369580">성균웹진</a></li>
+
+> <li><a data-id="416498" href="/416498">킹고응원단</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group">
+
+> <ul>
+
+> <li><a data-id="402712" href="/402712">성균타임즈</a></li>
+
+> <li><a data-id="451160" href="/451160">홍보대사</a></li>
+
+> <li><a data-id="399597" href="/399597">청랑</a></li>
+
+> <li><a data-id="451849" href="/451849">프레시맨 가이드</a></li>
+
+> <li><a data-id="452559" href="/452559">하이클럽</a></li>
+
+> <li><a data-id="452647" href="/452647">신문사</a></li>
+
+> <li><a data-id="477872" href="/477872">경제대 학생회</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="divider"></div>
+
+> <div class="group">
+
+> <ul>
+
+> <li><a class="new" data-id="384617" href="/384617">족보게시판</a></li>
+
+> <li><a class="new" data-id="395154" href="/395154">헬스 게시판</a></li>
+
+> <li><a class="new" data-id="375458" href="/375458">성균메이플</a></li>
+
+> <li><a class="new" data-id="403346" href="/403346">컴공&amp;소프트 게시판</a></li>
+
+> <li><a class="new" data-id="418730" href="/418730">주식게시판</a></li>
+
+> <li><a class="new" data-id="402746" href="/402746">우울증 고민💧</a></li>
+
+> <li><a class="new" data-id="402030" href="/402030">브로리에게 물어봐</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group">
+
+> <ul>
+
+> <li><a class="new" data-id="374857" href="/374857">통계게시판</a></li>
+
+> <li><a class="new" data-id="433086" href="/433086">대학원생의 자유공간</a></li>
+
+> <li><a class="new" data-id="403176" href="/403176">짝사랑 게시판</a></li>
+
+> <li><a class="new" data-id="375299" href="/375299">좋은 노래 있으면 적고가자</a></li>
+
+> <li><a class="new" data-id="421356" href="/421356">💚 성균관대 시즈니 게시판 💚</a></li>
+
+> <li><a class="new" data-id="402249" href="/402249">소개팅은 성대하게</a></li>
+
+> <li><a class="new" data-id="392232" href="/392232">퀴어한 나를 위한 게시판</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group">
+
+> <ul>
+
+> <li><a class="new" data-id="414888" href="/414888">글로벌 융합학부 게시판</a></li>
+
+> <li><a class="new" data-id="371411" href="/371411">경제게시판</a></li>
+
+> <li><a class="new" data-id="416506" href="/416506">공부하기싫을때소리지르는게시판</a></li>
+
+> <li><a class="new" data-id="369513" href="/369513">성대장터</a></li>
+
+> <li><a class="new" data-id="375426" href="/375426">교직이수자 모임</a></li>
+
+> <li><a class="new" data-id="428997" href="/428997">원룸게시판</a></li>
+
+> <li><a class="more">더 보기</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group hidden">
+
+> <ul>
+
+> <li><a data-id="390418" href="/390418">핑프뷰티</a></li>
+
+> <li><a class="new" data-id="443416" href="/443416">열녀 신문고</a></li>
+
+> <li><a class="new" data-id="370748" href="/370748">애니메이션 게시판</a></li>
+
+> <li><a class="new" data-id="375320" href="/375320">영화덕후</a></li>
+
+> <li><a class="new" data-id="427728" href="/427728">이상형 쓰기</a></li>
+
+> <li><a class="new" data-id="472006" href="/472006">영어영문학과 게시판</a></li>
+
+> <li><a class="new" data-id="377093" href="/377093">고양이 게시판</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group hidden">
+
+> <ul>
+
+> <li><a class="new" data-id="417350" href="/417350">아재개그 게시판</a></li>
+
+> <li><a class="new" data-id="396570" href="/396570">시를 잊은 그대에게</a></li>
+
+> <li><a class="new" data-id="402803" href="/402803">생명과학과 게시판</a></li>
+
+> <li><a class="new" data-id="380254" href="/380254">하스스톤 게시판</a></li>
+
+> <li><a class="new" data-id="388255" href="/388255">공익과법연계전공 게시판</a></li>
+
+> <li><a class="new" data-id="257902" href="/257902">성균맛집</a></li>
+
+> <li><a class="new" data-id="403768" href="/403768">끝말잇기 게시판</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group hidden">
+
+> <ul>
+
+> <li><a class="new" data-id="470630" href="/470630">향수 게시판</a></li>
+
+> <li><a data-id="440286" href="/440286">강아지 게시판</a></li>
+
+> <li><a class="new" data-id="414246" href="/414246">성균관의 연뮤덕</a></li>
+
+> <li><a data-id="451430" href="/451430">동네친구찾기</a></li>
+
+> <li><a class="new" data-id="396603" href="/396603">연애상담</a></li>
+
+> <li><a class="new" data-id="463111" href="/463111">일본 서브컬쳐 게시판</a></li>
+
+> <li><a class="new" data-id="377039" href="/377039">성균관대학교 사회복지학과 게시판</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group hidden">
+
+> <ul>
+
+> <li><a class="new" data-id="451732" href="/451732">모르겠군요.</a></li>
+
+> <li><a class="new" data-id="478695" href="/478695">성균클래식</a></li>
+
+> <li><a class="new" data-id="401152" href="/401152">금욕 게시판</a></li>
+
+> <li><a class="new" data-id="468043" href="/468043">과외게시판</a></li>
+
+> <li><a class="new" data-id="378673" href="/378673">스꾸 아르미</a></li>
+
+> <li><a data-id="466613" href="/466613">심리학과 게시판</a></li>
+
+> <li><a data-id="471386" href="/471386">ATM기 전용 꼬마</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group hidden">
+
+> <ul>
+
+> <li><a class="new" data-id="477605" href="/477605">스꾸툰(Skkutoon) 게시판</a></li>
+
+> <li><a data-id="471816" href="/471816">어느 누군가의 일기장</a></li>
+
+> <li><a class="new" data-id="403389" href="/403389">아스날 게시판</a></li>
+
+> <li><a data-id="408093" href="/408093">오늘의 TMI</a></li>
+
+> <li><a class="new" data-id="472402" href="/472402">반시공 게시판</a></li>
+
+> <li><a data-id="476555" href="/476555">새벽타로</a></li>
+
+> <li><a data-id="385876" href="/385876">오늘의 한끼</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group hidden">
+
+> <ul>
+
+> <li><a data-id="414681" href="/414681">카트라이더 게시판</a></li>
+
+> <li><a data-id="425785" href="/425785">포켓몬스터 게시판🔥</a></li>
+
+> <li><a data-id="391913" href="/391913">EXO</a></li>
+
+> <li><a class="new" data-id="404334" href="/404334">아이즈원 게시판</a></li>
+
+> <li><a data-id="451373" href="/451373">인디음악 게시판🎹🎸🎻</a></li>
+
+> <li><a class="new" data-id="388710" href="/388710">독서왕 성균인</a></li>
+
+> <li><a class="new" data-id="460588" href="/460588">성균관대 국어국문학과</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group hidden">
+
+> <ul>
+
+> <li><a data-id="393179" href="/393179">주류 게시판</a></li>
+
+> <li><a data-id="396984" href="/396984">성대 롤분식집</a></li>
+
+> <li><a data-id="401992" href="/401992">알바생 게시판</a></li>
+
+> <li><a class="new" data-id="414939" href="/414939">미술학과 튜터링 0.5</a></li>
+
+> <li><a class="new" data-id="442068" href="/442068">오마이걸 게시판</a></li>
+
+> <li><a class="new" data-id="478296" href="/478296">아임파인땡큐앤유🌝</a></li>
+
+> <li><a class="new" data-id="478827" href="/478827">약대생 공간</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group hidden">
+
+> <ul>
+
+> <li><a class="new" data-id="399377" href="/399377">당나귀 게시판</a></li>
+
+> <li><a data-id="403967" href="/403967">캐럿들은 세븐틴 사랑해서 어쩌나</a></li>
+
+> <li><a data-id="449368" href="/449368">TXT 투모로우바이투게더 게시판</a></li>
+
+> <li><a data-id="455365" href="/455365">아동청소년학과 게시판</a></li>
+
+> <li><a data-id="469590" href="/469590">자소서컨설팅</a></li>
+
+> <li><a data-id="477825" href="/477825">성대_원신</a></li>
+
+> <li><a data-id="378714" href="/378714">성균관대 걸그룹 여자친구 갤러리</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="group hidden">
+
+> <ul>
+
+> <li><a data-id="451669" href="/451669">쿠키런 오븐브레이크</a></li>
+
+> <li><a data-id="478805" href="/478805">백호🐯🥝🍣🍧의 고민상담 등 게시판😊</a></li>
+
+> <li><a class="search" href="/community/search">게시판 찾기</a></li>
+
+> </ul>
+
+> </div>
+
+> <div class="divider"></div>
+
+> <hr/>
+
+> </div>
+
+> <input id="communityCampusId" type="hidden" value="14"/> </div>
+
+63c262
+
+< <input id="isUser" type="hidden" value="0"/>
+
+---
+
+> <input id="isUser" type="hidden" value="1"/>
+
+68c267
+
+< </div>
+
+---
+
+> <h1><a href="/370444">인사캠 자유게시판</a></h1></div>
+
+70,71c269,270
+
+< <div class="wrap title"></div>
+
+< <div class="wrap articles"><div class="loading">불러오는 중입니다...</div></div>
+
+---
+
+> <div class="wrap title"><h1><a href="/370444">인사캠 자유게시판</a></h1><hr/></div>
+
+> <div class="wrap articles"><a id="writeArticleButton">새 글을 작성해주세요!</a><article><a class="article" href="/370444/v/157518771"><h2 class="medium">다들 아빠한테 아버지라고 불러?</h2><p class="small">아버지라고 하긴 해야하는데 언제부터 그렇게 부르지ㅠ</p><time class="small">방금</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">0</li></ul><hr/><input name="157518771_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157518757"><h2 class="medium">이과생이라몰라서 ㅠ</h2><p class="small">문과여동생이 42244입니다 어디로 가나요 문과는 이정도로?! 인서울은 바라지않으니 막 아시는대로 던져주세요 ㅠㅠ</p><time class="small">방금</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">0</li></ul><hr/><input name="157518757_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157518729"><h2 class="medium">평소학습</h2><p class="small">아캠인데 평소학습이 뭐임??</p><time class="small">방금</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">0</li></ul><hr/><input name="157518729_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157518557"><h2 class="medium">유급하면 성적장학금</h2><p class="small">뱉어야하나요..?ㅠㅜ</p><time class="small">방금</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">1</li></ul><hr/><input name="157518557_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157518551"><h2 class="medium">심심한데 쪽지나 할사람</h2><p class="small">남자고 그냥 진짜 심심해서 남녀노소 노상관 교수님도 가능</p><time class="small">방금</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">4</li></ul><hr/><input name="157518551_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157518317"><h2 class="medium">김진영</h2><p class="small">투자론 왜 저모냥이냐? 이건대체 풀라는거 말라는거</p><time class="small">2분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">0</li></ul><hr/><input name="157518317_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157518287"><h2 class="medium">부정행위 적발하면</h2><p class="small">그 사람한테 따로 연락하셔??</p><time class="small">2분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">1</li></ul><hr/><input name="157518287_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157518052"><h2 class="medium">비밀의숲1,2시즌 연달아 보니까</h2><p class="small">다른 법정 드라마 못 보겠다 다들 감정과잉 같아... 시목이 말고는 다 답답해</p><time class="small">3분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">3</li></ul><hr/><input name="157518052_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157518003"><h2 class="medium">..</h2><p class="small">남친이랑 술먹었는데 일부러 취한척했단말임..? 근데 선배들이랑 술먹는다고 데려다주지도 않고 버스타고 가버림.. ㅅㅂ</p><time class="small">4분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">7</li></ul><hr/><input name="157518003_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157517985"><h2 class="medium">코안쪽에 딱지있는데</h2><p class="small">그거 떼면 바로 코피나던데 이거 병원가봐야겟지??</p><time class="small">4분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">5</li></ul><hr/><input name="157517985_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157517827"><div class="attachthumbnail" style='background-image: url("https://cf-ea.everytime.kr/attach_thumbnail/856/33230927/everytime-1608045313234.jpg?Expires=1608046494&amp;Key-Pair-Id=APKAICU6XZKH23IGASFA&amp;Signature=KvgxqOOuHhQe6GE0c2g40cTY~OIRuK7dZmfRoPwKGsu~POQNL0lUK5FVxMoqWmBWUO5sNFHAnlu1Y05K3G8wBdiMfuZVPlfe23IvF~~Jxwo3H~ZnpGqkGX68d49w702NgzgKxJXoqaj886AB6JGmwZgbe-2-XHdLDTXv6-24TEGeqySmSOrKBShjDRjBsOGDyN9l0ysOjm0ttlOpxgeDS02MpwmAzGhefNgIWfH1r5Ob2KvcvUFxrXQdo0WdEv31hDaKLq-xqnz8Yb21AjCLL9TtgCIUkTw9QQwvKJZiD1rhASd6jciH6QD5jJZmd4a9LIOzCO72pL2-9drccr9MVg__");'></div><h2 class="medium">저는 이걸 이해 못합니다</h2><p class="small">솔직하게 말하면 저는 이런거 이해를 못하겠습니다  저희 집안도 자영업을 하고 있고 임대료를 지불하고 있지만  모두 힘든 이 시기에 임대료를 깎아</p><time class="small">4분 전</time><h3 class="small">익명</h3><ul class="status"><li class="attach">1</li><li class="vote" title="공감">1</li><li class="comment" title="댓글">8</li></ul><hr/><input name="157517827_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157517701"><h2 class="medium">산타할아버지 등장🎅🎅🎅</h2><p class="small">씻으러 가기 전에 소원을 들어주마🎅🎅</p><time class="small">5분 전</time><h3 class="small">오오9ㅁ9/</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">21</li></ul><hr/><input name="157517701_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157517344"><h2 class="medium">아니 어떻게 사람이 아무도 안만나고 지내</h2><p class="small">나는 그렇게 생각한다</p><time class="small">6분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">2</li><li class="comment" title="댓글">8</li></ul><hr/><input name="157517344_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157517288"><h2 class="medium">다니엘 동역사 과제 낸 사람들</h2><p class="small">00시에 내도 인정맞지?ㅡㅜㅜㅜㅠㅠㅜㅠㅜㅡㅜㅜㅠ 기사 다 읽느라고 막판에 번역기  호다닥 돌려서 낸다고 57분 내고 또 00초 냈는데 괜찮겟지?</p><time class="small">7분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">0</li></ul><hr/><input name="157517288_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157517242"><h2 class="medium">남자분들도</h2><p class="small">뒷담에 민감한가요 하하 옛날에 남사친 말투가 맘에 안든다고 식당에서 가볍게..(?) 뒷담했는데 제 뒤에 그 남사친이 있었더라구요 ㅎ 그 뒤로 상</p><time class="small">7분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">11</li></ul><hr/><input name="157517242_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157516803"><h2 class="medium">결석</h2><p class="small">출석 10프론데 결석 2번이면 학점에 영향 많이 미치나요??</p><time class="small">9분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">5</li></ul><hr/><input name="157516803_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157516712"><h2 class="medium">장영은 교수님 뭐임?</h2><p class="small">아침 열시 반에 문제 올리신다는 거 아니었음? 지금 올린 건 대체 뭐임...?</p><time class="small">9분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">0</li></ul><hr/><input name="157516712_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157516665"><h2 class="medium">@@@@@@이번 경기대 기숙사 사태 아는 사람 있음???</h2><p class="small">개충격인데</p><time class="small">10분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">9</li></ul><hr/><input name="157516665_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157516604"><h2 class="medium">커플들 자취방에서 노는 건 ㅇㅈ이고</h2><p class="small">걍 친구끼리는 코시국이라 안 되나? ㅠㅠㅠ 뭔가 커플이 자취방에서 조용히 논다고 하면 방역 잘 지키는 느낌이고 친구 둘이서 자취방에서 술 먹고 </p><time class="small">10분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">12</li></ul><hr/><input name="157516604_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><article><a class="article" href="/370444/v/157516535"><h2 class="medium">상판추</h2><p class="small">밤 새는 사람 있니 함께하자</p><time class="small">10분 전</time><h3 class="small">익명</h3><ul class="status"><li class="vote" title="공감">0</li><li class="comment" title="댓글">0</li></ul><hr/><input name="157516535_comment_anonym" type="hidden" value="0"/></a><div class="comments"></div></article><div class="clearBothOnly"></div><div class="pagination"><form class="search" id="searchArticleForm"><select name="search_type"><option value="4">전체</option><option value="3">해시태그</option><option value="2">글 제목</option><option value="1">글 내용</option></select><input class="text" name="keyword" placeholder="검색어를 입력하세요."/></form><a class="next" href="/370444/p/2">다음</a></div></div>
+
+73c272,331
+
+< <div class="rightside"><div class="card"><div class="board"><h3><a href="/bestarticle">BEST 게시판<span>더 보기</span></a></h3></div></div></div>
+
+---
+
+> <div class="rightside"><div class="card"><div class="board"><h3><a>실시간 인기 글</a></h3><a class="article" href="/375131/v/157445983"><p class="title">(문과) 삼성전자, 현대자동차, SK가스, 월트디즈니 최종합격</p><p class="small">2020년 하반기에 운이 좋게 다수 기업에 최종 합격했습니다. <br/>상반기에 처음 취업시장에 진입하면서 서류에 공을 들인지라 서류 합격률은 대체로</p><h4>취업·진로</h4><ul class="status"><li class="vote active">132</li><li class="comment active">157</li></ul><hr/></a><a class="article" href="/370444/v/157329107"><p class="title">남자 패션 기본템 집대성.txt</p><p class="small">군대도 전역했겠다, 군 학점 시험도 끝났고 할짓도 없어서 두서없이 적어봄<br/>초보자들은 걍 이거 보고 사셈<br/>참고로 위쪽일수록 더 범용성 있음<br/>•양</p><h4>인사캠 자유게시판</h4><ul class="status"><li class="vote active">97</li><li class="comment active">38</li></ul><hr/></a></div></div><div class="card"><div class="board"><h3><a href="/hotarticle">HOT 게시물<span>더 보기</span></a></h3><a class="list" href="/370444/v/157504284"><time>12/15 23:10</time><p>임대료 멈춤법ㅋㅋㅋㅋㅋㅋㅋ</p><hr/></a><a class="list" href="/370444/v/157493137"><time>12/15 22:17</time><p>짤 만들어 옴</p><hr/></a><a class="list" href="/370444/v/157501843"><time>12/15 22:59</time><p>코로나 확진자 실수하네</p><hr/></a><a class="list" href="/370445/v/157492584"><time>12/15 22:14</time><p>그래도 코로나 괜찮지 않냐?</p><hr/></a></div></div><div class="card"><div class="board"><h3><a href="/bestarticle">BEST 게시판<span>더 보기</span></a></h3></div></div><div class="card"><div class="board"><h3><a>학교 소식</a></h3><a class="article" href="/451849/v/157172542"><p>💚안녕하세요 프레시맨 가이드입니다💚<br/>모두 기말고사 준비 잘 하고 계신가요? 저번에 안내드린 학과진입 신청과 더불어 글로벌 융합학부 원전공 신청</p><h4>프레시맨 가이드</h4><ul class="status"><li class="vote active">4</li><li class="comment active">0</li></ul><hr/></a><a class="article" href="/369580/v/157211630"><p>학우 여러분 안녕하세요! 성균웹진입니다😊<br/>•오늘은 자랑스러운 학우분의 수상 소식을 가지고 왔는데요! 바로 영상학과 이연지 학우의 SF 어워드 </p><h4>성균웹진</h4><ul class="status"><li class="vote active">29</li><li class="comment active">4</li></ul><hr/></a></div></div><div class="card"><div class="board"><h3><a href="/lecture">최근 강의평<span>더 보기</span></a></h3><a class="article" href="/lecture/view/785401"><span class="star"><span class="on" style="width: 60%;"></span></span><p class="title">중급러시아어2 : 이형구</p><p class="small">수업 자체가 흥미롭진 않은데 배우는 건 많습니다. 형동사/부동사부터 시작하고, 이동동사 등 러시아어 문법 후반부를 다룹니당</p><hr/></a><a class="article" href="/lecture/view/43881"><span class="star"><span class="on" style="width: 80%;"></span></span><p class="title">문명과자연환경 : 한면희</p><p class="small">철학적이고 환경적인 내용이 많이 들어가고 양도 많아서 이전 강의평에서 왜 욕했는지 느꼈습니다 알다시피 지루한 내용도 많고요 근데 막상 다시 생각</p><hr/></a><a class="article" href="/lecture/view/2009680"><span class="star"><span class="on" style="width: 60%;"></span></span><p class="title">경제학원론2 : 박형수</p><p class="small">중간 대체도 아닌데 과제 양이 좀 많아서 좀 힘들었어요ㅠ 강의는 친절하게 설명해주셔서 좋았지만 양이 조금 많다는 점ㅎㅎ</p><hr/></a><a class="article" href="/lecture/view/44996"><span class="star"><span class="on" style="width: 60%;"></span></span><p class="title">기술경영개론 : 조근태</p><p class="small">좋았습니다 하하하하하ㅏ하하하하하ㅏ하하하하하하하하ㅏ하</p><hr/></a></div></div></div>
+
+> <form class="modal" id="abuseForm">
+
+> <a class="close" title="닫기"></a>
+
+> <h3>신고 사유 선택</h3>
+
+> <ul>
+
+> <li><a data-reason="1">게시판 성격에 부적절함</a></li>
+
+> <li><a data-reason="2">욕설/비하</a></li>
+
+> <li><a data-reason="3">음란물/불건전한 만남 및 대화</a></li>
+
+> <li><a data-reason="4">상업적 광고 및 판매</a></li>
+
+> <li><a data-reason="5">유출/사칭/사기</a></li>
+
+> <li><a data-reason="6">낚시/놀람/도배</a></li>
+
+> <li><a data-reason="7">정당/정치인 비하 및 선거운동</a></li>
+
+> </ul>
+
+> </form>
+
+> <form class="modal" id="manageMoimForm">
+
+> <a class="close" title="닫기"></a>
+
+> <h3>게시판 설정</h3>
+
+> <p>
+
+> <label>소개</label>
+
+> <input class="text" name="info" type="text"/>
+
+> </p>
+
+> <p class="hide">
+
+> <label>인기 글 금지</label>
+
+> <input id="manageMoimForm_is_not_selected_hot_article" name="is_not_selected_hot_article" type="checkbox"/><label class="checkbox" for="manageMoimForm_is_not_selected_hot_article">글이 공감을 받아도 인기 글 및 HOT 게시물에 선정되지 않음</label>
+
+> </p>
+
+> <input class="button light floatLeft" type="button" value="게시판 양도"/>
+
+> <input class="button light floatLeft" type="button" value="게시판 삭제"/>
+
+> <input class="button" type="submit" value="수정"/>
+
+> </form>
+
+> <form class="modal" id="transferMoimForm">
+
+> <a class="close" title="닫기"></a>
+
+> <h3>게시판 양도</h3>
+
+> <p>
+
+> <label>양도인 비밀번호</label>
+
+> <input class="text" name="transferer_password" type="password"/>
+
+> </p>
+
+> <p>
+
+> <label>피양도인 아이디</label>
+
+> <input class="text" name="transferee_userid" type="text"/>
+
+> </p>
+
+> <input class="button" type="submit" value="양도 요청"/>
+
+> </form>
+
+> <form class="modal" id="attachThumbnailForm">
+
+> <a class="close" title="닫기"></a>
+
+> <h3>첨부된 이미지</h3>
+
+> <p>
+
+> <label>설명 추가</label>
+
+> <textarea class="text" name="caption" placeholder="이 이미지에 대한 설명을 입력하세요."></textarea>
+
+> </p>
+
+> <input class="button light floatLeft" type="button" value="첨부 삭제"/>
+
+> <input class="button" type="submit" value="설명 저장"/>
+
+> </form>
+
+> <form class="modal" id="messageSend">
+
+> <a class="close" title="닫기"></a>
+
+> <h3>쪽지 보내기</h3>
+
+> <p>
+
+> <textarea class="text" name="message" placeholder="내용을 입력해주세요."></textarea>
+
+> </p>
+
+> <input class="button" type="submit" value="전송"/>
+
+> </form>
+
+86c344
+
+<     var _serverTime = 1608045582476;
+
+---
+
+>     var _serverTime = 1608045594090;
+
+

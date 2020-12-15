@@ -18,4 +18,4 @@ user_id = 'harim_k'
 
 user = init_user(user_id)
 
-monitor_posting(user, urls)
+monitor_posting(user, urls, keyword='??')

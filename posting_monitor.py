@@ -14,7 +14,7 @@ FILES_DIR = 'files'
 
 
 
-hrefs = dict()
+checked_hrefs = dict()
 
 
 def _get_current_time():
@@ -59,31 +59,29 @@ def _get_html_from_url(driver, url):
     return html
 
 
-def _get_links_from_html(html):
-    """ get link list form html """
-    links = []
+def _get_hrefs_from_html(html):
+    """ get href list form html """
+    hrefs = []
     soup = BeautifulSoup(html, "html.parser")
     anchors = soup.find_all('a', href=True)
 
     for anchor in anchors:
         href = anchor['href']
-        if href not in hrefs.keys():
-            hrefs[href] = True
-            links.append(href)
+        hrefs.append(href)
     
-    return links
+    return hrefs
 
 
-def _get_links_from_diff_file(file_name):
-    """ get link list from diff file """
-    links = []
+def _get_hrefs_from_diff_file(file_name):
+    """ get hrefs list from diff file """
+    hrefs = []
     with open(file_name, 'r', -1, 'utf-8') as f:
         lines = f.readlines()
         for line in lines:
             if line[0] == '>':
-                links.extend(_get_links_from_html(line))
+                hrefs.extend(_get_hrefs_from_html(line))
 
-    return links
+    return hrefs
 
 
 def _get_base_url(url):
@@ -96,13 +94,26 @@ def _get_base_url(url):
 
     return url[:end_index]
 
-def monitor_posting(user, urls):
+
+def _has_keyword(url, keyword, driver):
+    if not keyword:
+        return True
+    
+    html = _get_html_from_url(driver, url)
+
+    if keyword in html:
+        return True
+    else:
+        return False
+
+
+def monitor_posting(user, urls, keyword=None):
     """ monitor posting of website """
 
     driver = webdriver.Chrome()
 
     # save urls' html as file
-    base_url = [0]
+    base_url = ['']
     for index, url in enumerate(urls, 1):
         
         base_url.append(_get_base_url(url))
@@ -121,10 +132,12 @@ def monitor_posting(user, urls):
 
         html = _get_html_from_url(driver, url)
         _write_file(html_file_name, html)
-        links = _get_links_from_html(html)
+        hrefs = _get_hrefs_from_html(html)
 
-        for link in links:
-            hrefs[link] = True
+        for href in hrefs:
+            if href[0] == '/':
+                href = base_url[index] + href
+            checked_hrefs[href] = True
         
 
     # monitor posting
@@ -143,7 +156,17 @@ def monitor_posting(user, urls):
             # make diff file
             os.system(f'diff {html_file_name} {new_html_file_name} > {diff_file_name}')
 
-            links = _get_links_from_diff_file(diff_file_name)
+            hrefs = _get_hrefs_from_diff_file(diff_file_name)
+            links = []
+            
+            # get link list from href list
+            for href in hrefs:
+                if href[0] == '/':
+                    href = base_url[index] + href
+                if url in href and href not in checked_hrefs.keys():
+                    checked_hrefs[href] = True
+                    if _has_keyword(href, keyword, driver):
+                        links.append(href)
 
             print(_get_current_time())
             if links:
@@ -154,8 +177,7 @@ def monitor_posting(user, urls):
 
             # send message to user
             for i in range(len(links)):
-                if links[i][0] == '/':
-                    links[i] = base_url[index] + links[i]
+                
                 print(links[i])
                 send_message(user, links[i])
 
