@@ -36,7 +36,9 @@ def tele_register_v2_auto(user_id):
     starttime = time.time()
     # 봇에 사용자가 메시지를 우선 날려야 chat_id를 받을 수 있는데, 
     # 1분 이상 봇에 메시지를 주지 않을 경우 취소하도록 하기 위해 시간을 체크.
-    last_update_id = update[-1].update_id
+    last_update_id = 300000000
+    if len(update) >= 1:
+        last_update_id = update[-1].update_id
     # for 문이 너무 많은 메시지 정보를 확인하지 않도록 오프셋 설정을 위해 마지막 update_id를 확인
     webbrowser.open_new('https://t.me/skkunotify_bot')
     # 웹브라우저로 링크를 연다.
@@ -49,7 +51,8 @@ def tele_register_v2_auto(user_id):
                 return str(u.message.chat_id)
             # 메시지 정보에 username이 패러미터의 user_id와 동일한 경우,
             # chat_id를 string으로 리턴한다.(원래는 integer이나 tele_sendmsg에 활용하기 위함.)
-        last_update_id = update[-1].update_id
+        if len(update) >= 1:
+            last_update_id = update[-1].update_id
         # 마지막 update_id를 갱신한다.
         time.sleep(1)
         # 1초동안 가만히 있는다.
