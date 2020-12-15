@@ -1,6 +1,8 @@
 import json
 import requests
 import os
+
+link = "http://www.naver.com"
 def read_data(name,refresh = False): #토큰 폴더의 내용을 읽어서 access token의 value를 추출한다
     name = 'tokens/'+name
     with open(name,"r") as fp:
@@ -19,7 +21,7 @@ def read_data(name,refresh = False): #토큰 폴더의 내용을 읽어서 acces
 #     m_link = link.replace('www','m')
 #     return m_link
 
-def sendMsg(tokenName,msg, link="http://www.naver.com"):
+def sendMsg(tokenName,msg):
     #m_link = makeMobile(link)
     msg +='\n'+link
     access_token=(read_data(tokenName))
@@ -68,9 +70,9 @@ def main():
         while True:
             num = int(input('Select number: '))
             msg = input('Message: ')
-            link = input('Link: ')
+            #link = input('Link: ')
             tokenName= file_list[num]
-            sendMsg(tokenName,msg,link)
+            sendMsg(tokenName,msg)
     else:
         print('no tokens')
 
