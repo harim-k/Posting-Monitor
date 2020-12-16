@@ -1,29 +1,49 @@
+#-*- coding: utf-8 -*-
 from socket import *
-import datetime
 import os.path
 import threading
-import requests
 from pathlib import Path
-
+from selenium import webdriver
 from kakao_token import *
-from short_url import shortUrl
 
 local = getLocal()
 client_id = getClientId()
 port = getPort()
 
-
 def main():
-    mutex = threading.Lock()
+    run_token_server()
+
+def recieve(connectionSock, addr, serverSock):
+    sum_content = b''
+    while 1:
+        content = connectionSock.recv(4096)
+        sum_content += content
+        if b'\r\n\r\n' in sum_content:
+            break
+    strA = saveToken(sum_content)
+    #print(strA)
+    make200(strA)
+    data = sum_content.decode('utf-8').split()
+    data2 = sum_content.decode('utf-8')
+    snd_pkt = make_pkt(data, data2)
+    connectionSock.send(snd_pkt)
+    undo200(strA)
+    # print('connection thread is end. :' +str(addr[0])+':'+str(addr[1]))
+    connectionSock.close()
+    #mutex.release()
+def run_token_server():
+
+    #mutex = threading.Lock()
     serverSock = socket()
     serverSock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
     serverSock.bind(('', int(port)))
     serverSock.listen(1000)
-
+    driver = webdriver.Chrome('./chromedriver')
     link = setLink()
-    print('Share this login link (Port forwarding is needed.)\n' + link)
+    driver.get(link)
+    print('Share this login link (Port forwarding is needed)\n' + link)
     print('Server has started.')
-    refresher = threading.Thread(target = refrigerator, args=(mutex, ))
+    refresher = threading.Thread(target = refrigerator, args=( ))
     refresher.start() # 토큰 refresh
     while 1:
         try:
@@ -31,46 +51,30 @@ def main():
         except OSError as e:
             print(e)
             break
-        reciever = threading.Thread(target=recieve, args=(connectionSock, addr, serverSock,mutex))
+        reciever = threading.Thread(target=recieve, args=(connectionSock, addr, serverSock))
         reciever.start()
     serverSock.close()
     print('Program ended.')
 
-def recieve(connectionSock, addr, serverSock,mutex):
-    #mutex.acquire()
-    # print('Connection thread is created from '+str(addr[0])+':'+str(addr[1]))
-    sum_content = b''
-    while 1:
-        content = connectionSock.recv(4096)
-        sum_content += content
-        if b'\r\n\r\n' in sum_content:
-            break
-    uid =saveToken(sum_content)
-    data = sum_content.decode('utf-8').split()
-    data2 = sum_content.decode('utf-8')
-    snd_pkt = make_pkt(data, data2)
-    make200(uid)
-    connectionSock.send(snd_pkt)
-    undo200(uid)
-    # print('connection thread is end. :' +str(addr[0])+':'+str(addr[1]))
-    connectionSock.close()
-    #mutex.release()
-def make200(uid):
-    if uid == -1:
+
+def make200(strA):
+    #print(strA)
+    #print('hi')
+    if strA =='':
         return
     fileName = '200.html'
-    with open(fileName,"r") as fp:
-        data =  fp.read().replace('<p></p>','<p>'+str(uid)+'</p>')
-    with open(fileName,"w") as fp:
+    with open(fileName,"r",encoding='UTF8') as fp:
+        data =  fp.read().replace('<p></p>','<p>'+str(strA)+'</p>')
+    with open(fileName,"w",encoding='UTF8') as fp:
         fp.write(data)
-def undo200(uid):
-    if uid==-1:
+def undo200(strA):
+    if strA=='':
         return
     fileName = '200.html'
-    with open(fileName,"r") as fp:
+    with open(fileName,"r",encoding='UTF8') as fp:
         data =  fp.read()
-    data.replace(str(uid),'')
-    with open(fileName,"w") as fp:
+    data.replace(str(strA),'')
+    with open(fileName,"w",encoding='UTF8') as fp:
         fp.write(data)
 def isFile(strA):
     my_file = Path(strA)  # Path는 string을 return하는것 아님.window에서만 사용하능함.
@@ -141,17 +145,17 @@ def setLink():
         link += client_id + "&response_type=code&redirect_uri=http://"
         link += ip + ":"+ port
         return link
-    if isFile('short_url.txt'):
-        with open('short_url.txt',"r") as fp:
-            link = fp.read()
+    #if isFile('short_url.txt'):
+     #   with open('short_url.txt',"r") as fp:
+    #        link = fp.read()
     else:
         ip = requests.get("https://api.ipify.org").text
         link = "https://kauth.kakao.com/oauth/authorize?client_id="
         link += client_id + "&response_type=code&redirect_uri=http://"
         link += ip + ":" + port
-        link = shortUrl(link)
-        with open('short_url.txt',"w") as fp:
-            fp.write(link)
+        #link = shortUrl(link)
+        #with open('short_url.txt',"w") as fp:
+        #    fp.write(link)
     return link
 
 if __name__ == "__main__":

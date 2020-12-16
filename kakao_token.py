@@ -26,8 +26,8 @@ def saveToken(get_txt):
         with open("ip.txt","w") as fp:
             fp.write(ip)
     code = extractCode(get_txt)
-    print('Creating token requests have been received.')
-    print('Code\n'+code)
+    #print('Creating token requests have been received.')
+    #print('Code\n'+code)
     url = "https://kauth.kakao.com/oauth/token"
     data = {"grant_type": "authorization_code",
             "client_id": "7412c5bbc84770efd9fb12162c229f9f",
@@ -40,17 +40,19 @@ def saveToken(get_txt):
     tokens = response.json()
     nickName2, uid = getInfo(response.text)
 
-    print('Token info\n'+str(tokens))
+    #print('Token info\n'+str(tokens))
     if 'error' not in tokens.keys():
         #kakao2(tokens['access_token'])
         time1 = str(datetime.datetime.now()).split('.')[0].replace(' ','_').replace('-','').replace(':','')
         if not os.path.isdir('./tokens'):
             os.mkdir('tokens')
-        name =  "./tokens/"+ time1[2:]+"_"+nickName2+'.json'
+        name =  "./tokens/"+ time1[2:]+'.json'
+        #print()
         with open(name,"w") as fp:
             json.dump(tokens,fp)
-            print('Token has been saved: '+name[2:])
-    return uid
+    res = '토큰이 생성됨\n이 이름을 kakao_send_msg.py의 sendMsg함수의 첫번째 인자로 넣고, 두번째 인자에 메시지 넣고 sendMsg함수실행\n'+name[2+7:]
+    print(res)
+    return name[2+7:]
 
 def extractToken(txt):
     data = txt
@@ -66,8 +68,8 @@ def getInfo(text):
     #access_token=(read_data(tokenName))
     headers = {"Authorization": "Bearer " + access_token}
     response =requests.get("https://kapi.kakao.com/v2/user/me", headers = headers )
-    print('hi')
-    print(response.text)
+    #print('hi')
+    #print(response.text)
     if 'kakao_account' in response.json().keys():
         res = response.json()['kakao_account']['profile']['nickname']
         res2 = response.json()['id']
@@ -99,7 +101,7 @@ def extractCode(get_txt):
     res = get_txt[init:end + 1]
     return res
 
-def refrigerator(mutex): # 21599초(6시간)마다 만료, (21599-600)(5시간 50분)마다 갱신
+def refrigerator(): # 21599초(6시간)마다 만료, (21599-600)(5시간 50분)마다 갱신
     while 1:        # 토큰 refresh
         #mutex.acquire()
         data ={}
@@ -107,7 +109,7 @@ def refrigerator(mutex): # 21599초(6시간)마다 만료, (21599-600)(5시간 5
             os.mkdir('tokens')
         file_list = os.listdir('tokens')
         file_list.sort()
-        print('Refreshing token has started.')
+        #print('Refreshing token has started.')
         if len(file_list) >0:
             for idx, f in enumerate(file_list):
                 data['client_id'] = client_id
@@ -115,8 +117,8 @@ def refrigerator(mutex): # 21599초(6시간)마다 만료, (21599-600)(5시간 5
                 data['grant_type'] = 'refresh_token'
                 response = requests.post("https://kauth.kakao.com/oauth/token", data=data)
                 txt = response.text
-                print(response)
-                print(str(idx)+": "+str(f) +" "+txt)
+                #print(response)
+                #print(str(idx)+": "+str(f) +" "+txt)
         else:
             print('refrigerator: no tokens')
         #mutex.release()
