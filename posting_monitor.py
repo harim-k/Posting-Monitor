@@ -2,25 +2,25 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from selenium import webdriver
+
 import time
+import datetime
 import os
-from filecmp import cmp
 import difflib
+from filecmp import cmp
 
 from messenger import send_message
 
+
 MONITORING_TIME_INTERVAL = 10
 FILES_DIR = 'files'
-
-
 
 checked_hrefs = dict()
 
 
 def _get_current_time():
     """ get current time as string """
-
-    import datetime
+    
     current_time = str(datetime.datetime.now())
 
     return current_time
@@ -61,6 +61,7 @@ def _get_html_from_url(driver, url):
 
 def _get_hrefs_from_html(html):
     """ get href list form html """
+
     hrefs = []
     soup = BeautifulSoup(html, "html.parser")
     anchors = soup.find_all('a', href=True)
@@ -74,6 +75,7 @@ def _get_hrefs_from_html(html):
 
 def _get_hrefs_from_diff_file(file_name):
     """ get hrefs list from diff file """
+
     hrefs = []
     with open(file_name, 'r', -1, 'utf-8') as f:
         lines = f.readlines()
@@ -86,6 +88,7 @@ def _get_hrefs_from_diff_file(file_name):
 
 def _get_base_url(url):
     """ get base url """
+
     end_index = -1
     for index, char in enumerate(url[8:], 8):
         if char == '/':
@@ -96,6 +99,8 @@ def _get_base_url(url):
 
 
 def _has_keyword(url, keyword, driver):
+    """ return True if url has keyword """
+
     if not keyword:
         return True
     
@@ -196,8 +201,3 @@ def monitor_posting(user, urls, keyword=None):
             # sleep for monitoring time interval
             time.sleep(MONITORING_TIME_INTERVAL)
 
-
-# try:
-#     monitor_posting(urls)
-# except KeyboardInterrupt:
-#     driver.quit()
