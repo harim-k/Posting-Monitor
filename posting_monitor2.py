@@ -167,10 +167,10 @@ def monitor_posting(messenger_type, user, urls, keywords):
             
             # get link list from href list
             for href in hrefs:
-                print(href)
+                # print('href : ', href)
                 if len(href) > 0 and href[0] == '/':
                     href = base_url[index] + href
-                if href not in checked_hrefs.keys():
+                if url in href and href not in checked_hrefs.keys():
                     checked_hrefs[href] = True
                     if _has_keyword(href, keyword, driver):
                         links.append(href)
