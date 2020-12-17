@@ -26,7 +26,7 @@ def sendMsg(tokenName,msg):
         print('No tokenName : error')
         return
     #m_link = makeMobile(link)
-    msg +='\n'+link
+    #msg +='\n'+link
     access_token=(read_data(tokenName))
     url = "https://kapi.kakao.com/v2/api/talk/memo/default/send"
     #access_token = "{'access_token': '_5PpTNVC_TOnAGypTBNSzGNHZTXOlgCwUCwFcQo9dZwAAAF2Rq6GQg','token_type': 'bearer', 'refresh_token': 'pxRUdPpZ3q2Y5RSL7da4CPGeKg_-3YyJL7iJTAo9dZwAAAF2Rq6GQA','expires_in': 21599, 'scope': 'account_email profile', 'refresh_token_expires_in': 5183999}"
@@ -44,8 +44,8 @@ def sendMsg(tokenName,msg):
         "template_object" : json.dumps({ "object_type" : "text",
                                          "text" : msg,
                                           "link" : {
-                                                      "web_url" : link
-                                                     #,"mobile_web_url" : m_link
+                                                      "web_url" : link,
+                                                     "mobile_web_url" : link
                                                    },
                                          # "button_title": "변경된 웹 사이트 확인"
         })
