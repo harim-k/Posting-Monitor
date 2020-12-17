@@ -3,6 +3,7 @@ from socket import *
 import os.path
 import threading
 from pathlib import Path
+import webbrowser
 from selenium import webdriver
 from kakao_token import *
 
@@ -33,15 +34,14 @@ def recieve(connectionSock, addr, serverSock):
     #mutex.release()
     return strA
 def run_token_server():
-
-    mutex = threading.Lock()
     serverSock = socket()
     serverSock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
     serverSock.bind(('', int(port)))
     serverSock.listen(1000)
-    driver = webdriver.Chrome('./chromedriver')
+    #driver = webdriver.Chrome('./chromedriver')
     link = setLink()
-    driver.get(link)
+    #driver.get(link)
+    webbrowser.open_new(link)
     print('Share this login link (Port forwarding is needed)\n' + link)
     print('Server has started.')
     refresher = threading.Thread(target = refrigerator, args=( ))
