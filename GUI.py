@@ -56,6 +56,7 @@ class PNGUI:
             self.kakaoIDlabel.configure(text='카카오톡 토큰 등록됨')
             self.radio1.configure(state='normal')
             self.radio1.deselect()
+            print(self.kakao_tokenName)
         except:
             self.kakaoRegButton.configure(text='다시 시도하세요')
     
