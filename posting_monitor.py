@@ -52,7 +52,7 @@ def _get_html_from_url(driver, url):
     time.sleep(1)
     for _ in range(10):
         driver.execute_script('window.scrollBy(0,10000)')
-        
+    time.sleep(1)
     page_source = driver.page_source
     html = str(BeautifulSoup(page_source, "html.parser"))
 
@@ -112,14 +112,14 @@ def _has_keyword(url, keyword, driver):
         return False
 
 
-def monitor_posting(messenger_type, user, urls, keyword=None):
+def monitor_posting(messenger_type, user, urls, keywords):
     """ monitor posting of website """
 
     driver = webdriver.Chrome()
 
     # save urls' html as file
     base_url = ['']
-    for index, url in enumerate(urls, 1):
+    for index, (url, keyword) in enumerate(zip(urls, keywords), 1):
         
         base_url.append(_get_base_url(url))
         dir_name = os.path.join(FILES_DIR, str(index))
@@ -140,7 +140,7 @@ def monitor_posting(messenger_type, user, urls, keyword=None):
         hrefs = _get_hrefs_from_html(html)
 
         for href in hrefs:
-            if href[0] == '/':
+            if len(href) > 0 and href[0] == '/':
                 href = base_url[index] + href
             checked_hrefs[href] = True
         
@@ -161,12 +161,14 @@ def monitor_posting(messenger_type, user, urls, keyword=None):
             # make diff file
             os.system(f'diff {html_file_name} {new_html_file_name} > {diff_file_name}')
 
-            hrefs = _get_hrefs_from_diff_file(diff_file_name)
+            # hrefs = _get_hrefs_from_diff_file(diff_file_name)
+            hrefs = _get_hrefs_from_html(new_html)
             links = []
             
             # get link list from href list
             for href in hrefs:
-                if href[0] == '/':
+                print(href)
+                if len(href) > 0 and href[0] == '/':
                     href = base_url[index] + href
                 if url in href and href not in checked_hrefs.keys():
                     checked_hrefs[href] = True
