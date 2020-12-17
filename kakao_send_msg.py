@@ -22,6 +22,9 @@ def read_data(name,refresh = False): #토큰 폴더의 내용을 읽어서 acces
 #     return m_link
 
 def sendMsg(tokenName,msg):
+    if tokenName == '':
+        print('No tokenName : error')
+        return
     #m_link = makeMobile(link)
     msg +='\n'+link
     access_token=(read_data(tokenName))
