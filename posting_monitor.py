@@ -112,7 +112,7 @@ def _has_keyword(url, keyword, driver):
         return False
 
 
-def monitor_posting(user, urls, keyword=None):
+def monitor_posting(messenger_type, user, urls, keyword=None):
     """ monitor posting of website """
 
     driver = webdriver.Chrome()
@@ -184,7 +184,7 @@ def monitor_posting(user, urls, keyword=None):
             for i in range(len(links)):
                 
                 print(links[i])
-                send_message(user, links[i])
+                send_message(messenger_type, user, links[i])
 
             if links:
                 _write_log_file(links_file_name, links)

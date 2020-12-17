@@ -15,7 +15,8 @@ urls = [url4]
 
 
 user_id = 'harim_k'
+messenger_type = 'kakaotalk'
 
-user = init_user(user_id)
+user = init_user(messenger_type, user_id)
 
-monitor_posting(user, urls, keyword='??')
+monitor_posting(messenger_type, user, urls, keyword='??')
