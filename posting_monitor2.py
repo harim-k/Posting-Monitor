@@ -170,7 +170,7 @@ def monitor_posting(messenger_type, user, urls, keywords):
                 print(href)
                 if len(href) > 0 and href[0] == '/':
                     href = base_url[index] + href
-                if url in href and href not in checked_hrefs.keys():
+                if href not in checked_hrefs.keys():
                     checked_hrefs[href] = True
                     if _has_keyword(href, keyword, driver):
                         links.append(href)
@@ -183,10 +183,10 @@ def monitor_posting(messenger_type, user, urls, keywords):
 
 
             # send message to user
-            for i in range(len(links)):
+            for link in links:
                 
-                print(links[i])
-                send_message(messenger_type, user, links[i])
+                print(link)
+                send_message(messenger_type, user, link)
 
             # if links:
             #     _write_log_file(links_file_name, links)

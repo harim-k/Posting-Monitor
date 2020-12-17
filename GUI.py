@@ -1,7 +1,7 @@
 from tkinter import *
 import tele_sendmsg
 import kakao_token_server
-from posting_monitor import monitor_posting
+from posting_monitor2 import monitor_posting
 
 class PNGUI:
     def __init__(self):

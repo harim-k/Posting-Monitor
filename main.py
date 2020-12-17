@@ -20,11 +20,11 @@ url6 = 'https://gall.dcinside.com/board/lists/?id=leagueoflegends4'
 url7 = 'https://www.i-sh.co.kr/main/lay2/program/S1T294C297/www/brd/m_247/list.do?multi_itm_seq=2'
 
 
-urls = [url4]
+urls = [url2]
 
 user_id = 'harim_k'
 messenger_type = 'telegram'
-keywords = [None]
+keywords = ['']
 user = init_user(messenger_type, user_id)
 
 monitor_posting(messenger_type, user, urls, keywords)

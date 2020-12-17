@@ -11,8 +11,9 @@ url1 = 'https://docs.google.com/document/d/1i9j_XGRqFNHX-nu3ehOQ3RgUpLCHNtctCXrX
 url2 = 'http://acebedmall.co.kr/front/search/categorySearch.do?searchYn=N&ctgNo=2'
 url = 'https://blog.naver.com/harim9355'
 urls = [url]
-keywords = ['dd']
+keywords = ['']
+keyword = ''
 # driver = webdriver.Chrome()
 
-for index, (url, keyword) in enumerate(zip(urls, keywords), 1):
-    print(index, url, keyword)
+if not keyword:
+    print('dd')
