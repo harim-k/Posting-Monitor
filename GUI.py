@@ -6,7 +6,7 @@ from posting_monitor2 import monitor_posting
 class PNGUI:
     def __init__(self):
         self.root = Tk()
-        self.root.title('Posting-Notifier')
+        self.root.title('Posting-Monitor')
         self.root.geometry('640x480')
         self.kakao_tokenName = ''
         self.Tele_chatid = ''
