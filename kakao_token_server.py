@@ -31,9 +31,10 @@ def recieve(connectionSock, addr, serverSock):
     # print('connection thread is end. :' +str(addr[0])+':'+str(addr[1]))
     connectionSock.close()
     #mutex.release()
+    return strA
 def run_token_server():
 
-    #mutex = threading.Lock()
+    mutex = threading.Lock()
     serverSock = socket()
     serverSock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
     serverSock.bind(('', int(port)))
@@ -45,17 +46,15 @@ def run_token_server():
     print('Server has started.')
     refresher = threading.Thread(target = refrigerator, args=( ))
     refresher.start() # 토큰 refresh
-    while 1:
-        try:
-            connectionSock, addr = serverSock.accept()
-        except OSError as e:
-            print(e)
-            break
-        reciever = threading.Thread(target=recieve, args=(connectionSock, addr, serverSock))
-        reciever.start()
+    try:
+        connectionSock, addr = serverSock.accept()
+        tokenName = recieve(connectionSock, addr, serverSock)
+    except OSError as e:
+        print(e)
+        # break
     serverSock.close()
     print('Program ended.')
-
+    return tokenName
 
 def make200(strA):
     #print(strA)
@@ -73,7 +72,7 @@ def undo200(strA):
     fileName = '200.html'
     with open(fileName,"r",encoding='UTF8') as fp:
         data =  fp.read()
-    data.replace(str(strA),'')
+    data=data.replace(str(strA),'')
     with open(fileName,"w",encoding='UTF8') as fp:
         fp.write(data)
 def isFile(strA):
