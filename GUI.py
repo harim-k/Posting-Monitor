@@ -119,7 +119,7 @@ class PNGUI:
             urls.append(self.notifyListbox.get(i)[0])
             keywords.append(self.notifyListbox.get(i)[1])
         
-        monitor_posting(self.RadioVariety,user,urls,keywords)
+        monitor_posting(self.RadioVariety.get(),user,urls,keywords)
         
 if __name__ == "__main__":
     PNGUI()
