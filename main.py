@@ -1,6 +1,8 @@
 
 from posting_monitor import monitor_posting
 from messenger import init_user
+
+
 url1 = 'https://docs.google.com/document/d/1i9j_XGRqFNHX-nu3ehOQ3RgUpLCHNtctCXrXTNKMGVw/edit'
 url2 = 'http://acebedmall.co.kr/front/search/categorySearch.do?searchYn=N&ctgNo=2'
 url3 = 'https://blog.naver.com/harim9355'
@@ -16,7 +18,7 @@ urls = [url4]
 
 user_id = 'harim_k'
 messenger_type = 'kakaotalk'
-
+keyword = '??'
 user = init_user(messenger_type, user_id)
 
-monitor_posting(messenger_type, user, urls, keyword='??')
+monitor_posting(messenger_type, user, urls, keyword)
