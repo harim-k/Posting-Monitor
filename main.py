@@ -14,8 +14,6 @@ url8 = 'https://careers.kakao.com/jobs'
 
 urls = [url4]
 
-
-
 user_id = 'harim_k'
 messenger_type = 'kakaotalk'
 keyword = '??'
