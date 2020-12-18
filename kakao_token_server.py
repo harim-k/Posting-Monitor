@@ -34,11 +34,14 @@ def recieve(connectionSock, addr, serverSock):
     #mutex.release()
     return strA
 def run_token_server():
+    refrigerator()
     if not os.path.isdir('tokens'):
         os.mkdir('tokens')
     file_list = os.listdir('tokens')
     file_list.sort()
-    if len(file_list)>0:
+    #print(hour6over(file_list[0]))
+    #print(file_list)
+    if len(file_list)>0 :
         return file_list[0]
     serverSock = socket()
     serverSock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
@@ -50,8 +53,8 @@ def run_token_server():
     webbrowser.open_new(link)
     print('Share this login link (Port forwarding is needed)\n' + link)
     print('Server has started.')
-    refresher = threading.Thread(target = refrigerator, args=( ))
-    refresher.start() # 토큰 refresh
+    # refresher = threading.Thread(target = refrigerator, args=( ))
+    # refresher.start() # 토큰 refresh
     try:
         connectionSock, addr = serverSock.accept()
         tokenName = recieve(connectionSock, addr, serverSock)
