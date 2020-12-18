@@ -104,7 +104,7 @@ def monitor_posting(messenger_type, user, urls, keywords):
 
     # monitor posting
     while True:
-        for index, url in enumerate(urls, 1):
+        for index, (url, keyword) in enumerate(zip(urls, keywords), 1):
 
             new_html = _get_html_from_url(driver, url)
             hrefs = _get_hrefs_from_html(new_html)
